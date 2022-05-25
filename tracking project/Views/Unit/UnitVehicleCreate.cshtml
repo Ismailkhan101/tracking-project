@@ -1,0 +1,51 @@
+﻿@model tracking_project.Models.UnitVehicle
+
+@{
+    ViewData["Title"] = "UnitVehicleCreate";
+}
+
+<h4>Add new vehicle units</h4>
+
+
+<hr />
+<div class="">
+    <div class="">
+        <form asp-action="UnitVehicleCreate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row col-sm-10">
+                <div class="col">
+                <label asp-for="UnitModel" class="control-label"></label>
+                <input asp-for="UnitModel" class="form-control" />
+                <span asp-validation-for="UnitModel" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="SimNumber" class="control-label"></label>
+                <input asp-for="SimNumber" class="form-control" />
+                <span asp-validation-for="SimNumber" class="text-danger"></span>
+            </div></div><br />
+            <div class="row col-sm-10">
+                <div class="col">
+                <label asp-for="PostalCode" class="control-label"></label>
+                <input asp-for="PostalCode" class="form-control" />
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="GeoFences" class="control-label"></label>
+                <input asp-for="GeoFences" class="form-control" />
+                <span asp-validation-for="GeoFences" class="text-danger"></span>
+            </div></div><br />
+           
+            
+            <div class="row col-sm-10">
+                <div class="col">
+                <input type="submit" value="Add" class="btn btn-primary" style="width:100px;"/>
+            </div></div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

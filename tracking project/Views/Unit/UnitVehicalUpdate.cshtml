@@ -1,0 +1,69 @@
+﻿@model tracking_project.Models.UnitVehicle
+
+@{
+    ViewData["Title"] = "UnitVehicalUpdate";
+}
+
+<h1>UnitVehicalUpdate</h1>
+
+<h4>UnitVehicle</h4>
+<hr />
+<div class="">
+    <div class="">
+        <form asp-action="UnitVehicalUpdate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UnitId" />
+            <div class="row col-sm-10">
+                <div class="col">
+                    <label asp-for="UnitModel" class="control-label"></label>
+                    <input asp-for="UnitModel" class="form-control" />
+                    <span asp-validation-for="UnitModel" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="SimNumber" class="control-label"></label>
+                    <input asp-for="SimNumber" class="form-control" />
+                    <span asp-validation-for="SimNumber" class="text-danger"></span>
+                </div></div><br />
+               <div class="row col-sm-10">
+                <div class="col"> 
+                    <label asp-for="PostalCode" class="control-label"></label>
+                    <input asp-for="PostalCode" class="form-control" />
+                    <span asp-validation-for="PostalCode" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="GeoFences" class="control-label"></label>
+                    <input asp-for="GeoFences" class="form-control" />
+                    <span asp-validation-for="GeoFences" class="text-danger"></span>
+                </div></div><br />
+                <div class="row col-sm-10">
+                <div class="col" >
+                    <label asp-for="InstallationDate" class="control-label"></label>
+                    <input asp-for="InstallationDate" class="form-control" type="hidden"/>
+                    <span asp-validation-for="InstallationDate" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="Status" class="control-label"></label>
+                    <select asp-for="Status" class="form-control" type="hidden">
+                        <option value="1">enabled</option>
+                        <option value="0">Disabled</option>
+                    </select>
+                    
+                </div></div><br />
+                <div class="row col-sm-10">
+                <div class="col">
+                    <label asp-for="FreshExpiry" class="control-label"></label>
+                    <input asp-for="FreshExpiry" class="form-control"/>
+                    <span asp-validation-for="FreshExpiry" class="text-danger"></span>
+                </div>
+
+                <div class="col">
+                    <input type="submit" value="Save" class="btn btn-primary" style="width:100px;margin-top:30px"/>
+                </div></div>
+</form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

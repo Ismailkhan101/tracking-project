@@ -1,0 +1,78 @@
+﻿@model IEnumerable<tracking_project.Models.UnitVehicle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="UnitVehicleCreate">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SimNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeoFences)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InstallationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FreshExpiry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SimNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeoFences)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstallationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FreshExpiry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vehicle.ChasisNo)
+            </td>
+            <td>
+                <a asp-action="UnitVehicalUpdate" asp-route-id="@item.UnitId">Edit</a> |
+                <a asp-action="UnitVehicleDetails" asp-route-id="@item.UnitId">Details</a> |
+                <a asp-action="UnitVehicalDelete" asp-route-id="@item.UnitId">Delete</a>
+                <a asp-action="test" asp-route-id="@item.UnitId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

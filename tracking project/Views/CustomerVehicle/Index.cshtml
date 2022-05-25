@@ -1,0 +1,87 @@
+﻿@model IEnumerable<tracking_project.Models.CustomerVehicle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Vehicle Details</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistrationNo)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.EngineNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChasisNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiveAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balance)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.DueDate)
+            </th>
+            
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationNo)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.EngineNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChasisNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceiveAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Balance)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+
+
+            <td>
+                <a asp-action="CustomerVehicleDetails" asp-route-id="@item.VehicalId">Details</a> 
+                
+
+               
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

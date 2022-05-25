@@ -1,0 +1,144 @@
+﻿@model tracking_project.Models.Customer
+
+@{
+    ViewData["Title"] = "CustomerVehicleSelect";
+}
+
+<h4 style="font-family:'Times New Roman'">Customer </h4>
+
+
+<table class="table">
+    <thead>
+        <tr style="font-family:'Times New Roman'">
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CNIC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+
+
+
+        <tr style="font-family:'Times New Roman'">
+            <td>
+                @Html.DisplayFor(modelItem => Model.Name)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => Model.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.CNIC)
+            </td>
+
+
+
+            <td>
+                @Html.DisplayFor(modelItem => Model.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.PhoneNumber)
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<br />
+<br />
+
+<th> <h4 style="font-family:'Times New Roman'">Vehicles</h4></th>
+
+<table class="table">
+    <thead>
+        <tr style="font-family:'Times New Roman'">
+            <th>
+                RegistrationNo
+            </th>
+            <th>
+                EngineNo
+            </th>
+
+            <th>
+                ChasisNo
+            </th>
+            <th>
+                Color
+            </th>
+            <th>
+                InvoiceAmount
+            </th>
+            <th>
+                ReceiveAmount
+            </th>
+
+            <th>
+                DueDate
+            </th>
+
+
+            <th><a asp-action="CustomerVehicleCreate" asp-route-id="@Model.CustomerId" class="btn btn-primary"> Add vehicle</a></th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model.Vehicles)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RegistrationNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EngineNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChasisNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InvoiceAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReceiveAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueDate)
+                </td>
+
+
+                <td>
+                    <a asp-action="CustomerVehicleDetails" asp-route-id="@item.VehicalId">Details</a> |
+                    <a asp-action="CustomerVehicalUpdate" asp-route-id="@item.VehicalId">Edit</a>|
+                    <a asp-action="CustomerVehicalDelete" asp-route-id="@item.VehicalId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

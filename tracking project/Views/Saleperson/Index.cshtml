@@ -1,0 +1,54 @@
+﻿@model IEnumerable<tracking_project.Models.SalePerson>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>Sale person information</h4>
+
+<p>
+    <a asp-action="CreateSalePerson">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CNIC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CNIC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                <a asp-action="UpdateSalePerson" asp-route-id="@item.SalePersonId">Update</a> |
+                <a asp-action="DetailsSalePerson" asp-route-id="@item.SalePersonId">Details</a> |
+                <a asp-action="DeleteSalePerson" asp-route-id="@item.SalePersonId">Delete</a>|
+                <a asp-action="SalePersonVehicleSelect" asp-route-id="@item.SalePersonId">Select</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
