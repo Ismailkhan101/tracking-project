@@ -12,6 +12,8 @@
     <Compile Remove="Migrations\20220525134403_asd.Designer.cs" />
     <Compile Remove="Migrations\20220525134553_asddelete.cs" />
     <Compile Remove="Migrations\20220525134553_asddelete.Designer.cs" />
+    <Compile Remove="Migrations\20220525140617_addnewpropertyStrUnitId.cs" />
+    <Compile Remove="Migrations\20220525140617_addnewpropertyStrUnitId.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

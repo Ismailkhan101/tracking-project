@@ -20,7 +20,7 @@ namespace tracking_project.Controllers
         public IActionResult Index()
         {
 
-            List<UnitVehicle> UnitVehicles= _context.UnitVehicles.ToList();
+            List<UnitVehicle> UnitVehicles = _context.UnitVehicles.ToList();
             return View(UnitVehicles);
 
         }
@@ -39,18 +39,18 @@ namespace tracking_project.Controllers
             
             return RedirectToAction("Index");
         }
-        private UnitVehicle GetUnitVehicle(int id)
+        private UnitVehicle GetUnitVehicle(string id)
         {
-            UnitVehicle UnitVehicle = _context.UnitVehicles.FirstOrDefault(u => u.UnitId == id);
+            UnitVehicle UnitVehicle = _context.UnitVehicles.FirstOrDefault(u => u.UnitId.Equals(id));
             return UnitVehicle;
         }
 
-        public IActionResult UnitVehicleDetails(int id)
+        public IActionResult UnitVehicleDetails(string id)
         {
             UnitVehicle UnitVehicles = GetUnitVehicle(id);
             return View(UnitVehicles);
         }
-        public IActionResult UnitVehicalUpdate(int id)
+        public IActionResult UnitVehicalUpdate(string id)
         {
             UnitVehicle UnitVehicle = GetUnitVehicle(id);
             return View(UnitVehicle);
@@ -71,19 +71,19 @@ namespace tracking_project.Controllers
             }
             return RedirectToAction("Index");
         }
-        public IActionResult UnitVehicalDelete(int id)
+        public IActionResult UnitVehicalDelete(string id)
         {
-            UnitVehicle UnitVehicle = GetUnitVehicle(id);
+           UnitVehicle UnitVehicle = GetUnitVehicle(id);
             return View(UnitVehicle);
         }
         [HttpPost]
         public IActionResult UnitVehicalDelete(UnitVehicle UnitVehicle)
         {
-
-            _context.UnitVehicles.Attach(UnitVehicle);
-            _context.Entry(UnitVehicle).State = EntityState.Deleted;
-            _context.SaveChanges();
-
+           
+                _context.UnitVehicles.Attach(UnitVehicle);
+                _context.Entry(UnitVehicle).State = EntityState.Deleted;
+                _context.SaveChanges();
+           
             return RedirectToAction("index");
         }
     }

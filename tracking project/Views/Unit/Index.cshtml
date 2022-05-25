@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.UnitId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.UnitModel)
             </th>
             <th>
@@ -43,6 +46,9 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.UnitId)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.UnitModel)
             </td>
             <td>
@@ -70,7 +76,6 @@
                 <a asp-action="UnitVehicalUpdate" asp-route-id="@item.UnitId">Edit</a> |
                 <a asp-action="UnitVehicleDetails" asp-route-id="@item.UnitId">Details</a> |
                 <a asp-action="UnitVehicalDelete" asp-route-id="@item.UnitId">Delete</a>
-                <a asp-action="test" asp-route-id="@item.UnitId">Delete</a>
             </td>
         </tr>
 }

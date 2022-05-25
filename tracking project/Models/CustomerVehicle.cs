@@ -64,7 +64,7 @@ namespace tracking_project.Models
         public double Deduction { get; set; }
         
         public int CustomerID { get; set; }
-        public int? unitId { get; set; }
+        public string? unitId { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual SalePerson SalePerson { get; set; }
         public virtual UnitVehicle UnitVehicle { get; set; }
