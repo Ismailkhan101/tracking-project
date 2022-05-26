@@ -23,11 +23,11 @@ namespace tracking_project.Models
 
 
 
-        public String? InstallationDate { get; set; }
+        public DateTime? InstallationDate { get; set; }
 
         public bool? Status { get; set; }
 
-        public string FreshExpiry { get; set; }
+        public DateTime? FreshExpiry { get; set; }
 
         public int? VehicleId { get; set; }
         public CustomerVehicle Vehicle { get; set; }

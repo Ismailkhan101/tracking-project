@@ -55,6 +55,11 @@ namespace tracking_project.Controllers
 
             ViewBag.listod = li;
 
+            List<UnitVehicle> UnitId = new List<UnitVehicle>();
+            UnitId = _context.UnitVehicles.ToList();
+
+            ViewBag.UnitId = UnitId;
+
 
             return View();
         }
@@ -64,15 +69,28 @@ namespace tracking_project.Controllers
             customerVehicles.CustomerID = customerVehicles.Customer.CustomerId;
             customerVehicles.Customer = null;
             _context.CustomerVehicles.Add(customerVehicles);
+            _context.SaveChanges();
 
-                _context.SaveChanges();
+            UnitVehicle unitVehicle = _context.UnitVehicles.Where(x => x.UnitId.Equals(customerVehicles.unitId)).FirstOrDefault();
+            unitVehicle.VehicleId = customerVehicles.VehicalId;
+            unitVehicle.InstallationDate = DateTime.Now;
+            unitVehicle.Status = true;
+            unitVehicle.FreshExpiry = DateTime.Now.AddYears(1);
+            _context.Entry(unitVehicle).State = EntityState.Modified;
+            _context.SaveChanges();
+
 
             return RedirectToAction("CustomerVehicleSelect", "Customer", new { @id = customerVehicles.CustomerID });
         }
         public IActionResult CustomerVehicalUpdate(int id)
         {
+            List<UnitVehicle> UnitId = new List<UnitVehicle>();
+            UnitId = _context.UnitVehicles.ToList();
+
+            ViewBag.UnitId = UnitId;
             CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
             return View(CustomerVehicles);
+
         }
 
         [HttpPost]

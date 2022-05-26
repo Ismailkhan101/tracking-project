@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tracking_project.Models;
 
 namespace tracking_project.Migrations
 {
     [DbContext(typeof(VehicleTrackingERPDBContext))]
-    partial class VehicleTrackingERPDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220526132757_UnitTableEdited")]
+    partial class UnitTableEdited
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -206,7 +208,7 @@ namespace tracking_project.Migrations
                     b.Property<string>("UnitId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime?>("FreshExpiry")
+                    b.Property<DateTime>("FreshExpiry")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("GeoFences")

@@ -70,8 +70,9 @@
                 @Html.DisplayFor(modelItem => item.FreshExpiry)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Vehicle.ChasisNo)
+                @Html.DisplayFor(modelItem => item.VehicleId)
             </td>
+            
             <td>
                 <a asp-action="UnitVehicalUpdate" asp-route-id="@item.UnitId">Edit</a> |
                 <a asp-action="UnitVehicleDetails" asp-route-id="@item.UnitId">Details</a> |

@@ -52,6 +52,14 @@ namespace tracking_project.Controllers
         }
         public IActionResult UnitVehicalUpdate(string id)
         {
+            List<Customer> li = new List<Customer>();
+            li = _context.Customers.ToList();
+
+            ViewBag.listod = li;
+            List<CustomerVehicle> VehicleId = new List<CustomerVehicle>();
+            VehicleId = _context.CustomerVehicles.ToList();
+
+            ViewBag.UnitId = VehicleId;
             UnitVehicle UnitVehicle = GetUnitVehicle(id);
             return View(UnitVehicle);
         }
