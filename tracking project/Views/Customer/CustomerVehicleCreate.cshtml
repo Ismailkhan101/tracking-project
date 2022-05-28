@@ -14,13 +14,14 @@
         <form asp-action="CustomerVehicleCreate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <h4 style="font-family:'Times New Roman'"> Vehicle Info</h4>
+            <select asp-for="Customer.CustomerId" class="form-control" asp-items="@(new SelectList(ViewBag.listod,"CustomerId","Name",ViewBag.Id))" style="display:none">
+            </select>
             <div class="row col-sm-10">
                 <div class="col">
                     <label asp-for="Customer.CustomerId" class="control-label"></label>
-                    <select asp-for="Customer.CustomerId" class="form-control" asp-items="@(new SelectList(ViewBag.listod,"CustomerId","Name",ViewBag.Id))" >
+                    <select asp-for="Customer.CustomerId" class="form-control" asp-items="@(new SelectList(ViewBag.listod,"CustomerId","Name",ViewBag.Id))" disabled>
                     </select>
                 </div>
-         
 
                 <div class="col">
                     <label asp-for="UnitVehicle.UnitId" class="control-label"></label>
