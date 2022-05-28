@@ -15,13 +15,15 @@
             <input type="hidden" asp-for="UnitId" />
             <div class="row col-sm-10">
                 <div class="col">
-                    <label class="control-label"></label>
-                    <select class="form-control" asp-items="@(new SelectList(ViewBag.listod,"CustomerId","Name",ViewBag.Id))">
+                    <label  class="control-label">Customer</label>
+                    <select id="Customer" class="form-control" asp-items="@(new SelectList(ViewBag.Customer,"CustomerId","Name"))">
+                        <option>select customer</option>
                     </select>
                 </div>
                 <div class="col">
                     <label asp-for="VehicleId" class="control-label"></label>
-                    <select asp-for="VehicleId" class="form-control" asp-items="@(new SelectList(ViewBag.UnitId,"VehicalId","RegistrationNo"))">
+                    <select asp-for="VehicleId" class="form-control" id="Vehicle">
+                        <option value="-1">Select vehicles</option>
                     </select>
                 </div>
             </div><br />
@@ -80,6 +82,46 @@
 </div>
 
 
-@section Scripts {
+@section Scripts 
+{
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script>
+   
+
+    $(document).ready(function () {
+        /*var id = $("#Customer").val();*/
+        
+        $("#Customer").change(function () {
+            var Cusid = $("#Customer").prop('value');
+            $("#Vehicle").empty();
+            $.ajax(
+                
+                {
+                    type: 'POST',
+                    url: '@Url.Action("VehicleLoad", "Unit")',
+                    dataType: 'Json',
+                    data: { id: Cusid},
+                    success: function (data) {
+                        $("#Vehicle").append('<option value="' + -1 + '">' + "View record" + '</option>');
+                        $.each(data, function (i, vehicle) {
+                            console.log(vehicle.vehicalId);
+                            $("#Vehicle").append('<option value="' + vehicle.vehicalId + '">' + vehicle.registrationNo + '</option>');
+                                    });
+                        },
+                    error: function (ex) {
+                        console.log(ex);
+
+                    }
+
+                    });
+            return false;
+        })
+
+    })
+
+
+    
+
+</script>
+
 }

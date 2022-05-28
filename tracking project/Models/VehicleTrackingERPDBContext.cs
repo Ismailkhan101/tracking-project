@@ -17,5 +17,7 @@ namespace tracking_project.Models
         public DbSet<CustomerVehicle> CustomerVehicles { get; set; }
         public DbSet<UnitVehicle> UnitVehicles { get; set; }
 
+
+
     }
 }

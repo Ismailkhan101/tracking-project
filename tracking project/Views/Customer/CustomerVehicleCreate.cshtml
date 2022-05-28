@@ -10,15 +10,17 @@
 <hr />
 <div class="">
     <div class="">
+
         <form asp-action="CustomerVehicleCreate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <h4 style="font-family:'Times New Roman'"> Vehicle Info</h4>
             <div class="row col-sm-10">
                 <div class="col">
                     <label asp-for="Customer.CustomerId" class="control-label"></label>
-                    <select asp-for="Customer.CustomerId" class="form-control" asp-items="@(new SelectList(ViewBag.listod,"CustomerId","Name",ViewBag.Id))" disabled>
+                    <select asp-for="Customer.CustomerId" class="form-control" asp-items="@(new SelectList(ViewBag.listod,"CustomerId","Name",ViewBag.Id))" >
                     </select>
                 </div>
+         
 
                 <div class="col">
                     <label asp-for="UnitVehicle.UnitId" class="control-label"></label>
@@ -182,6 +184,7 @@
                     <input type="submit" value="Add" class="btn btn-primary" style="width:100px;margin-top:30px;" />
 
                 </div>
+            </div>
 
         </form>
     </div>

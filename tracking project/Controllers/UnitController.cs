@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,14 +54,17 @@ namespace tracking_project.Controllers
         }
         public IActionResult UnitVehicalUpdate(string id)
         {
+
             List<Customer> li = new List<Customer>();
             li = _context.Customers.ToList();
 
-            ViewBag.listod = li;
+            ViewBag.Customer = li;
             List<CustomerVehicle> VehicleId = new List<CustomerVehicle>();
             VehicleId = _context.CustomerVehicles.ToList();
 
-            ViewBag.UnitId = VehicleId;
+            ViewBag.Vehicle = VehicleId;
+            var data = _context.Customers.ToList();
+           /* ViewBag.Customer = new SelectList(data, "CustomerId", "Name");*/
             UnitVehicle UnitVehicle = GetUnitVehicle(id);
             return View(UnitVehicle);
         }
@@ -67,16 +72,11 @@ namespace tracking_project.Controllers
         [HttpPost]
         public IActionResult UnitVehicalUpdate(UnitVehicle UnitVehicle)
         {
-            try
-            {
+            
                 _context.UnitVehicles.Attach(UnitVehicle);
                 _context.Entry(UnitVehicle).State = EntityState.Modified;
                 _context.SaveChanges();
-            }
-            catch
-            {
-
-            }
+           
             return RedirectToAction("Index");
         }
         public IActionResult UnitVehicalDelete(string id)
@@ -94,5 +94,18 @@ namespace tracking_project.Controllers
            
             return RedirectToAction("index");
         }
+
+        public IActionResult CustomerLoad()
+        {
+            ViewBag.Customer = new SelectList(_context.Customers, "CustomerId", "Name");
+            return Index();
+        }
+        [HttpPost]
+        public JsonResult VehicleLoad(int id)
+        {
+            var Vehcle = _context.CustomerVehicles.Where(z => z.CustomerID == id).ToList();
+            return this.Json(Vehcle);
+        }
+
     }
 }

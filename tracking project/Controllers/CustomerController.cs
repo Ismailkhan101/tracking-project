@@ -66,7 +66,7 @@ namespace tracking_project.Controllers
         [HttpPost]
         public IActionResult CustomerVehicleCreate(CustomerVehicle customerVehicles)
         {
-            customerVehicles.CustomerID = customerVehicles.Customer.CustomerId;
+            customerVehicles.CustomerID= customerVehicles.Customer.CustomerId;
             customerVehicles.Customer = null;
             _context.CustomerVehicles.Add(customerVehicles);
             _context.SaveChanges();
