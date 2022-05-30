@@ -9,7 +9,7 @@ namespace tracking_project.ViewModel
     public class CustomerAndVehicleViewModel
     {
         public List<Customer> Customer { get; set; }
-        public UnitVehicle UnitVehicle { get; set; }
+        public List<CustomerVehicle> CustomerVehicles { get; set; }
 
     }
 }

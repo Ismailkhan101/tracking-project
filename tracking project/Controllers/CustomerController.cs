@@ -60,7 +60,7 @@ namespace tracking_project.Controllers
 
             ViewBag.UnitId = UnitId;
 
-
+            
             return View();
         }
         [HttpPost]
@@ -68,6 +68,8 @@ namespace tracking_project.Controllers
         {
             customerVehicles.CustomerID= customerVehicles.Customer.CustomerId;
             customerVehicles.Customer = null;
+            customerVehicles.Net = 5;
+            customerVehicles.Balance = 5;
             _context.CustomerVehicles.Add(customerVehicles);
             _context.SaveChanges();
 

@@ -124,18 +124,24 @@
                     <span asp-validation-for="DueDate" class="text-danger"></span>
                 </div>
             </div><br />
-            <div class="row col-sm-10">
-                <div class="col">
-                    <label asp-for="Net" class="control-label"></label>
-                    <input asp-for="Net" class="form-control" />
-                    <span asp-validation-for="Net" class="text-danger"></span>
-                </div>
-                <div class="col">
-                    <label asp-for="ReceiveAmount" class="control-label"></label>
-                    <input asp-for="ReceiveAmount" class="form-control" />
-                    <span asp-validation-for="ReceiveAmount" class="text-danger"></span>
-                </div>
-            </div><br />
+                  <div class="row col-sm-10">
+                      <div class="col" type="hidden" >
+                          <label asp-for="Net" class="control-label"></label>
+                          <input asp-for="Net" class="form-control"  />
+                          <span asp-validation-for="Net" class="text-danger"></span>
+                      </div>
+                      <div class="col">
+                          <label asp-for="ReceiveAmount" class="control-label"></label>
+                          <input asp-for="ReceiveAmount" class="form-control" />
+                          <span asp-validation-for="ReceiveAmount" class="text-danger"></span>
+                      </div>
+
+                      <div class="col" type="hidden">
+                          <label asp-for="Balance" class="control-label"></label>
+                          <input asp-for="Balance" class="form-control" />
+                          <span asp-validation-for="Balance" class="text-danger"></span>
+                      </div>
+                  </div><br />
             <div class="row col-sm-10">
                 <div class="col">
                     <label asp-for="Tax" class="control-label"></label>

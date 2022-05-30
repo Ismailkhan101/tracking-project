@@ -47,14 +47,19 @@ namespace tracking_project.Models
         public Double TaxDeduction { get; set; }
         public double Commission { get; set; }
         public double Discount { get; set; }
-        public double Net { get; set; }
+        private double _Net;
+        public double Net{
+            get { return _Net;  }
+            set { _Net = (Tax + InvoiceAmount + ExtraCharges) - Discount; }
+        }
+
 
         public double ReceiveAmount { get; set; }
-        private Double _Balance;
+        private double _Balance;
         public double Balance
         {
             get { return _Balance; }
-            set { _Balance = InvoiceAmount - ReceiveAmount; }
+            set { _Balance = ( ReceiveAmount - _Net); }
         }
         public string PaymentRemarkes { get; set; }
         public bool PaymentAlert { get; set; }
