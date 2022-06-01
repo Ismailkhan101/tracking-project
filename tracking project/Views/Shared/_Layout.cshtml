@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - tracking_project</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" src="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"></link>
 </head>
 <body>
     <header>
@@ -18,9 +19,9 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
+                        </li>*@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="index">Customer</a>
                         </li>
@@ -33,6 +34,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Unit" asp-action="Index">Unit</a>
                         </li>
+                       @* <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="InvoiceYearly" asp-action="Index">InvoiceYearly</a>
+                        </li>*@
                     </ul>
                 </div>
             </div>

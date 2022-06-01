@@ -65,7 +65,7 @@ namespace tracking_project.Models
         public bool PaymentAlert { get; set; }
         public string DueDate { get; set; }
 
-        
+        public double DecidedAMF { get; set; }
         public double Deduction { get; set; }
         
         public int CustomerID { get; set; }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tracking_project.Models;
 
 namespace tracking_project.Migrations
 {
     [DbContext(typeof(VehicleTrackingERPDBContext))]
-    partial class VehicleTrackingERPDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220530144923_InvoiceYearlyTableUpdated")]
+    partial class InvoiceYearlyTableUpdated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,9 +96,6 @@ namespace tracking_project.Migrations
 
                     b.Property<int>("CustomerID")
                         .HasColumnType("int");
-
-                    b.Property<double>("DecidedAMF")
-                        .HasColumnType("float");
 
                     b.Property<double>("Deduction")
                         .HasColumnType("float");

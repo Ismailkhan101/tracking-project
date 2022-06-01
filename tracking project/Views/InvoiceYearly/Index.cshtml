@@ -1,0 +1,129 @@
+﻿@model IEnumerable<tracking_project.Models.InvoiceYearly>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" asp-route-id="@ViewBag.vehicleID">Create New</a>
+</p>
+
+<table id="myTable" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ValidFromDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpiryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmfStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YearlyPaymentStatus)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comission)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tax)
+            </th>
+            <th>
+                Decided AMF
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceivedAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BalanceAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaxDeduction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Commission)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicalId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValidFromDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpiryDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmfStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YearlyPaymentStatus)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comission)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tax)
+                </td>
+                <td>
+                    @ViewBag.AMF
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReceivedAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BalanceAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaxDeduction)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Commission)
+                </td>
+                <td>
+                    @*<a asp-action="Details2" asp-route-id="@item.VehicalId">*@  @Html.DisplayFor(modelItem => item.VehicalId)@*</a>*@
+                </td>
+                <td>
+                    <a asp-action="InvoiceYearlyUpdate" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="InvoiceYearlyDelete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts
+{
+    @*<script src="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"></script>*@    
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+}
+

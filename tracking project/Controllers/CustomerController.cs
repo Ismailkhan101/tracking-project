@@ -79,6 +79,15 @@ namespace tracking_project.Controllers
             unitVehicle.Status = true;
             unitVehicle.FreshExpiry = DateTime.Now.AddYears(1);
             _context.Entry(unitVehicle).State = EntityState.Modified;
+
+            InvoiceYearly invoice = new InvoiceYearly();
+            invoice.ValidFromDate = DateTime.Now;
+            invoice.ExpiryDate = DateTime.Now.AddYears(1);
+            invoice.AmfStatus = false;
+            invoice.YearlyPaymentStatus = true;
+            invoice.Year = DateTime.Now;
+            invoice.VehicalId = customerVehicles.VehicalId;
+            _context.InvoiceYearly.Add(invoice);
             _context.SaveChanges();
 
 
@@ -98,8 +107,10 @@ namespace tracking_project.Controllers
         [HttpPost]
         public IActionResult CustomerVehicalUpdate(CustomerVehicle CustomerVehicles)
         {
-            
+            CustomerVehicles.Net = 5;
+            CustomerVehicles.Balance = 5;
             _context.CustomerVehicles.Attach(CustomerVehicles);
+            
             _context.Entry(CustomerVehicles).State = EntityState.Modified;
             _context.SaveChanges();
 
