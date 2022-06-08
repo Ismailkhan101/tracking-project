@@ -1,0 +1,46 @@
+﻿@model tracking_project.Models.RFR
+
+@{
+    ViewData["Title"] = "RFRDetails";
+}
+
+<h1>RFR request details</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Charges)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Charges)
+        </dd>
+        ?
+        @*<dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RFRCommision)
+        </dd>*@
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReceiveAmount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReceiveAmount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Agent)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Agent)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

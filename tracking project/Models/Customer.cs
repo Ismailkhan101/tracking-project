@@ -34,27 +34,45 @@ namespace tracking_project.Models
         [Display(Name = "Date of Birth")]
         public string DateOfBirth { get; set; }
 
+        
+
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "PhonePOne")]
+        [Required(ErrorMessage = "Office_Phone Number Required!")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
+                   ErrorMessage = "Entered Office_Phone format is not valid.")]
+        public string PhonePOne { get; set; }
+
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "PhonePTwo")]
+        [Required(ErrorMessage = "Home_Phone Number Required!")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
+                   ErrorMessage = "Entered Home_Phone format is not valid.")]
+        public string PhonePTwo { get; set; }
+        [Required(ErrorMessage = "Please Enter  Name ...")]
+        [Display(Name = " Name")]
+        public string SName { get; set; }
+
         [DataType(DataType.PhoneNumber)]
         [Display(Name = "Phone Number")]
         [Required(ErrorMessage = "Phone Number Required!")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
                    ErrorMessage = "Entered phone format is not valid.")]
-        public string PhoneNumber { get; set; }
-
+        public string PhoneSOne { get; set; }
         [DataType(DataType.PhoneNumber)]
-        [Display(Name = "Office_Phone")]
-        [Required(ErrorMessage = "Office_Phone Number Required!")]
+        [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "Phone Number Required!")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
-                   ErrorMessage = "Entered Office_Phone format is not valid.")]
-        public string Office_Phone { get; set; }
+                   ErrorMessage = "Entered phone format is not valid.")]
+        public string PhoneSTwo { get; set; }
 
-        [DataType(DataType.PhoneNumber)]
-        [Display(Name = "HomePhone")]
-        [Required(ErrorMessage = "Home_Phone Number Required!")]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
-                   ErrorMessage = "Entered Home_Phone format is not valid.")]
-        public string HomePhone { get; set; }
+        [Required(ErrorMessage = "Please Enter Normal password...")]
+        [Display(Name = "Normal")]
+        public string Normal { get; set; }
 
+        [Required(ErrorMessage = "Please Enter Emergency password...")]
+        [Display(Name = "Emergency")]
+        public string Emergency { get; set; }
         public  IList<CustomerVehicle> Vehicles { get; set; }
 
         public int? SalePersonID { get; set; }

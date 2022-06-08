@@ -43,33 +43,59 @@
                 </div>
                 <div class="col">
                     <label asp-for="DateOfBirth" class="control-label"></label>
-                    <input asp-for="DateOfBirth" class="form-control" type="date"  />
+                    <input asp-for="DateOfBirth" class="form-control" type="date" />
                     <span asp-validation-for="DateOfBirth" class="text-danger"></span>
                 </div>
             </div><br />
             <div class="row col-sm-10">
                 <div class="col">
-                    <label asp-for="PhoneNumber" class="control-label"></label>
-                    <input asp-for="PhoneNumber" class="form-control" placeholder="345-678-8976"/>
-                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    <label asp-for="PhonePOne" class="control-label"></label>
+                    <input asp-for="PhonePOne" class="form-control" placeholder="345-678-8976" />
+                    <span asp-validation-for="PhonePOne" class="text-danger"></span>
                 </div>
                 <div class="col">
-                    <label asp-for="Office_Phone" class="control-label"></label>
-                    <input asp-for="Office_Phone" class="form-control" placeholder="218-564-7678" />
-                    <span asp-validation-for="Office_Phone" class="text-danger"></span>
+                    <label asp-for="PhonePTwo" class="control-label"></label>
+                    <input asp-for="PhonePTwo" class="form-control" placeholder="218-564-7678" />
+                    <span asp-validation-for="PhonePTwo" class="text-danger"></span>
                 </div>
             </div><br />
             <div class="row col-sm-10">
                 <div class="col">
-                    <label asp-for="HomePhone" class="control-label"></label>
-                    <input asp-for="HomePhone" class="form-control" placeholder="218-564-7678" />
-                    <span asp-validation-for="HomePhone" class="text-danger"></span>
+                    <label asp-for="SName" class="control-label"></label>
+                    <input asp-for="SName" class="form-control" placeholder="" />
+                    <span asp-validation-for="SName" class="text-danger"></span>
                 </div>
+                <div class="col">
+                    <label asp-for="PhoneSOne" class="control-label"></label>
+                    <input asp-for="PhoneSOne" class="form-control" placeholder="218-564-7678" />
+                    <span asp-validation-for="PhoneSOne" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="PhoneSTwo" class="control-label"></label>
+                    <input asp-for="PhoneSTwo" class="form-control" placeholder="218-564-7678" />
+                    <span asp-validation-for="PhoneSTwo" class="text-danger"></span>
+                </div>
+            </div>
             </br>
+            <div class="row col-sm-10">
+
+                <div class="col">
+                    <label asp-for="Normal" class="control-label"></label>
+                    <input asp-for="Normal" class="form-control" placeholder="" />
+                    <span asp-validation-for="Normal" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="Emergency" class="control-label"></label>
+                    <input asp-for="Emergency" class="form-control" placeholder="" />
+                    <span asp-validation-for="Emergency" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row col-sm-10">
                 <div class="col">
                     <input type="submit" value="Add" class="btn btn-primary" style="margin-top:30px; width:100px;" />
-                   
-                </div></div>
+
+                </div>
+            </div>
         </form>
     </div>
 </div>

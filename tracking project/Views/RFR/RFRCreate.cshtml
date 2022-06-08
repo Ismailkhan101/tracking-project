@@ -1,0 +1,188 @@
+﻿@model tracking_project.Models.RFR
+
+@{
+    ViewData["Title"] = "RFRCreate";
+}
+
+
+
+<h4>Add new RfR request</h4>
+<hr />
+<div class="">
+    <div class="">
+        <form asp-action="RFRCreate" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row col-sm-10">
+                <div class="col">
+                    <label class="control-label">Customer</label>
+                    <select id="Customer" class="form-control" asp-items="@(new SelectList(ViewBag.Customer,"CustomerId","Name"))">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label asp-for="VehicleId" class="control-label"></label>
+                    <select asp-for="VehicleId" class="form-control" id="Vehicle" >
+                        <option value="-1">Select vehicles</option>
+                    </select>
+                    <h6 style="color:red"> @ViewBag.unitid</h6>
+                </div>
+            </div><br />
+            <div class="row col-sm-10">
+                <div class="col">
+                    <label asp-for="Request" class="control-label"></label>
+                    <select asp-for="Request" class="form-control" id="transfer">
+                        <option value="-1">Select request</option>
+                        <option value="transfer">transfer</option>
+                        <option value="temporary removal">temporary removal</option>
+                        <option value="permanent removal">permanent removal</option>
+                    </select>
+                </div>
+            </div><br />
+            <div id="show"  class="row col-sm-10">
+                <div class="col">
+                    <label class="control-label">Customer</label>
+                    <select name="customer2" id="ToCustomer" class="form-control" asp-items="@(new SelectList(ViewBag.Customer,"CustomerId","Name"))">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label asp-for="TransferVehicleId" class="control-label"></label>
+                    <select asp-for="TransferVehicleId" class="form-control" id="ToVehicle">
+                        <option value="-1">select record</option>
+                    </select>
+                </div>
+            </div><br />
+                  <div class="row col-sm-10">
+                      <div class="col">
+                          <label asp-for="Charges" class="control-label"></label>
+                          <input asp-for="Charges" class="form-control" />
+                          <span asp-validation-for="Charges" class="text-danger"></span>
+                      </div>
+                      @*<div class="col">
+                          <label asp-for="Agent" class="control-label"></label>
+                          <input asp-for="Agent" class="form-control" />
+                          <span asp-validation-for="Agent" class="text-danger"></span>
+                      </div>*@
+                  </div>
+            <br />
+            <div class="row col-sm-10">
+                <div class="col">
+                    <label asp-for="ReceiveAmount" class="control-label"></label>
+                    <input asp-for="ReceiveAmount" class="form-control" />
+                    <span asp-validation-for="ReceiveAmount" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="Balance" class="control-label"></label>
+                    <input asp-for="Balance" class="form-control" />
+                    <span asp-validation-for="Balance" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <div class="row col-sm-10">
+                <div class="col">
+                    <label  class="control-label">Agent</label>
+                    <select  asp-for="Agent" class="form-control" asp-items="@(new SelectList(ViewBag.SalePerson,"SalePersonId","Name"))">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label  class="control-label">Commission</label>
+                    <input  class="form-control" name="Commission"/>
+                    
+                </div></div><br />
+                <div class="row col-sm-10">
+                    <div class="col">
+                        <input type="submit" value="Create" class="btn btn-primary" style="margin-top:30px;width:100px;" />
+                    </div>
+                </div>
+</form>
+    </div>
+</div>
+
+
+
+
+
+@section Scripts
+{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script>
+
+
+    $(document).ready(function () {
+        /*var id = $("#Customer").val();*/
+
+        $("#show").hide();
+
+        $("#Customer").change(function () {
+            var Cusid = $("#Customer").prop('value');
+            $("#Vehicle").empty();
+            $.ajax(
+
+                {
+                    type: 'POST',
+                    url: '@Url.Action("VehicleLoad", "Unit")',
+                    dataType: 'Json',
+                    data: { id: Cusid},
+                    success: function (data) {
+                        $("#Vehicle").append('<option value="' + -1 + '">' + "View record" + '</option>');
+                        $.each(data, function (i, vehicle) {
+                            console.log(vehicle.vehicalId);
+                            $("#Vehicle").append('<option value="' + vehicle.vehicalId + '">' + vehicle.registrationNo + '</option>');
+                                    });
+                        },
+                    error: function (ex) {
+                        console.log(ex);
+
+                    }
+
+                    });
+            return false;
+        })
+
+        $("#ToCustomer").change(function () {
+            var Cusid = $("#ToCustomer").prop('value');
+            $("#ToVehicle").empty();
+            $.ajax(
+
+                {
+                    type: 'POST',
+                    url: '@Url.Action("VehicleLoad", "Unit")',
+                    dataType: 'Json',
+                    data: { id: Cusid},
+                    success: function (data) {
+                        $("#ToVehicle").append('<option value="' + -1 + '">' + "View record" + '</option>');
+                        $.each(data, function (i, vehicle) {
+                            console.log(vehicle.vehicalId);
+                            $("#ToVehicle").append('<option value="' + vehicle.vehicalId + '">' + vehicle.registrationNo + '</option>');
+                                    });
+                        },
+                    error: function (ex) {
+                        console.log(ex);
+
+                    }
+
+                    });
+            return false;
+          })
+
+        $("#transfer").change(function () {
+
+            if ($('#transfer').val() == 'transfer') {
+                $("#show").show();
+            }
+            
+
+            
+        });
+
+
+
+    })
+
+
+</script>
+
+
+}
+

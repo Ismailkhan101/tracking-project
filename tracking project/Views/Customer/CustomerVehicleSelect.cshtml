@@ -28,10 +28,10 @@
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
+                @Html.DisplayNameFor(model => model.PhonePOne)
             </th>
-            <th>
-
+            <th>TotalAmount</th>
+            
 
         </tr>
     </thead>
@@ -62,8 +62,12 @@
                 @Html.DisplayFor(modelItem => Model.DateOfBirth)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => Model.PhoneNumber)
+                @Html.DisplayFor(modelItem => Model.PhonePOne)
             </td>
+            <td>
+                @ViewBag.TotalAmount
+            </td>
+            <td><a asp-action="" asp-route-id="@Model.CustomerId" class="btn btn-primary">View Invoice</a></td>
         </tr>
 
     </tbody>

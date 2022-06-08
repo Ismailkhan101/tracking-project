@@ -1,0 +1,57 @@
+﻿@model IEnumerable<tracking_project.Models.Comission>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Commission details</h1>
+
+<p>
+    <a asp-action="CommissionCreate">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Commission)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommissionType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleId)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Vehicle)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.SalePersonId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Commission)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommissionType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalePersonId)
+            </td>
+           
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CommisionId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CommisionId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CommisionId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

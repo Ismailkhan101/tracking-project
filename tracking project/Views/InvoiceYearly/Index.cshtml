@@ -50,68 +50,71 @@
             <th>
                 @Html.DisplayNameFor(model => model.TaxDeduction)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Commission)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.VehicalId)
             </th>
-            <th></th>
+            <th></th>*@
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ValidFromDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ExpiryDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AmfStatus)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.YearlyPaymentStatus)
-                </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValidFromDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpiryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmfStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearlyPaymentStatus)
+            </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Comission)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Discount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tax)
-                </td>
-                <td>
-                    @ViewBag.AMF
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReceivedAmount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BalanceAmount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TaxDeduction)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Commission)
-                </td>
-                <td>
-                    @*<a asp-action="Details2" asp-route-id="@item.VehicalId">*@  @Html.DisplayFor(modelItem => item.VehicalId)@*</a>*@
-                </td>
-                <td>
-                    <a asp-action="InvoiceYearlyUpdate" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="InvoiceYearlyDelete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comission)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tax)
+            </td>
+            <td>
+                @ViewBag.AMF
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceivedAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BalanceAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaxDeduction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comission)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remarks)
+            </td>
+            <td>
+                @*<a asp-action="Details2" asp-route-id="@item.VehicalId">*@  @Html.DisplayFor(modelItem => item.VehicalId)@*</a>*@
+            </td>
+            <td>
+                <a asp-action="InvoiceYearlyUpdate" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="InvoiceYearlyDelete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

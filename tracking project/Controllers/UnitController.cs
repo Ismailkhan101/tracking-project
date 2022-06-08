@@ -59,10 +59,7 @@ namespace tracking_project.Controllers
             li = _context.Customers.ToList();
 
             ViewBag.Customer = li;
-            List<CustomerVehicle> VehicleId = new List<CustomerVehicle>();
-            VehicleId = _context.CustomerVehicles.ToList();
-
-            ViewBag.Vehicle = VehicleId;
+            
             var data = _context.Customers.ToList();
            /* ViewBag.Customer = new SelectList(data, "CustomerId", "Name");*/
             UnitVehicle UnitVehicle = GetUnitVehicle(id);

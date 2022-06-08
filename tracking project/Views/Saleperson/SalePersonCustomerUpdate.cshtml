@@ -46,29 +46,56 @@
                 </div>
 
                 <div class="col">
-                    <label asp-for="PhoneNumber" class="control-label"></label>
-                    <input asp-for="PhoneNumber" class="form-control" />
-                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    <label class="control-label">Phone One</label>
+                    <input asp-for="PhonePOne" class="form-control" />
+                    <span asp-validation-for="PhonePOne" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label class="control-label">Phone Two</label>
+                    <input asp-for="PhonePTwo" class="form-control" />
+                    <span asp-validation-for="PhonePTwo" class="text-danger"></span>
                 </div>
             </div><br />
             <div class="row col-sm-10">
                 <div class="col">
-                    <label asp-for="Office_Phone" class="control-label"></label>
-                    <input asp-for="Office_Phone" class="form-control" />
-                    <span asp-validation-for="Office_Phone" class="text-danger"></span>
+                    <label class="control-label">Normal password</label>
+                    <input asp-for="Normal" class="form-control" />
+                    <span asp-validation-for="Normal" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label class="control-label">Emergency password</label>
+                    <input asp-for="Emergency" class="form-control" />
+                    <span asp-validation-for="Emergency" class="text-danger"></span>
+                </div>
+            </div><br />
+
+            <h4 style="margin-top:10px;">Secondry user</h4>
+            <div class="row col-sm-10">
+                <div class="col">
+                    <label class="control-label">Name</label>
+                    <input asp-for="SName" class="form-control" />
+                    <span asp-validation-for="SName" class="text-danger"></span>
                 </div>
 
                 <div class="col">
-                    <label asp-for="HomePhone" class="control-label"></label>
-                    <input asp-for="HomePhone" class="form-control" />
-                    <span asp-validation-for="HomePhone" class="text-danger"></span>
+                    <label class="control-label">Phone One</label>
+                    <input asp-for="PhoneSOne" class="form-control" />
+                    <span asp-validation-for="PhoneSOne" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label class="control-label">Phone Two</label>
+                    <input asp-for="PhoneSTwo" class="form-control" />
+                    <span asp-validation-for="PhoneSTwo" class="text-danger"></span>
                 </div>
             </div><br />
+
+
             <div class="row col-sm-10">
                 <div class="col">
-                    
-                        <input type="submit" value="Save" class="btn btn-primary" style="width:100px;" />
-                    </div></div>
+
+                    <input type="submit" value="Save" class="btn btn-primary" style="width:100px;" />
+                </div>
+            </div>
         </form>
     </div>
 </div>

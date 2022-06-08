@@ -16,19 +16,19 @@
                 <div class="col">
 
                     <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control"  />
+                    <input asp-for="Name" class="form-control" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="col">
                     <label asp-for="CompanyName" class="control-label"></label>
-                    <input asp-for="CompanyName" class="form-control"  />
+                    <input asp-for="CompanyName" class="form-control" asp-items="@(new SelectList(ViewBag.listod,"","CompanyName"))" />
                     <span asp-validation-for="CompanyName" class="text-danger"></span>
                 </div>
             </div><br />
             <div class="row col-sm-10">
                 <div class="col">
                     <label asp-for="Email" class="control-label"></label>
-                    <input asp-for="Email" class="form-control" placeholder="XYZ@gmail.com"/>
+                    <input asp-for="Email" class="form-control" placeholder="XYZ@gmail.com" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="col">
@@ -40,27 +40,54 @@
             <div class="row col-sm-10">
                 <div class="col">
                     <label asp-for="DateOfBirth" class="control-label"></label>
-                    <input asp-for="DateOfBirth" class="form-control" type="date" placeholder=" date of birth"/>
+                    <input asp-for="DateOfBirth" class="form-control" type="date" placeholder=" date of birth" />
                     <span asp-validation-for="DateOfBirth" class="text-danger"></span>
                 </div>
+            </div>
+            <br />
+            <div class="row col-sm-10">
                 <div class="col">
-                    <label asp-for="PhoneNumber" class="control-label"></label>
-                    <input asp-for="PhoneNumber" class="form-control" placeholder="345-678-8976" />
-                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    <label class="control-label">Phone One</label>
+                    <input asp-for="PhonePOne" class="form-control" placeholder="345-678-8976" />
+                    <span asp-validation-for="PhonePOne" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label class="control-label">Phone Two</label>
+                    <input asp-for="PhonePTwo" class="form-control" placeholder="345-678-8976" />
+                    <span asp-validation-for="PhonePTwo" class="text-danger"></span>
                 </div>
             </div><br />
             <div class="row col-sm-10">
                 <div class="col">
-                    <label asp-for="Office_Phone" class="control-label"></label>
-                    <input asp-for="Office_Phone" class="form-control" placeholder="218-564-7678" />
-                    <span asp-validation-for="Office_Phone" class="text-danger"></span>
+                    <label class="control-label">Normal password</label>
+                    <input asp-for="Normal" class="form-control" placeholder="" />
+                    <span asp-validation-for="Normal" class="text-danger"></span>
                 </div>
                 <div class="col">
-                    <label asp-for="HomePhone" class="control-label"></label>
-                    <input asp-for="HomePhone" class="form-control" placeholder="218-564-7678"/>
-                    <span asp-validation-for="HomePhone" class="text-danger"></span>
+                    <label class="control-label">Emergency password</label>
+                    <input asp-for="Emergency" class="form-control" placeholder="" />
+                    <span asp-validation-for="Emergency" class="text-danger"></span>
                 </div>
             </div><br />
+            <h4 style="margin-top:10px;">Secondry user</h4>
+            <div class="row col-sm-10">
+                <div class="col">
+                    <label  class="control-label">Name</label>
+                    <input asp-for="SName" class="form-control" placeholder="" />
+                    <span asp-validation-for="SName" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label class="control-label">Phone One</label>
+                    <input asp-for="PhoneSOne" class="form-control" placeholder="218-564-7678" />
+                    <span asp-validation-for="PhoneSOne" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label  class="control-label">Phone Two</label>
+                    <input asp-for="PhoneSTwo" class="form-control" placeholder="218-564-7678" />
+                    <span asp-validation-for="PhoneSTwo" class="text-danger"></span>
+                </div>
+            </div><br />
+
             <div class="row col-sm-10">
                 <div class="col">
                     <input type="submit" value="Add" class="btn btn-primary" style="width:100px" />

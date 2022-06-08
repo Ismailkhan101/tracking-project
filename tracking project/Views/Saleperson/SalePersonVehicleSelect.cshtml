@@ -72,15 +72,27 @@
                 @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().DateOfBirth)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().PhoneNumber)
+                @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().PhonePOne)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().Office_Phone)
+                @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().PhonePTwo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().HomePhone)
+                @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().SName)
             </th>
-            
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().PhoneSOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().PhoneSTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().Normal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().Emergency)
+            </th>
+
             <th>
                 <a asp-action="SalePersonCustomerCreate" class="btn btn-primary" style="width:80px;">Add </a>
             </th>
@@ -89,39 +101,50 @@
     <tbody>
         @foreach (var item in Model.Customers)
         {
-            <tr style="font-family:'Times New Roman'">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CompanyName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CNIC)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateOfBirth)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PhoneNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Office_Phone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HomePhone)
-                </td>
-            
-                <td>
-                    <a asp-action="SalePersonCustomerUpdate" asp-route-id="@item.CustomerId">Edit</a> |
-                    <a asp-action="SalePersonCustomerDelete" asp-route-id="@item.CustomerId">Delete</a>
-                    
+        <tr style="font-family:'Times New Roman'">
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CNIC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhonePOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhonePTwo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneSOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneSTwo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Normal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emergency)
+            </td>
+            <td>
+                <a asp-action="SalePersonCustomerUpdate" asp-route-id="@item.CustomerId">Edit</a> |
+                <a asp-action="SalePersonCustomerDelete" asp-route-id="@item.CustomerId">Delete</a>
 
-                </td>
-            </tr>
+
+            </td>
+        </tr>
         }
     </tbody>
 </table>

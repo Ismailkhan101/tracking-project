@@ -1,0 +1,76 @@
+﻿@model tracking_project.Models.RFR
+
+@{
+    ViewData["Title"] = "RFRUpdate";
+}
+
+
+
+<h4>RFR request</h4>
+<hr />
+<div class="">
+    <div class="">
+        <form asp-action="RFRUpdate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="row col-sm-10">
+                <div class="col">
+                    <label asp-for="VehicleId" class="control-label"></label>
+                    <input asp-for="VehicleId" class="form-control" >
+                        
+                   
+                </div>
+                <div class="col">
+                    <label asp-for="TransferVehicleId" class="control-label"></label>
+                    <input asp-for="TransferVehicleId" class="form-control" />
+                  
+                </div></div><br />
+                <div class="row col-sm-10">
+                    <div class="col">
+                        <label asp-for="Request" class="control-label"></label>
+                        <input asp-for="Request" class="form-control" />
+                        <span asp-validation-for="Request" class="text-danger"></span>
+                    </div>
+                    @*<div class="col">
+                        <label asp-for="RFRCommision" class="control-label"></label>
+                        <input asp-for="RFRCommision" class="form-control" />
+                        <span asp-validation-for="RFRCommision" class="text-danger"></span>
+                    </div>*@
+                </div><br />
+                <div class="row col-sm-10">
+                    <div class="col">
+                        <label asp-for="ReceiveAmount" class="control-label"></label>
+                        <input asp-for="ReceiveAmount" class="form-control" />
+                        <span asp-validation-for="ReceiveAmount" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Balance" class="control-label"></label>
+                        <input asp-for="Balance" class="form-control" />
+                        <span asp-validation-for="Balance" class="text-danger"></span>
+                    </div>
+                </div><br />
+                      <div class="row col-sm-10">
+                          <div class="col">
+                              <label asp-for="Agent" class="control-label"></label>
+                              <input asp-for="Agent" class="form-control" />
+                              <span asp-validation-for="Agent" class="text-danger"></span>
+                          </div>
+                          <div class="col">
+                              <label asp-for="Charges" class="control-label"></label>
+                              <input asp-for="Charges" class="form-control" />
+                              <span asp-validation-for="Charges" class="text-danger"></span>
+                          </div></div>
+                          <div class="row col-sm-10">
+                              <div class="col">
+                                  <input type="submit" value="Save" class="btn btn-primary" style="margin-top:30px;width:100px;" />
+                              </div>
+                          </div>
+</form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

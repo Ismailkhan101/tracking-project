@@ -28,9 +28,11 @@ namespace tracking_project.Models
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
                    ErrorMessage = "Entered phone format is not valid.")]
         public string PhoneNumber { get; set; }
-
+       
+        
         public int? CustomerId { get; set; }
         public virtual IList<Customer> Customers { get; set; }
+       // public virtual IList<Comission> Comissions { get; set; }
 
     }
 }

@@ -40,8 +40,8 @@ namespace tracking_project.Models
         public Double ReceivedAmount { get; set; }
         public Double BalanceAmount { get; set; }
         public Double TaxDeduction { get; set; }
-        public double Commission { get; set; }
-        
+
+        public string Remarks { get; set; }
         public int? VehicalId { get; set; }
         public virtual CustomerVehicle CustomerVehicle { get; set; }
 

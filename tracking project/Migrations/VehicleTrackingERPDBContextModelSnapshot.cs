@@ -19,6 +19,47 @@ namespace tracking_project.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("tracking_project.Models.Comission", b =>
+                {
+                    b.Property<int>("CommisionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("Commission")
+                        .HasColumnType("float");
+
+                    b.Property<string>("CommissionType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("SalePersonId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("VehicleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CommisionId");
+
+                    b.HasIndex("VehicleId");
+
+                    b.ToTable("Comissions");
+                });
+
+            modelBuilder.Entity("tracking_project.Models.Company", b =>
+                {
+                    b.Property<int>("CompanyId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CompanyId");
+
+                    b.ToTable("Company");
+                });
+
             modelBuilder.Entity("tracking_project.Models.Customer", b =>
                 {
                     b.Property<int>("CustomerId")
@@ -42,7 +83,7 @@ namespace tracking_project.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HomePhone")
+                    b.Property<string>("Emergency")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -50,11 +91,27 @@ namespace tracking_project.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Office_Phone")
+                    b.Property<string>("Normal")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneNumber")
+                    b.Property<string>("PhonePOne")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhonePTwo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneSOne")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneSTwo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -89,9 +146,6 @@ namespace tracking_project.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Commission")
-                        .HasColumnType("float");
-
                     b.Property<int>("CustomerID")
                         .HasColumnType("int");
 
@@ -104,8 +158,8 @@ namespace tracking_project.Migrations
                     b.Property<double>("Discount")
                         .HasColumnType("float");
 
-                    b.Property<string>("DueDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("DueDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("EngineNo")
                         .IsRequired()
@@ -189,9 +243,6 @@ namespace tracking_project.Migrations
                     b.Property<double>("Comission")
                         .HasColumnType("float");
 
-                    b.Property<double>("Commission")
-                        .HasColumnType("float");
-
                     b.Property<int?>("CustomerVehicleVehicalId")
                         .HasColumnType("int");
 
@@ -203,6 +254,9 @@ namespace tracking_project.Migrations
 
                     b.Property<double>("ReceivedAmount")
                         .HasColumnType("float");
+
+                    b.Property<string>("Remarks")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Tax")
                         .HasColumnType("float");
@@ -227,6 +281,39 @@ namespace tracking_project.Migrations
                     b.HasIndex("CustomerVehicleVehicalId");
 
                     b.ToTable("InvoiceYearly");
+                });
+
+            modelBuilder.Entity("tracking_project.Models.RFR", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Agent")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Balance")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Charges")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ReceiveAmount")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Request")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TransferVehicleId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VehicleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RFRs");
                 });
 
             modelBuilder.Entity("tracking_project.Models.SalePerson", b =>
@@ -265,9 +352,6 @@ namespace tracking_project.Migrations
                     b.Property<string>("UnitId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime?>("FreshExpiry")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("GeoFences")
                         .HasColumnType("nvarchar(max)");
 
@@ -297,6 +381,13 @@ namespace tracking_project.Migrations
                         .HasFilter("[VehicleId] IS NOT NULL");
 
                     b.ToTable("UnitVehicles");
+                });
+
+            modelBuilder.Entity("tracking_project.Models.Comission", b =>
+                {
+                    b.HasOne("tracking_project.Models.CustomerVehicle", "Vehicle")
+                        .WithMany("Comissions")
+                        .HasForeignKey("VehicleId");
                 });
 
             modelBuilder.Entity("tracking_project.Models.Customer", b =>

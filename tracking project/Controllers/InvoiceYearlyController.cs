@@ -31,12 +31,29 @@ namespace tracking_project.Controllers
        
         public IActionResult Create(int id)
         {
-            return View();
+            List<SalePerson> SalePerson = new List<SalePerson>();
+            SalePerson = _context.SalePersons.ToList();
+            ViewBag.SalePerson = SalePerson;
+
+            InvoiceYearly invoiceYearly = new InvoiceYearly();
+            invoiceYearly.VehicalId = id;
+            return View(invoiceYearly);
+
         }
 
         [HttpPost]
-        public IActionResult Create(InvoiceYearly invoice)
+        public IActionResult Create(InvoiceYearly invoice,int Sale)
         {
+            Comission com = new Comission();
+            com.Commission = invoice.Comission;
+            com.CommissionType = "Yearly Invoice";
+            com.VehicleId = invoice.VehicalId; ;
+            com.SalePersonId = Convert.ToInt32(Sale);
+            // sale person id
+            // comssion value
+            _context.Comissions.Add(com);
+            _context.SaveChanges();
+
             invoice.ValidFromDate = DateTime.Now;
             invoice.ExpiryDate = DateTime.Now.AddYears(1);
             invoice.VehicalId = invoice.Id;

@@ -28,15 +28,27 @@
                 @Html.DisplayNameFor(model => model.DateOfBirth)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
+                @Html.DisplayNameFor(model => model.PhonePOne)
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.PhonePTwo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Office_Phone)
+                @Html.DisplayNameFor(model => model.SName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.HomePhone)
+                @Html.DisplayNameFor(model => model.PhoneSOne)
             </th>
-            
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneSTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Normal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emergency)
+            </th>*@
+
             <th>
                 Sales Person
             </th>
@@ -61,17 +73,29 @@
                 @Html.DisplayFor(modelItem => item.DateOfBirth)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
+                @Html.DisplayFor(modelItem => item.PhonePOne)
+            </td>
+           @* <td>
+                @Html.DisplayFor(modelItem => item.PhonePTwo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Office_Phone)
+                @Html.DisplayFor(modelItem => item.SName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.HomePhone)
+                @Html.DisplayFor(modelItem => item.PhoneSOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneSTwo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Normal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emergency)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SalePerson.Name)
-            </td>
+            </td>*@
 
             <td>
                 <a asp-action="EditCustomer" asp-route-id="@item.CustomerId">Edit</a> |

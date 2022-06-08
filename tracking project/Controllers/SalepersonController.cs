@@ -32,7 +32,7 @@ namespace tracking_project.Controllers
         [HttpPost]
         public IActionResult CreateSalePerson(SalePerson SalePersons)
         {
-
+            
             try
             {
                 _context.SalePersons.Add(SalePersons);

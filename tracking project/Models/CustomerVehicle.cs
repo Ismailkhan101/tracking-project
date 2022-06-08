@@ -45,7 +45,7 @@ namespace tracking_project.Models
         public Double InvoiceAmount { get; set; }
         public Double Tax { get; set; }
         public Double TaxDeduction { get; set; }
-        public double Commission { get; set; }
+        //public double Commission { get; set; }
         public double Discount { get; set; }
         private double _Net;
         public double Net{
@@ -63,16 +63,17 @@ namespace tracking_project.Models
         }
         public string PaymentRemarkes { get; set; }
         public bool PaymentAlert { get; set; }
-        public string DueDate { get; set; }
+        public DateTime DueDate { get; set; }
 
         public double DecidedAMF { get; set; }
         public double Deduction { get; set; }
-        
+
         public int CustomerID { get; set; }
         public string? unitId { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual SalePerson SalePerson { get; set; }
         public virtual UnitVehicle UnitVehicle { get; set; }
+        public virtual IList<Comission> Comissions { get; set; }
 
     }
 }

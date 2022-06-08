@@ -1,0 +1,77 @@
+﻿@model IEnumerable<tracking_project.Models.RFR>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="RFRCreate">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransferVehicleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Request)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Charges)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.RFRCommision)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiveAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Agent)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransferVehicleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Request)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Charges)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.RFRCommision)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceiveAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agent)
+            </td>
+            <td>
+                <a asp-action="RFRUpdate" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="RFRDetails" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="RFRDelete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

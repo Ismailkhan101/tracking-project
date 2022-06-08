@@ -30,7 +30,60 @@ namespace tracking_project.Controllers
         public IActionResult CustomerVehicleSelect(int id)
         {
             Customer c = _context.Customers.Include(x => x.Vehicles).SingleOrDefault(x => x.CustomerId == id);
+
+            var dueAmount = (from v in c.Vehicles
+                             where v.DueDate < DateTime.Now
+                             select v.Net).ToList();
+            double totalAmount = 0;
+            foreach (var item in dueAmount)
+            {
+                totalAmount = totalAmount + item;
+            }
+
+            var vehiclesdecidedAMF = from v in c.Vehicles
+                             select new { v.VehicalId, v.DecidedAMF };
+
+            //vehiclesdecidedAMF.Select(x=>x.DecidedAMF)
+
+            List<InvoiceYearly> invoices = new List<InvoiceYearly>();
+
+            foreach (var item in _context.InvoiceYearly)
+            {
+                foreach (var item2 in vehiclesdecidedAMF)
+                {
+                    if(item.VehicalId == item2.VehicalId && item.ExpiryDate < DateTime.Now)
+                    {
+                        invoices.Add(item);
+                    }
+                }
+            }
+
+            var q = from x in invoices
+                    group x by x.VehicalId into g
+                    let count = g.Count()
+                    orderby count descending
+                    select new { Value = g.Key, Count = count };
+
+            double yearAmount = 0;
+
+            foreach (var item in q)
+            {
+                foreach(var item2 in vehiclesdecidedAMF)
+                {
+                    if(item.Value == item2.VehicalId)
+                    {
+                        yearAmount = yearAmount + (item.Count * item2.DecidedAMF);
+                    }
+                }
+            }
+
+            double totalInvoice = yearAmount + totalAmount;
+
            
+
+            ViewBag.TotalAmount = totalInvoice;
+
+
             return View(c);
 
         }
@@ -55,16 +108,19 @@ namespace tracking_project.Controllers
 
             ViewBag.listod = li;
 
-            List<UnitVehicle> UnitId = new List<UnitVehicle>();
-            UnitId = _context.UnitVehicles.ToList();
+            List<UnitVehicle> Units = new List<UnitVehicle>();
+            Units = _context.UnitVehicles.ToList();
 
-            ViewBag.UnitId = UnitId;
+            ViewBag.UnitId = Units;
+            List<SalePerson> SalePerson = new List<SalePerson>();
+            SalePerson = _context.SalePersons.ToList();
+            ViewBag.SalePerson = SalePerson;
 
-            
+
             return View();
         }
         [HttpPost]
-        public IActionResult CustomerVehicleCreate(CustomerVehicle customerVehicles)
+        public IActionResult CustomerVehicleCreate(CustomerVehicle customerVehicles,double Commission,int Agent)
         {
             customerVehicles.CustomerID= customerVehicles.Customer.CustomerId;
             customerVehicles.Customer = null;
@@ -77,7 +133,7 @@ namespace tracking_project.Controllers
             unitVehicle.VehicleId = customerVehicles.VehicalId;
             unitVehicle.InstallationDate = DateTime.Now;
             unitVehicle.Status = true;
-            unitVehicle.FreshExpiry = DateTime.Now.AddYears(1);
+           /* unitVehicle.FreshExpiry = DateTime.Now.AddYears(1);*/
             _context.Entry(unitVehicle).State = EntityState.Modified;
 
             InvoiceYearly invoice = new InvoiceYearly();
@@ -88,6 +144,16 @@ namespace tracking_project.Controllers
             invoice.Year = DateTime.Now;
             invoice.VehicalId = customerVehicles.VehicalId;
             _context.InvoiceYearly.Add(invoice);
+            _context.SaveChanges();
+
+            Comission com = new Comission();
+            com.Commission = Commission;
+            com.CommissionType = "Vehicle for Request";
+            com.VehicleId = customerVehicles.VehicalId; ;
+            com.SalePersonId =Convert.ToInt32( Agent); 
+            // sale person id
+            // comssion value
+            _context.Comissions.Add(com);
             _context.SaveChanges();
 
 
@@ -137,7 +203,10 @@ namespace tracking_project.Controllers
 
         public IActionResult Customercreate()
         {
-            
+            List<Customer> li = new List<Customer>();
+            li = _context.Customers.ToList();
+
+            ViewBag.listod = li;
             return View();
         }
         [HttpPost]

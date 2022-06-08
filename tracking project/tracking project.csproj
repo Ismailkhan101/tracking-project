@@ -14,6 +14,32 @@
     <Compile Remove="Migrations\20220525134553_asddelete.Designer.cs" />
     <Compile Remove="Migrations\20220525140617_addnewpropertyStrUnitId.cs" />
     <Compile Remove="Migrations\20220525140617_addnewpropertyStrUnitId.Designer.cs" />
+    <Compile Remove="Migrations\20220603150915_RealtionCommissionWithCustomerVehicleSalePersonansRFR.cs" />
+    <Compile Remove="Migrations\20220603150915_RealtionCommissionWithCustomerVehicleSalePersonansRFR.Designer.cs" />
+    <Compile Remove="Migrations\20220604081434_AddNewRelationVehicleCommission.cs" />
+    <Compile Remove="Migrations\20220604081434_AddNewRelationVehicleCommission.Designer.cs" />
+    <Compile Remove="Migrations\20220604082145_AddNewRelationVehicleCommission.cs" />
+    <Compile Remove="Migrations\20220604082145_AddNewRelationVehicleCommission.Designer.cs" />
+    <Compile Remove="Migrations\20220604082804_newCommission.cs" />
+    <Compile Remove="Migrations\20220604082804_newCommission.Designer.cs" />
+    <Compile Remove="Migrations\20220604084154_newcommision.cs" />
+    <Compile Remove="Migrations\20220604084154_newcommision.Designer.cs" />
+    <Compile Remove="Migrations\20220604085433_newCommissionVehicleRelation.cs" />
+    <Compile Remove="Migrations\20220604085433_newCommissionVehicleRelation.Designer.cs" />
+    <Compile Remove="Migrations\20220604120737_dropsalepersionfromvehicle.cs" />
+    <Compile Remove="Migrations\20220604120737_dropsalepersionfromvehicle.Designer.cs" />
+    <Compile Remove="Migrations\20220604130358_changeDateTimeFromString.cs" />
+    <Compile Remove="Migrations\20220604130358_changeDateTimeFromString.Designer.cs" />
+    <Compile Remove="Migrations\20220606154652_CreateCompany.cs" />
+    <Compile Remove="Migrations\20220606154652_CreateCompany.Designer.cs" />
+    <Compile Remove="Migrations\20220606154851_CreateCompany.cs" />
+    <Compile Remove="Migrations\20220606154851_CreateCompany.Designer.cs" />
+    <Compile Remove="Migrations\20220607132532_removeCommissionIdfromVehicle.cs" />
+    <Compile Remove="Migrations\20220607132532_removeCommissionIdfromVehicle.Designer.cs" />
+    <Compile Remove="Migrations\20220607132902_removeCommissionIdfromVehicle.cs" />
+    <Compile Remove="Migrations\20220607132902_removeCommissionIdfromVehicle.Designer.cs" />
+    <Compile Remove="Migrations\20220607134522_commissionIdremove.cs" />
+    <Compile Remove="Migrations\20220607134522_commissionIdremove.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
