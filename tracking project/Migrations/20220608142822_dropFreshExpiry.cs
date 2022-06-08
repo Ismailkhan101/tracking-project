@@ -11,7 +11,7 @@ namespace tracking_project.Migrations
                 name: "FreshExpiry",
                 table: "UnitVehicles");
         }
-
+        //asdasdasdasd
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<DateTime>(
