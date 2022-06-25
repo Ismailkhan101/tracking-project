@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\tracking project\\tracking project\\tracking project.csproj": {}
+    "C:\\Users\\ahsan\\source\\repos\\tracking-project\\tracking project\\tracking project.csproj": {}
   },
   "projects": {
-    "D:\\tracking project\\tracking project\\tracking project.csproj": {
+    "C:\\Users\\ahsan\\source\\repos\\tracking-project\\tracking project\\tracking project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\tracking project\\tracking project\\tracking project.csproj",
+        "projectUniqueName": "C:\\Users\\ahsan\\source\\repos\\tracking-project\\tracking project\\tracking project.csproj",
         "projectName": "tracking project",
-        "projectPath": "D:\\tracking project\\tracking project\\tracking project.csproj",
-        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "D:\\tracking project\\tracking project\\obj\\",
+        "projectPath": "C:\\Users\\ahsan\\source\\repos\\tracking-project\\tracking project\\tracking project.csproj",
+        "packagesPath": "C:\\Users\\ahsan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ahsan\\source\\repos\\tracking-project\\tracking project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ahsan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,12 +79,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.24, 3.1.24]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -93,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

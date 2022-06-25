@@ -122,78 +122,104 @@
                         <option>Islamic</option>
                         <option>JS bank</option>
                     </select></div>
-                    <div class="col">
-                        <label  class="control-label">Agent</label>
-                        <select name="Agent" class="form-control" asp-items="@(new SelectList(ViewBag.SalePerson,"SalePersonId","Name"))">
-                            <option></option>
-                        </select></div></div><br />
-             <div class="row col-sm-10">
-                    <div class="col">
+
+                     <div class="col">
                         <label asp-for="DueDate" class="control-label"></label>
                         <input asp-for="DueDate" class="form-control" type="date" />
                         <span asp-validation-for="DueDate" class="text-danger"></span>
                  
                   
-                      <div class="col" style="display:none;" >
+                     @* <div class="col" style="display:none;" >
                           <label asp-for="Net" class="control-label"></label>
                           <input asp-for="Net" class="form-control"  />
                           <span asp-validation-for="Net" class="text-danger"></span>
-                      </div></div><br />
-                      <div class="col">
-                          <label asp-for="ReceiveAmount" class="control-label"></label>
-                          <input asp-for="ReceiveAmount" class="form-control" />
-                          <span asp-validation-for="ReceiveAmount" class="text-danger"></span>
-                      </div>
+                      </div>*@</div><br />
 
-                      <div class="col" style="display:none;">
-                          <label asp-for="Balance" class="control-label"></label>
-                          <input asp-for="Balance" class="form-control" />
-                          <span asp-validation-for="Balance" class="text-danger"></span>
-                      </div>
-                  </div><br />
+                    </div><br />
+                   
+                    <div class="row col-sm-10">
+                <div class="col">
+                    <label asp-for="ExtraCharges" class="control-label"></label>
+                    <input id="ExtraCharges" asp-for="ExtraCharges" class="form-control" />
+                    <span asp-validation-for="ExtraCharges" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="InvoiceAmount" class="control-label"></label>
+                    <input id="InvoiceAmount" asp-for="InvoiceAmount" class="form-control" />
+                    <span asp-validation-for="InvoiceAmount" class="text-danger"></span>
+                </div>
+            </div><br />
+
             <div class="row col-sm-10">
                 <div class="col">
                     <label asp-for="Tax" class="control-label"></label>
-                    <input asp-for="Tax" class="form-control" />
+                    <input id="Tax" asp-for="Tax" class="form-control" />
                     <span asp-validation-for="Tax" class="text-danger"></span>
                 </div>
-                <div class="col">
+                 <div class="col">
+                    <label asp-for="Discount" class="control-label"></label>
+                    <input id="Discount" asp-for="Discount" class="form-control" />
+                    <span asp-validation-for="Discount" class="text-danger"></span>
+                </div>
+                @*<div class="col">
                     <label asp-for="TaxDeduction" class="control-label"></label>
                     <input asp-for="TaxDeduction" class="form-control" />
                     <span asp-validation-for="TaxDeduction" class="text-danger"></span>
-                </div>
+                </div>*@
             </div><br />
+
             <div class="row col-sm-10">
+
+                <div class="col">
+                        <label  class="control-label">Agent</label>
+                        <select name="Agent" class="form-control" asp-items="@(new SelectList(ViewBag.SalePerson,"SalePersonId","Name"))">
+                            <option></option>
+                        </select></div>
+
                 <div class="col">
                     <label  class="control-label">Commission</label>
                     <input  class="form-control" name="Commission"/>
                    
                 </div>
-                <div class="col">
-                    <label asp-for="Discount" class="control-label"></label>
-                    <input asp-for="Discount" class="form-control" />
-                    <span asp-validation-for="Discount" class="text-danger"></span>
-                </div>
-            </div><br />
-            <div class="row col-sm-10">
-                <div class="col">
-                    <label asp-for="ExtraCharges" class="control-label"></label>
-                    <input asp-for="ExtraCharges" class="form-control" />
-                    <span asp-validation-for="ExtraCharges" class="text-danger"></span>
-                </div>
-                <div class="col">
-                    <label asp-for="InvoiceAmount" class="control-label"></label>
-                    <input asp-for="InvoiceAmount" class="form-control" />
-                    <span asp-validation-for="InvoiceAmount" class="text-danger"></span>
-                </div>
-            </div><br />
-            <div class="row col-sm-10">
 
+               
+            </div><br />
+
+             <div class="row col-sm-10">
+
+                  <div class="col">
+                    <label asp-for="Net" class="control-label"></label>
+                    <input asp-for="Net" id="Net" class="form-control" disabled/>
+                    <span asp-validation-for="Net" class="text-danger"></span>
+                </div>
+                   
+                      <div class="col">
+                          <label asp-for="ReceiveAmount" class="control-label"></label>
+                          <input id="ReceiveAmount" asp-for="ReceiveAmount" class="form-control" />
+                          <span asp-validation-for="ReceiveAmount" class="text-danger"></span>
+                      </div>
+
+                     
+
+                     
+                  </div><br />
+            
+            
+            
+            <div class="row col-sm-10">
+@*
                 <div class="col">
                     <label asp-for="Deduction" class="control-label"></label>
                     <input asp-for="Deduction" class="form-control" />
                     <span asp-validation-for="Deduction" class="text-danger"></span>
-                </div>
+                </div>*@
+                 <div class="col">
+                          <label asp-for="Balance" class="control-label"></label>
+                          <input id="Balance" asp-for="Balance" class="form-control" disabled/>
+                          <span asp-validation-for="Balance" class="text-danger"></span>
+                      </div>
+
+                 
 
 
                 <div class="col">
@@ -210,4 +236,51 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+
+        $(document).ready(function() {
+
+            
+            function calculatebalance()
+            {
+                var ReceiveAmount = parseInt($('#ReceiveAmount').val());
+                var balance = ReceiveAmount - total;
+                document.getElementById("Balance").value= balance;
+            }
+            var total= 0;
+            function calculateNet()
+            {
+                
+                var ext = parseInt($('#ExtraCharges').val());
+                var tax = parseInt($('#Tax').val());
+                var invoiceAmount = parseInt($('#InvoiceAmount').val());
+                var discount = parseInt($('#Discount').val());
+                total = parseInt(ext+tax+invoiceAmount-discount);
+                document.getElementById("Net").value= total;
+            }
+
+            $("#ExtraCharges").change(function(){
+              calculateNet();
+            });
+
+            $("#Tax").change(function(){
+              calculateNet();
+            });
+
+             $("#InvoiceAmount").change(function(){
+              calculateNet();
+            });
+
+             $("#Discount").change(function(){
+              calculateNet();
+            });
+
+             $("#ReceiveAmount").change(function(){
+              calculatebalance();
+            });
+
+          
+        });
+    </script>
 }

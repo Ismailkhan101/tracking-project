@@ -33,7 +33,9 @@ namespace tracking_project.Models
         public DbSet<Comission> Comissions { get; set; }
        public DbSet<Company> Company{ get; set; }
 
-
-
+        internal object Include(Func<object, object> p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

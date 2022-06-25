@@ -9,9 +9,12 @@
 <p>
     <a asp-action="Customercreate">Create New</a>
 </p>
-<table class="table table-striped">
+<table id="myTable" class="table table-striped">
     <thead>
         <tr style="font-family:'Times New Roman'">
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -50,7 +53,7 @@
             </th>*@
 
             <th>
-                Sales Person
+                Actions
             </th>
         </tr>
     </thead>
@@ -58,7 +61,12 @@
 @foreach (var item in Model) {
         <tr style="font-family:'Times New Roman'">
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                <a href="@Url.Action("ApplicationForm","Customer", new { id = item.CustomerId })" class="nav-link">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CompanyName)
@@ -98,14 +106,89 @@
             </td>*@
 
             <td>
+                <a asp-action="CustomerVehicleSelect" asp-route-id="@item.CustomerId">Select</a> |
                 <a asp-action="EditCustomer" asp-route-id="@item.CustomerId">Edit</a> |
                 <a asp-action="CustomerDetails" asp-route-id="@item.CustomerId">Details</a> |
-                <a asp-action="DeleteCustomer" asp-route-id="@item.CustomerId">Delete</a>
+                <a asp-action="DeleteCustomer" asp-route-id="@item.CustomerId">Delete</a> 
 
-                <a asp-action="CustomerVehicleSelect" asp-route-id="@item.CustomerId">select</a>
+                
 
             </td>
         </tr>
 }
     </tbody>
+
+     <tfoot>
+            <tr style="font-family:'Times New Roman'">
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CNIC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhonePOne)
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.PhonePTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneSOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneSTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Normal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emergency)
+            </th>*@
+        </tr>
+        </tfoot>
 </table>
+
+
+@section Scripts {
+     <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+ <script>
+     $(document).ready(function () {
+    $('#myTable').DataTable({
+        initComplete: function () {
+            this.api()
+                .columns()
+                .every(function () {
+                    var column = this;
+                    var select = $('<select><option value=""></option></select>')
+                        .appendTo($(column.footer()).empty())
+                        .on('change', function () {
+                            var val = $.fn.dataTable.util.escapeRegex($(this).val());
+ 
+                            column.search(val ? '^' + val + '$' : '', true, false).draw();
+                        });
+ 
+                    column
+                        .data()
+                        .unique()
+                        .sort()
+                        .each(function (d, j) {
+                            select.append('<option value="' + d + '">' + d + '</option>');
+                        });
+                });
+        },
+    });
+});
+ </script>   
+}

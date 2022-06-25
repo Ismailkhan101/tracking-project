@@ -61,4 +61,9 @@
     <Folder Include="ViewModel\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Content\css\Style.css" />
+    <None Include="wwwroot\Content\img\logo.png" />
+  </ItemGroup>
+
 </Project>

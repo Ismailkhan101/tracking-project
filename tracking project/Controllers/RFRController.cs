@@ -33,7 +33,15 @@ namespace tracking_project.Controllers
         {
             List<Customer> Customer = new List<Customer>();
             Customer = _context.Customers.ToList();
-            ViewBag.Customer = Customer;
+            List<Customer> Customer2 = new List<Customer>();
+
+
+            foreach (var item in Customer)
+            {
+                item.Name = item.Name + " ("+ item.CNIC+")";
+                Customer2.Add(item);
+            }
+            ViewBag.Customer = Customer2;
 
             List<SalePerson> SalePerson1 = new List<SalePerson>();
             SalePerson1 = _context.SalePersons.ToList();

@@ -32,8 +32,8 @@ namespace tracking_project.Controllers
             Customer c = _context.Customers.Include(x => x.Vehicles).SingleOrDefault(x => x.CustomerId == id);
 
             var dueAmount = (from v in c.Vehicles
-                             where v.DueDate < DateTime.Now
-                             select v.Net).ToList();
+                             where v.DueDate < DateTime.Now && v.Balance < 0
+                             select v.Balance).ToList();
             double totalAmount = 0;
             foreach (var item in dueAmount)
             {
@@ -51,7 +51,7 @@ namespace tracking_project.Controllers
             {
                 foreach (var item2 in vehiclesdecidedAMF)
                 {
-                    if(item.VehicalId == item2.VehicalId && item.ExpiryDate < DateTime.Now)
+                    if(item.VehicalId == item2.VehicalId && item.ExpiryDate < DateTime.Now && item.BalanceAmount < 0)
                     {
                         invoices.Add(item);
                     }
@@ -87,6 +87,83 @@ namespace tracking_project.Controllers
             return View(c);
 
         }
+
+
+        [HttpGet]
+        public IActionResult InvoiceDetails(int id)
+        {
+            Customer c = _context.Customers.Include(x => x.Vehicles).SingleOrDefault(x => x.CustomerId == id);
+
+            var dueAmount = (from v in c.Vehicles
+                             where v.DueDate < DateTime.Now && v.Balance < 0
+                             orderby v.RegistrationNo select v ).ToList();
+
+            InvoiceDetails invoiceDetails = new InvoiceDetails();
+            invoiceDetails.customerVehicle = dueAmount;
+
+            double freshVehicleAmounts = 0;
+
+            foreach (var item in dueAmount)
+            {
+                freshVehicleAmounts = freshVehicleAmounts + item.Balance;
+            }
+
+            invoiceDetails.freshVehicleAmounts = freshVehicleAmounts;
+
+
+            var vehiclesdecidedAMF = from v in c.Vehicles
+                                     select new { v.VehicalId, v.DecidedAMF };
+
+            //vehiclesdecidedAMF.Select(x=>x.DecidedAMF)
+
+            List<InvoiceYearly> invoices = new List<InvoiceYearly>();
+
+            foreach (var item in _context.InvoiceYearly)
+            {
+                foreach (var item2 in vehiclesdecidedAMF)
+                {
+                    if (item.VehicalId == item2.VehicalId && item.ExpiryDate < DateTime.Now && item.BalanceAmount < 0)
+                    {
+                        invoices.Add(item);
+                    }
+                }
+            }
+
+            invoiceDetails.InvoiceYearly = (from v in invoices
+                                           orderby v.VehicalId
+                                           select v).ToList();
+
+            var q = from x in invoices
+                    group x by x.VehicalId into g
+                    let count = g.Count()
+                    orderby count descending
+                    select new { Value = g.Key, Count = count };
+
+
+            double yearAmount = 0;
+
+            foreach (var item in q)
+            {
+                foreach (var item2 in vehiclesdecidedAMF)
+                {
+                    if (item.Value == item2.VehicalId)
+                    {
+                        yearAmount = yearAmount + (item.Count * item2.DecidedAMF);
+                    }
+                }
+            }
+
+            invoiceDetails.totalYearlyInvoice = yearAmount; 
+
+            double totalInvoice = yearAmount + freshVehicleAmounts;
+
+            invoiceDetails.totalAmounntDue = totalInvoice;  
+
+
+            return View(invoiceDetails);
+        }
+
+
         // it shows the details of customer vehicles
         private CustomerVehicle GetCustomerVehicle(int id)
         {
@@ -109,7 +186,7 @@ namespace tracking_project.Controllers
             ViewBag.listod = li;
 
             List<UnitVehicle> Units = new List<UnitVehicle>();
-            Units = _context.UnitVehicles.ToList();
+            Units = _context.UnitVehicles.Where(x=>x.VehicleId == null).ToList();
 
             ViewBag.UnitId = Units;
             List<SalePerson> SalePerson = new List<SalePerson>();
@@ -136,15 +213,15 @@ namespace tracking_project.Controllers
            /* unitVehicle.FreshExpiry = DateTime.Now.AddYears(1);*/
             _context.Entry(unitVehicle).State = EntityState.Modified;
 
-            InvoiceYearly invoice = new InvoiceYearly();
-            invoice.ValidFromDate = DateTime.Now;
-            invoice.ExpiryDate = DateTime.Now.AddYears(1);
-            invoice.AmfStatus = false;
-            invoice.YearlyPaymentStatus = true;
-            invoice.Year = DateTime.Now;
-            invoice.VehicalId = customerVehicles.VehicalId;
-            _context.InvoiceYearly.Add(invoice);
-            _context.SaveChanges();
+            //InvoiceYearly invoice = new InvoiceYearly();
+            //invoice.ValidFromDate = DateTime.Now;
+            //invoice.ExpiryDate = DateTime.Now.AddYears(1);
+            //invoice.AmfStatus = false;
+            //invoice.YearlyPaymentStatus = true;
+            //invoice.Year = DateTime.Now;
+            //invoice.VehicalId = customerVehicles.VehicalId;
+            //_context.InvoiceYearly.Add(invoice);
+            //_context.SaveChanges();
 
             Comission com = new Comission();
             com.Commission = Commission;
@@ -207,6 +284,8 @@ namespace tracking_project.Controllers
             li = _context.Customers.ToList();
 
             ViewBag.listod = li;
+
+            ViewBag.company = _context.Company.ToList();
             return View();
         }
         [HttpPost]
@@ -284,5 +363,22 @@ namespace tracking_project.Controllers
             }
             return RedirectToAction("index");
         }
+
+        public IActionResult ApplicationForm(int id)
+        {
+            var data = _context.Customers.Include(x => x.Vehicles).Where(x => x.CustomerId == id).FirstOrDefault();
+            //var a = _context.CustomerVehicles.Include(x => x.UnitVehicle).ToList();
+            //a = (from v in a
+            //         from c in data.Vehicles
+            //         where v.VehicalId == c.VehicalId
+            //         select v).ToList();
+            //foreach (var v in data.Vehicles)
+            //{
+
+            //}
+            return View(data);
+        }
+
+
     }
 }

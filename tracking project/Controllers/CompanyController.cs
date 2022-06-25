@@ -42,52 +42,52 @@ namespace tracking_project.Controllers
             return RedirectToAction("Index");
         }
         // it shows the details of customer vehicles
-        /* private CustomerVehicle GetCustomerVehicle(int id)
-         {
-             CustomerVehicle CustomerVehicles = _context.CustomerVehicles.FirstOrDefault(u => u.VehicalId == id);
-             return CustomerVehicles;
-         }
+        // private CustomerVehicle GetCustomerVehicle(int id)
+        // {
+        //     CustomerVehicle CustomerVehicles = _context.CustomerVehicles.FirstOrDefault(u => u.VehicalId == id);
+        //     return CustomerVehicles;
+        // }
 
-         public IActionResult CustomerVehicleDetails(int id)
-         {
-             CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
-             return View(CustomerVehicles);
-         }*/
+        // public IActionResult CustomerVehicleDetails(int id)
+        // {
+        //     CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
+        //     return View(CustomerVehicles);
+        // }
 
-        /*public IActionResult CustomerVehicalUpdate(int id)
+        //public IActionResult CustomerVehicalUpdate(int id)
+        //{
+        //   CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
+        //    return View(CustomerVehicles);
+        //}
+
+        //[HttpPost]
+        //public IActionResult CustomerVehicalUpdate(CustomerVehicle CustomerVehicles)
+        //{
+        //    try
+        //    {
+        //        _context.CustomerVehicles.Attach(CustomerVehicles);
+        //        _context.Entry(CustomerVehicles).State = EntityState.Modified;
+        //        _context.SaveChanges();
+        //    }
+        //    catch
+        //    {
+
+        //    }
+        //    return RedirectToAction("Index");
+        //}
+        public IActionResult Delete(int id)
         {
-           CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
-            return View(CustomerVehicles);
+            Company company = _context.Company.Where(x=>x.CompanyId == id).FirstOrDefault();
+            return View(company);
         }
 
         [HttpPost]
-        public IActionResult CustomerVehicalUpdate(CustomerVehicle CustomerVehicles)
+        public IActionResult Delete(Company company)
         {
             try
             {
-                _context.CustomerVehicles.Attach(CustomerVehicles);
-                _context.Entry(CustomerVehicles).State = EntityState.Modified;
-                _context.SaveChanges();
-            }
-            catch
-            {
-
-            }
-            return RedirectToAction("Index");
-        }
-        public IActionResult CustomerVehicalDelete(int id)
-        {
-            CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
-            return View(CustomerVehicles);
-        }
-
-        [HttpPost]
-        public IActionResult CustomerVehicalDelete(CustomerVehicle CustomerVehicles)
-        {
-            try
-            {
-                _context.CustomerVehicles.Attach(CustomerVehicles);
-                _context.Entry(CustomerVehicles).State = EntityState.Deleted;
+                _context.Company.Attach(company);
+                _context.Entry(company).State = EntityState.Deleted;
                 _context.SaveChanges();
             }
             catch
@@ -95,6 +95,6 @@ namespace tracking_project.Controllers
 
             }
             return RedirectToAction("index");
-        }*/
+        }
     }
 }

@@ -1,0 +1,463 @@
+﻿@model tracking_project.Models.Customer
+
+@{
+    ViewData["Title"] = "ApplicationForm";
+}
+
+
+<link rel="stylesheet" href="~/content/css/style.css" />
+<div class="container-fluid" style="padding:0px;">
+    <div class="card">
+        <div class="card-header" style="padding-bottom: 0px;">
+            <div class="row">
+                <div class="col-md-2 logo">
+                    <img src="~/Content/img/logo.png">
+                </div>
+                <div class="col-md-7">
+                    <h2 class="text-center" style="padding-top:30px; padding-left: 47px; font-family:'Segoe UI'">
+                        Customer Application Form
+                    </h2>
+                </div>
+            </div>
+       
+           
+        </div>
+       
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card-header bg-gray">
+                        <p class="subHeading">Customer Information</p>
+                    </div>
+                    <div class="row ">
+                        <table class="table table-bordered">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Company Name
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        CNIC
+                                    </th>
+                                    <th>
+                                        Phone Number (Primary)
+                                    </th>
+
+
+                                    <th>
+                                        Phone Number (Secondary)
+                                    </th>
+                                
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+
+
+                                <tr>
+                                    <td>
+
+                                        @Html.DisplayFor(model => model.Name)
+
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.CompanyName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Email)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.CNIC)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.PhonePOne)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.PhonePTwo)
+                                    </td>
+                                  
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+            @if (Model.Vehicles.Count() > 0)
+            {
+
+@*
+                var list = Model.group_of_people_details_tbl.Where(x => x.isDeleted != true).ToList();
+                int number = (int)Math.Ceiling((double)Model.group_of_people_details_tbl.Where(x => x.isDeleted != true).ToList().Count()/2);
+                var firstList = list.Skip(0).Take(number);
+                var secondList = list.Skip(number);*@
+
+               
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-header bg-gray">
+                            <p class="subHeading">Vehicle Information</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+
+                        <div class="row ">
+                            <table class="table table-bordered">
+                                <thead class="text-center">
+                                    <tr>
+                                        <th>
+                                            Reg No
+                                        </th>
+                                        <th>
+                                           Make/Model
+                                        </th>
+                                        <th>
+                                            Engine Number
+                                        </th>
+                                        <th>
+                                            Chasis Number
+                                        </th>
+                                         <th>
+                                            Year
+                                        </th>
+                                         <th>
+                                            Color
+                                        </th>
+                                         <th>
+                                            Decided AMF
+                                        </th>
+                                         <th>
+                                            Sale Person
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    @foreach (var item in Model.Vehicles)
+                                    {
+                                    <tr>
+                                        <td>
+
+                                            @Html.DisplayFor(model => item.RegistrationNo)
+
+                                        </td>
+                                        <td>
+
+                                            @Html.DisplayFor(model => item.MakeModel)
+
+                                        </td>
+                                        <td>
+
+                                            @Html.DisplayFor(model => item.EngineNo)
+
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => item.ChasisNo)
+                                        </td>
+                                         <td>
+                                            @Html.DisplayFor(model => item.Year)
+                                        </td>
+                                         <td>
+                                            @Html.DisplayFor(model => item.Color)
+                                        </td>
+                                         <td>
+                                            @Html.DisplayFor(model => item.DecidedAMF)
+                                        </td>
+                                         <td>
+                                            @Html.DisplayFor(model => item.UnitVehicle.InstallationDate)
+                                        </td>
+
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+          
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card-header bg-gray">
+                        <p class="subHeading">Confedential Information</p>
+                    </div>
+                    <div class="row ">
+                        <table class="table table-bordered">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>
+                                        Normal Code
+                                    </th>
+                                    <th>
+                                        Emergency Code
+                                    </th>
+                                    <th>
+                                        Name (Secondary User)
+                                    </th>
+                                    <th>
+                                        Primary Phone (Secondary User)
+                                    </th>
+                                   
+
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Normal)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.Emergency)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.SName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.PhoneSOne)
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    @*<div class="row">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Package P/H Cost: <span style="font-weight:lighter"> @Html.DisplayFor(model => model.package_details_tbl.FirstOrDefault().packageCost) </span> 
+                                    </th>
+                                    <th>
+                                        Airline Cost:<span style="font-weight:lighter"> @Html.DisplayFor(model => model.package_details_tbl.FirstOrDefault().airlineCost)</span>
+                                    </th>
+                                    <th>
+                                        </span>
+                                        Visa Cost: <span style="font-weight:lighter">@Html.DisplayFor(model => model.package_details_tbl.FirstOrDefault().visaCost)</span>
+                                    </th>
+                                    <th>
+                                        Transport Cost:<span style="font-weight:lighter"> @Html.DisplayFor(model => model.package_details_tbl.FirstOrDefault().transportCost)</span>
+                                    </th>
+                                    <th>
+                                        P/H Cost with Ticket:<span style="font-weight:lighter"> @Html.DisplayFor(model => model.package_details_tbl.FirstOrDefault().costWithTicket)</span>
+                                    </th>
+                                    <th>
+                                        No. of Pax:<span style="font-weight:lighter"> @Model.group_of_people_details_tbl.Where(x => x.isDeleted != true).Count()</span>
+                                    </th>
+                                </tr>
+                            </thead>*@
+                            @*<tbody>
+
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(model => model.package_details_tbl.FirstOrDefault().packageCost)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.package_details_tbl.FirstOrDefault().airlineCost)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.package_details_tbl.FirstOrDefault().visaCost)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.package_details_tbl.FirstOrDefault().transportCost)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.package_details_tbl.FirstOrDefault().costWithTicket)
+                                    </td>
+                                    <td>12</td>
+                                </tr>
+                            </tbody>*@
+                       @* </table>
+                    </div>
+                    <div class="row">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Extra Services and Others
+                                    </th>
+                                    <th>
+                                        <b>Grand Total</b>
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(model => model.package_details_tbl.FirstOrDefault().other_details)
+                                    </td>
+                                    <td>12</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col-md-12">
+                    
+                    <div class="row ">
+                        <table class="table table-bordered">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Airline Name
+                                    </th>
+                                    <th>
+                                        Ticket Number
+                                    </th>
+                                    <th>
+                                        Departure From
+                                    </th>
+
+                                    <th>
+                                        Arrival at
+                                    </th>*@
+                                    @*<th>
+                                        Departure Time
+                                    </th>
+                                    <th>
+                                        Arrival Time
+                                    </th>*@
+
+                                  @*  <th>
+                                        Return Date
+                                    </th>
+                                    <th>
+                                        Airline Name
+                                    </th>
+                                    <th>
+                                        Ticket Number
+                                    </th>
+                                    <th>
+                                        Departure From
+                                    </th>
+
+                                    <th>
+                                        Arrival at
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <td>
+
+                                        @Model.flight_details_tbl.FirstOrDefault().date.Value.ToString("d")
+
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.flight_details_tbl.FirstOrDefault().airline_tbl.airlineName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => model.flight_details_tbl.FirstOrDefault().ticketNo)
+                                    </td>
+                                    <td>
+                                        @ViewBag.DepartureFrom
+                                    </td>
+                                    <td>
+                                        @ViewBag.ArrivalAt
+                                    </td>*@
+                                    @*<td>
+            @Html.DisplayFor(model => model.flight_details_tbl.FirstOrDefault().departure_time)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.flight_details_tbl.FirstOrDefault().arrival_time)
+        </td>*@
+
+                                   @* <td>
+
+                                        @Model.flight_details_tbl.FirstOrDefault().dateOfReturn.Value.ToString("d")
+
+                                    </td>
+                                    <td>
+                                        @ViewBag.ReturnAirlineName
+                                    </td>
+                                    <td>
+                                        return ticket number
+                                    </td>
+                                    <td>
+                                        @ViewBag.ReturnDepartureFrom
+                                    </td>
+                                    <td>
+                                        @ViewBag.ReturnArrivalAt
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>*@
+           @* <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card-header bg-gray">
+                        <p class="subHeading">Details of Account</p>
+                    </div>
+                    <div class="row ">
+                        <table class="table table-bordered">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Cheque/ Draft No.
+                                    </th>
+                                    <th>
+                                        Total Bill
+                                    </th>
+
+                                    <th>
+                                        Recieved Amount
+                                    </th>
+                                    <th>
+                                        Balance
+                                    </th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>12</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    *@
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

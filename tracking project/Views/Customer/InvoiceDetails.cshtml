@@ -1,0 +1,132 @@
+﻿@model tracking_project.Models.InvoiceDetails
+@{
+    ViewData["Title"] = "InvoiceDetails";
+}
+
+<h4>Fresh Invoice Details</h4>
+
+
+<table class="table">
+    <thead>
+        <tr style="font-family:'Times New Roman'">
+            <th>
+                @Html.DisplayNameFor(model => model.customerVehicle.FirstOrDefault().VehicalId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.customerVehicle.FirstOrDefault().RegistrationNo)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.customerVehicle.FirstOrDefault().DueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.customerVehicle.FirstOrDefault().Balance)
+            </th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+
+        @foreach (var item in Model.customerVehicle) 
+        {
+
+            <tr style="font-family:'Times New Roman'">
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehicalId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RegistrationNo)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueDate)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.Balance)
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<table style="margin-left: 900px;">
+    <thead>
+        <tr>
+            <th>
+                Total Fresh Invoice Amount
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Model.freshVehicleAmounts
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+
+<h4>Yearly Invoice Details</h4>
+
+<table class="table">
+    <thead>
+        <tr style="font-family:'Times New Roman'">
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceYearly.FirstOrDefault().VehicalId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceYearly.FirstOrDefault().ExpiryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceYearly.FirstOrDefault().BalanceAmount)
+            </th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+
+        @foreach (var item in Model.InvoiceYearly) 
+        {
+
+            <tr style="font-family:'Times New Roman'">
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehicalId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpiryDate)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.BalanceAmount)
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<table style="margin-left: 900px;">
+    <thead>
+        <tr>
+            <th>
+                Total Yearly Invoice Amount (All Vehicles)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Model.totalYearlyInvoice
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+
+<h4> Total Invoice Amount for the Year = @Model.totalAmounntDue</h4>

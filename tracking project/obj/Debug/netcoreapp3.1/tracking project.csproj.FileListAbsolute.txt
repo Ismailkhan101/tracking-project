@@ -748,3 +748,176 @@ D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Commiss
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Commission\CommissionCreate.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\CompanyName\Index.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\CompanyName\CompanyCreate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\tracking project.exe
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\tracking project.deps.json
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\tracking project.runtimeconfig.json
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\tracking project.runtimeconfig.dev.json
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\tracking project.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\tracking project.pdb
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\tracking project.Views.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\tracking project.Views.pdb
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.csproj.AssemblyReference.cache
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.AssemblyInfoInputs.cache
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.AssemblyInfo.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.csproj.CoreCompileInputs.cache
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.RazorAssemblyInfo.cache
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.RazorAssemblyInfo.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\staticwebassets\tracking project.StaticWebAssets.Manifest.cache
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.TagHelpers.input.cache
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.TagHelpers.output.cache
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.RazorCoreGenerate.cache
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Commission\CommissionCreate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Commission\Index.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\CompanyName\CompanyCreate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\CompanyName\Index.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\CustomerVehicle\CustomerVehicleDetails.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\CustomerVehicle\Index.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Customercreate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerDetails.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerVehicalDelete.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerVehicalUpdate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerVehicleCreate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerVehicleDetails.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerVehicleSelect.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\DeleteCustomer.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\EditCustomer.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Index.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\InvoiceYearly\Create.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\InvoiceYearly\Details.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\InvoiceYearly\Index.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\InvoiceYearly\InvoiceYearlyDelete.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\InvoiceYearly\InvoiceYearlyUpdate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\RFR\Index.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\RFR\RFRCreate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\RFR\RFRDelete.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\RFR\RFRDetails.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\RFR\RFRUpdate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Saleperson\CreateSalePerson.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Saleperson\DeleteSalePerson.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Saleperson\DetailsSalePerson.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Saleperson\Index.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Saleperson\SalePersonCustomerCreate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Saleperson\SalePersonCustomerDelete.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Saleperson\SalePersonCustomerUpdate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Saleperson\SalePersonVehicleSelect.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Saleperson\UpdateSalePerson.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Unit\Index.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Unit\UnitVehicalDelete.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Unit\UnitVehicalUpdate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Unit\UnitVehicleCreate.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Unit\UnitVehicleDetails.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.RazorTargetAssemblyInfo.cache
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.RazorTargetAssemblyInfo.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.Views.pdb
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.csproj.CopyComplete
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.dll
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.pdb
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\tracking project.genruntimeconfig.cache
+C:\Users\ahsan\Source\Repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\InvoiceDetails.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\ApplicationForm.cshtml.g.cs
+C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\CompanyName\Delete.cshtml.g.cs
