@@ -184,7 +184,15 @@ namespace tracking_project.Controllers
             li = _context.Customers.ToList();
 
             ViewBag.listod = li;
+            List<Make> Makes = new List<Make>();
+            Makes = _context.Makes.ToList();
 
+            ViewBag.Make = Makes;
+
+            List<Model> Models = new List<Model>();
+            Models = _context.Models.ToList();
+
+            ViewBag.Model = Models;
             List<UnitVehicle> Units = new List<UnitVehicle>();
             Units = _context.UnitVehicles.Where(x=>x.VehicleId == null).ToList();
 
@@ -197,7 +205,7 @@ namespace tracking_project.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult CustomerVehicleCreate(CustomerVehicle customerVehicles,double Commission,int Agent)
+        public IActionResult CustomerVehicleCreate(CustomerVehicle customerVehicles,double Commission,int Agent,bool GSTCheck, string ServiceTax)
         {
             customerVehicles.CustomerID= customerVehicles.Customer.CustomerId;
             customerVehicles.Customer = null;
@@ -206,13 +214,56 @@ namespace tracking_project.Controllers
             _context.CustomerVehicles.Add(customerVehicles);
             _context.SaveChanges();
 
-            UnitVehicle unitVehicle = _context.UnitVehicles.Where(x => x.UnitId.Equals(customerVehicles.unitId)).FirstOrDefault();
-            unitVehicle.VehicleId = customerVehicles.VehicalId;
-            unitVehicle.InstallationDate = DateTime.Now;
-            unitVehicle.Status = true;
-           /* unitVehicle.FreshExpiry = DateTime.Now.AddYears(1);*/
-            _context.Entry(unitVehicle).State = EntityState.Modified;
-
+            if(customerVehicles.unitId != null)
+            {
+                UnitVehicle unitVehicle = _context.UnitVehicles.Where(x => x.UnitId.Equals(customerVehicles.unitId)).FirstOrDefault();
+                unitVehicle.VehicleId = customerVehicles.VehicalId;
+                unitVehicle.InstallationDate = DateTime.Now;
+                unitVehicle.Status = true;
+                /* unitVehicle.FreshExpiry = DateTime.Now.AddYears(1);*/
+                _context.Entry(unitVehicle).State = EntityState.Modified;
+            }
+            //For check box of GSt
+            if(GSTCheck == true)
+            {
+                customerVehicles._GST = ((customerVehicles.UnitCost )* 0.17);
+            }
+            else
+            {
+                customerVehicles._GST = 0;
+            }
+            // customerVehicles.Net += customerVehicles._GST;
+           
+            if (ServiceTax == "BRA-19.5%")
+            {
+                customerVehicles.ServiceTax = ((customerVehicles.DecidedAMF) * 0.195);
+            }
+            else if(ServiceTax == "SRB-19.5%")
+            {
+                customerVehicles.ServiceTax = ((customerVehicles.DecidedAMF) * 0.195);
+            }
+            else if (ServiceTax == "PRA-19.5%")
+            {
+                customerVehicles.ServiceTax = ((customerVehicles.DecidedAMF) * 0.195);
+            }
+            else if (ServiceTax == "KPRA-19.5%")
+            {
+                customerVehicles.ServiceTax = ((customerVehicles.DecidedAMF) * 0.195);
+            }
+            else if (ServiceTax == "ICT-15%")
+            {
+                customerVehicles.ServiceTax = ((customerVehicles.DecidedAMF) * 0.15);
+            }
+            else if (ServiceTax == "Zero")
+            {
+                customerVehicles.ServiceTax = ((customerVehicles.DecidedAMF) * 0);
+            }
+            else
+            {
+                customerVehicles.ServiceTax = 0;
+            }
+            customerVehicles.Service = customerVehicles.ServiceTax ;
+            customerVehicles.Net += customerVehicles._GST;
             //InvoiceYearly invoice = new InvoiceYearly();
             //invoice.ValidFromDate = DateTime.Now;
             //invoice.ExpiryDate = DateTime.Now.AddYears(1);

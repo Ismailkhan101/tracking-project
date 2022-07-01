@@ -34,14 +34,17 @@ namespace tracking_project.Models
 
         public Double Discount { get; set; }
 
-        public Double Tax { get; set; }
+        public Double Service_Tax { get; set; }
 
-       
+        
         public Double ReceivedAmount { get; set; }
         public Double BalanceAmount { get; set; }
         public Double TaxDeduction { get; set; }
 
         public string Remarks { get; set; }
+        public double AMF { get; set; }
+
+        public double Net ;
         public int? VehicalId { get; set; }
         public virtual CustomerVehicle CustomerVehicle { get; set; }
 

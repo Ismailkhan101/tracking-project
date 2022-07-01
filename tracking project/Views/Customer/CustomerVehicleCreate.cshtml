@@ -29,28 +29,30 @@
                     </select>
                 </div>
             </div><br />
-                  <div class="row col-sm-10">
-                      <div class="col">
-                          <label asp-for="RegistrationNo" class="control-label"></label>
-                          <input asp-for="RegistrationNo" class="form-control" placeholder="KH-5708" />
-                          <span asp-validation-for="RegistrationNo" class="text-danger"></span>
-                      </div>
-                      <div class="col">
-                          <label asp-for="EngineNo" class="control-label"></label>
-                          <input asp-for="EngineNo" class="form-control" placeholder="19k203455" />
-                          <span asp-validation-for="EngineNo" class="text-danger"></span>
-                      </div>
-                      <div class="col">
-                          <label asp-for="DecidedAMF" class="control-label"></label>
-                          <input asp-for="DecidedAMF" class="form-control" placeholder="19k203455" />
-                          <span asp-validation-for="DecidedAMF" class="text-danger"></span>
-                      </div>
-                  </div><br />
             <div class="row col-sm-10">
                 <div class="col">
+                    <label asp-for="RegistrationNo" class="control-label"></label>
+                    <input asp-for="RegistrationNo" class="form-control" placeholder="KH-5708" />
+                    <span asp-validation-for="RegistrationNo" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="EngineNo" class="control-label"></label>
+                    <input asp-for="EngineNo" class="form-control" placeholder="19k203455" />
+                    <span asp-validation-for="EngineNo" class="text-danger"></span>
+                </div>
+                
+            </div><br />
+            <div class="row col-sm-10">
+
+                <div class="col">
                     <label asp-for="MakeModel" class="control-label"></label>
-                    <input asp-for="MakeModel" class="form-control" />
-                    <span asp-validation-for="MakeModel" class="text-danger"></span>
+                    <select asp-for="MakeModel" class="form-control" asp-items="@(new SelectList(ViewBag.Make,"Id","Name"))">
+                    </select>
+                </div>
+                <div class="col">
+                    <label asp-for="Model" class="control-label"></label>
+                    <select asp-for="Model" class="form-control" asp-items="@(new SelectList(ViewBag.Model,"Id","Name"))">
+                    </select>
                 </div>
                 <div class="col">
                     <label asp-for="ChasisNo" class="control-label"></label>
@@ -74,9 +76,9 @@
             <h4 style="font-family:'Times New Roman'">Extra Info</h4>
             <div class="row col-sm-10">
                 <div class="col">
-                    <label asp-for="Reason" class="control-label"></label>
-                    <input asp-for="Reason" class="form-control" />
-                    <span asp-validation-for="Reason" class="text-danger"></span>
+                    <label asp-for="GeoFences" class="control-label"></label>
+                    <input asp-for="GeoFences" class="form-control" />
+                    <span asp-validation-for="GeoFences" class="text-danger"></span>
                 </div>
                 <div class="col">
                     <label asp-for="Source" class="control-label"></label>
@@ -110,116 +112,228 @@
                     </label>
                 </div>
             </div><br />
+            <div class="row col-sm-10">
+                <div class="col">
+                    <label class="control-label">Normal password</label>
+                    <input asp-for="Normal" class="form-control" placeholder="" />
+                    <span asp-validation-for="Normal" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label class="control-label">Emergency password</label>
+                    <input asp-for="Emergency" class="form-control" placeholder="" />
+                    <span asp-validation-for="Emergency" class="text-danger"></span>
+                </div>
+            </div><br />
+            <div class="row col-sm-10">
+                <div class="col">
+                    <label class="control-label">Driver</label>
+                    <input asp-for="Driver" class="form-control" placeholder="" />
+                    <span asp-validation-for="Driver" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label class="control-label">DrContact</label>
+                    <input asp-for="DrContact" class="form-control" placeholder="" />
+                    <span asp-validation-for="DrContact" class="text-danger"></span>
+                </div>
+            </div><br />
             <h4 style="font-family:'Times New Roman'">payment Info</h4>
             <div class="row col-sm-10">
 
                 <div class="col">
-                    <label asp-for="Bank" class="control-label"></label>
-                    <select asp-for="Bank" class="form-control">
-                        <option>---select bank---</option>
-                        <option>HBL</option>
-                        <option>MCB</option>
-                        <option>Islamic</option>
-                        <option>JS bank</option>
-                    </select></div>
+                    <label asp-for="PaymentMethod" class="control-label"></label>
+                    <select asp-for="PaymentMethod" class="form-control">
+                        <option></option>
+                        <option>Bank</option>
+                        <option>Cash</option>
+                        @*<option>Islamic</option>
+                    <option>JS bank</option>*@
+                    </select>
+                </div>
 
-                     <div class="col">
-                        <label asp-for="DueDate" class="control-label"></label>
-                        <input asp-for="DueDate" class="form-control" type="date" />
-                        <span asp-validation-for="DueDate" class="text-danger"></span>
-                 
-                  
-                     @* <div class="col" style="display:none;" >
-                          <label asp-for="Net" class="control-label"></label>
-                          <input asp-for="Net" class="form-control"  />
-                          <span asp-validation-for="Net" class="text-danger"></span>
-                      </div>*@</div><br />
+                <div class="col">
+                    <label asp-for="DueDate" class="control-label"></label>
+                    <input asp-for="DueDate" class="form-control" type="date" />
+                    <span asp-validation-for="DueDate" class="text-danger"></span>
 
-                    </div><br />
-                   
-                    <div class="row col-sm-10">
+
+                    @* <div class="col" style="display:none;" >
+                    <label asp-for="Net" class="control-label"></label>
+                    <input asp-for="Net" class="form-control"  />
+                    <span asp-validation-for="Net" class="text-danger"></span>
+                </div>*@
+                </div><br />
+
+            </div><br />
+            <div class="row col-sm-10">
+
+                <div class="col">
+                    <label class="control-label">Agent</label>
+                    <select name="Agent" class="form-control" asp-items="@(new SelectList(ViewBag.SalePerson,"SalePersonId","Name"))">
+                        <option></option>
+                    </select>
+                </div>
+
+                <div class="col">
+                    <label class="control-label">Commission</label>
+                    <input class="form-control" name="Commission" />
+
+                </div>
+
+
+            </div><br />
+            <div class="row col-sm-10">
                 <div class="col">
                     <label asp-for="ExtraCharges" class="control-label"></label>
                     <input id="ExtraCharges" asp-for="ExtraCharges" class="form-control" />
                     <span asp-validation-for="ExtraCharges" class="text-danger"></span>
                 </div>
                 <div class="col">
-                    <label asp-for="InvoiceAmount" class="control-label"></label>
-                    <input id="InvoiceAmount" asp-for="InvoiceAmount" class="form-control" />
-                    <span asp-validation-for="InvoiceAmount" class="text-danger"></span>
+                    <label asp-for="UnitCost" class="control-label"></label>
+                    <input id="InvoiceAmount" asp-for="UnitCost" class="form-control" />
+                    <span asp-validation-for="UnitCost" class="text-danger"></span>
+                </div>
+
+                <div class="col">
+                    <label class="form-check-label" style="margin-top:40px;margin-left:40px">
+                        <input asp-for="GSTCheck" type="checkbox" /> @Html.DisplayNameFor(model => model.GSTCheck)
+                    </label>
                 </div>
             </div><br />
 
             <div class="row col-sm-10">
                 <div class="col">
-                    <label asp-for="Tax" class="control-label"></label>
-                    <input id="Tax" asp-for="Tax" class="form-control" />
-                    <span asp-validation-for="Tax" class="text-danger"></span>
+                    <label asp-for="ServiceTax" class="control-label"></label>
+                    <select id="Tax" asp-for="ServiceTax" class="form-control">
+                        <option>BRA-19.5%</option>
+                        <option>SRB-19.5%</option>
+                        <option>PRA-19.5%</option>
+                        <option>KPRA-19.5%</option>
+                        <option>ICT-15%</option>
+                        <option>KPRA-19.5%</option>
+                        <option>Zero</option>
+                    </select>
                 </div>
-                 <div class="col">
+                <div class="col">
                     <label asp-for="Discount" class="control-label"></label>
                     <input id="Discount" asp-for="Discount" class="form-control" />
                     <span asp-validation-for="Discount" class="text-danger"></span>
                 </div>
+            <div class="col">
+                    <label asp-for="DecidedAMF" class="control-label"></label>
+                    <input asp-for="DecidedAMF" class="form-control"  />
+                    <span asp-validation-for="DecidedAMF" class="text-danger"></span>
+                </div>
                 @*<div class="col">
-                    <label asp-for="TaxDeduction" class="control-label"></label>
-                    <input asp-for="TaxDeduction" class="form-control" />
-                    <span asp-validation-for="TaxDeduction" class="text-danger"></span>
-                </div>*@
+                <label asp-for="TaxDeduction" class="control-label"></label>
+                <input asp-for="TaxDeduction" class="form-control" />
+                <span asp-validation-for="TaxDeduction" class="text-danger"></span>
+            </div>*@
             </div><br />
+
+            
 
             <div class="row col-sm-10">
 
                 <div class="col">
-                        <label  class="control-label">Agent</label>
-                        <select name="Agent" class="form-control" asp-items="@(new SelectList(ViewBag.SalePerson,"SalePersonId","Name"))">
-                            <option></option>
-                        </select></div>
-
-                <div class="col">
-                    <label  class="control-label">Commission</label>
-                    <input  class="form-control" name="Commission"/>
-                   
-                </div>
-
-               
-            </div><br />
-
-             <div class="row col-sm-10">
-
-                  <div class="col">
                     <label asp-for="Net" class="control-label"></label>
-                    <input asp-for="Net" id="Net" class="form-control" disabled/>
+                    <input asp-for="Net" id="Net" class="form-control" />
                     <span asp-validation-for="Net" class="text-danger"></span>
                 </div>
-                   
-                      <div class="col">
-                          <label asp-for="ReceiveAmount" class="control-label"></label>
-                          <input id="ReceiveAmount" asp-for="ReceiveAmount" class="form-control" />
-                          <span asp-validation-for="ReceiveAmount" class="text-danger"></span>
-                      </div>
 
-                     
-
-                     
-                  </div><br />
-            
-            
-            
-            <div class="row col-sm-10">
-@*
                 <div class="col">
-                    <label asp-for="Deduction" class="control-label"></label>
-                    <input asp-for="Deduction" class="form-control" />
-                    <span asp-validation-for="Deduction" class="text-danger"></span>
-                </div>*@
+                    <label asp-for="ReceiveAmount" class="control-label"></label>
+                    <input id="ReceiveAmount" asp-for="ReceiveAmount" class="form-control" />
+                    <span asp-validation-for="ReceiveAmount" class="text-danger"></span>
+                </div>
                  <div class="col">
-                          <label asp-for="Balance" class="control-label"></label>
-                          <input id="Balance" asp-for="Balance" class="form-control" disabled/>
-                          <span asp-validation-for="Balance" class="text-danger"></span>
-                      </div>
+                    <label asp-for="Balance" class="control-label"></label>
+                    <input id="Balance" asp-for="Balance" class="form-control"  />
+                    <span asp-validation-for="Balance" class="text-danger"></span>
+                </div>
+            </div><br />
 
-                 
+
+            <h4 style="margin-top:10px;">Secondry User One</h4>
+            <div class="row col-sm-10">
+            <div class="col">
+                <label class="control-label">Name</label>
+                <input asp-for="PName" class="form-control" />
+                <span asp-validation-for="PName" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label class="control-label">Phone One</label>
+                <input asp-for="PhonePOne" class="form-control" placeholder="345-678-8976" />
+                <span asp-validation-for="PhonePOne" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label class="control-label">Phone Two</label>
+                <input asp-for="PhonePTwo" class="form-control" placeholder="345-678-8976" />
+                <span asp-validation-for="PhonePTwo" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label class="control-label">Relation</label>
+                <input asp-for="PRelation" class="form-control" />
+                <span asp-validation-for="PRelation" class="text-danger"></span>
+            </div>
+        </div><br />
+        <h4 style="margin-top:10px;">Secondry User Two</h4>
+        <div class="row col-sm-10">
+            <div class="col">
+                <label class="control-label">Name</label>
+                <input asp-for="SName" class="form-control" placeholder="" />
+                <span asp-validation-for="SName" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label class="control-label">Phone One</label>
+                <input asp-for="PhoneSOne" class="form-control" placeholder="218-564-7678" />
+                <span asp-validation-for="PhoneSOne" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label class="control-label">Phone Two</label>
+                <input asp-for="PhoneSTwo" class="form-control" placeholder="218-564-7678" />
+                <span asp-validation-for="PhoneSTwo" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label class="control-label">Relation</label>
+                <input asp-for="SRelation" class="form-control" />
+                <span asp-validation-for="SRelation" class="text-danger"></span>
+            </div>
+        </div><br />
+        <h4 style="margin-top:10px;">Emergency Contact Person</h4>
+        <div class="row col-sm-10">
+            <div class="col">
+                <label class="control-label">Name</label>
+                <input asp-for="ECPName" class="form-control" placeholder="" />
+                <span asp-validation-for="ECPName" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label class="control-label">Phone One</label>
+                <input asp-for="ECPPhoneOne" class="form-control" placeholder="218-564-7678" />
+                <span asp-validation-for="ECPPhoneOne" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label class="control-label">Phone Two</label>
+                <input asp-for="ECPPhoneTwo" class="form-control" placeholder="218-564-7678" />
+                <span asp-validation-for="ECPPhoneTwo" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label class="control-label">Relation</label>
+                <input asp-for="ECPRelation" class="form-control" />
+                <span asp-validation-for="SRelation" class="text-danger"></span>
+            </div>
+        </div><br />
+            
+
+            <div class="row col-sm-10">
+                @*
+            <div class="col">
+                <label asp-for="Deduction" class="control-label"></label>
+                <input asp-for="Deduction" class="form-control" />
+                <span asp-validation-for="Deduction" class="text-danger"></span>
+            </div>*@
+               
+
+
 
 
                 <div class="col">
@@ -233,7 +347,7 @@
 </div>
 
 
-
+@*
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
@@ -284,3 +398,4 @@
         });
     </script>
 }
+*@

@@ -53,10 +53,10 @@
             @Html.DisplayFor(model => model.Discount)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tax)
+            @Html.DisplayNameFor(model => model.Service_Tax)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tax)
+            @Html.DisplayFor(model => model.Service_Tax)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ReceivedAmount)
@@ -89,6 +89,18 @@
             @Html.DisplayFor(model => model.Remarks)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AMF)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AMF)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Net)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Net)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CustomerVehicle.RegistrationNo)
         </dt>
         <dd class="col-sm-10">
@@ -100,6 +112,8 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CustomerVehicle.Customer.Name)
         </dd>
+
+
     </dl>
 </div>
 <div>

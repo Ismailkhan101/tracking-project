@@ -1,54 +1,63 @@
+
+vehicle
 City and Package(Rental, Ownership/Cash, Coorperate) for customer
 
-Mother Name
-Driver
-Emergency Contact
+// Mother Name
+
+// vehicle
+
+// Driver
+// Emergency Contact
 
 
 
-Geo Fence from Unit Move to Vehicle
+// Geo Fence from Unit Move to Vehicle
 
-Make-Brand
+table 
+// Make-Brand
 
-Model-Cultus 
+//Model-Cultus 
 
-Remove reason from Vehicle Create
-
-
-Payment Method instead of bank in vehicle
+//Remove reason from Vehicle Create
 
 
+//Payment Method instead of bank in vehicle
 
-Tax to Service Tax
+
+
+//Tax to Service Tax
 BRA-19.5%
 SRB-19.5%
 PRA-19.5%
 KPRA-19.5%
 ICT-15%
+
+remaining
 Others
 
-invoiceamount to unit cost in vehicle create
+//invoiceamount to unit cost in vehicle create
 
-Unit -> GST
-
-AMF -> Service tax
+//Unit -> GST
 
 YearlyInvoice
-
+// AMF -> Service tax
 show pending invoices to accountants
-add AMF to yearlyInvoice
+// add AMF to yearlyInvoice
 edit invoices
 send automated email
+
+
+
 
 
 Optional sms option for Govt
 
 
-Technician Table
+//Technician Table
 
 
-Installer Name
-Installer address (address + City)
+//Installer Name
+//Installer address (address + City)
 
 
 RFR same customer

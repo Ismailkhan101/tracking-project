@@ -743,7 +743,6 @@ D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.dll
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.pdb
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.genruntimeconfig.cache
-D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.csproj.AssemblyReference.cache
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Commission\Index.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Commission\CommissionCreate.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\CompanyName\Index.cshtml.g.cs
@@ -921,3 +920,18 @@ C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcorea
 C:\Users\ahsan\Source\Repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\InvoiceDetails.cshtml.g.cs
 C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\ApplicationForm.cshtml.g.cs
 C:\Users\ahsan\source\repos\tracking-project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\CompanyName\Delete.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\CompanyName\Delete.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\ApplicationForm.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\InvoiceDetails.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Make\Index.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Make\MakeCreate.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Make\Delete.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Make\MakeUpdate.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Model\Index.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Model\ModelCreate.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Model\Delete.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Model\ModelUpdate.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Technician\Index.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Technician\TechniciansCreate.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Technician\TechniciansUpdate.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.csproj.AssemblyReference.cache

@@ -22,7 +22,7 @@
         <th>
             @Html.DisplayNameFor(model => model.ChasisNo)
         </th>
-        
+
     </tr>
     <tr>
         <td>
@@ -36,7 +36,7 @@
         <td>
             @Html.DisplayFor(model => model.ChasisNo)
         </td>
-        
+
 
     </tr>
     <tr>
@@ -62,7 +62,7 @@
         </td>
     </tr>
     <thead>
-    </dl>
+        </dl>
 </table>
 <br />
 <h5 style="font-family:'Times New Roman'">Payment info</h5>
@@ -79,9 +79,9 @@
                 @Html.DisplayNameFor(model => model.ReceiveAmount)
             </th>
             <th> @Html.DisplayNameFor(model => model.Balance)</th>
-            
 
-        </tr > 
+
+        </tr>
         <tr style="font-family: 'Times New Roman';">
             <td>
                 @Html.DisplayFor(model => model.Discount)
@@ -93,56 +93,62 @@
                 @Html.DisplayFor(model => model.ReceiveAmount)
             </td>
             <td>@Html.DisplayFor(model => model.Balance)</td>
-           
+
         </tr>
         <tr style="font-family: 'Times New Roman';">
             <th>@Html.DisplayNameFor(model => model.Deduction)</th>
-            <th> @Html.DisplayNameFor(model => model.Bank)</th>
+            <th> @Html.DisplayNameFor(model => model.PaymentMethod)</th>
             <th>
                 @Html.DisplayNameFor(model => model.ExtraCharges)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.InvoiceAmount)
+                @Html.DisplayNameFor(model => model.UnitCost)
             </th>
         </tr>
         <tr style="font-family: 'Times New Roman';">
             <td>@Html.DisplayFor(model => model.Deduction)</td>
-            <td>@Html.DisplayFor(model => model.Bank)</td>
+            <td>@Html.DisplayFor(model => model.PaymentMethod)</td>
             <td> @Html.DisplayFor(model => model.ExtraCharges)</td>
             <td>
-                @Html.DisplayFor(model => model.InvoiceAmount)
+                @Html.DisplayFor(model => model.UnitCost)
             </td>
         </tr>
         <tr style="font-family: 'Times New Roman'">
             <th>
-                @Html.DisplayNameFor(model => model.Tax)
+                @Html.DisplayNameFor(model => model.ServiceTax)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TaxDeduction)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.Commission)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Commission)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.DecidedAMF)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.DueDate)
             </th>
         </tr>
         <tr style="font-family: 'Times New Roman'">
             <td>
-                @Html.DisplayFor(model => model.Tax)
+                @Html.DisplayFor(model => model.ServiceTax)
             </td>
             <td>
                 @Html.DisplayFor(model => model.TaxDeduction)
             </td>
-           @* <td>
-                @Html.DisplayFor(model => model.Commission)
-            </td>*@
+            @* <td>
+                    @Html.DisplayFor(model => model.Commission)
+                </td>*@
+            <td>
+                @Html.DisplayFor(model => model.DecidedAMF)
+            </td>
             <td>
                 @Html.DisplayFor(model => model.DueDate)
             </td>
         </tr>
-    
-    </tbody>
+
+        </tbody>
 </table>
 
 
@@ -154,7 +160,7 @@
     <thead>
         <tr style="font-family: 'Times New Roman';">
             <th>
-                @Html.DisplayNameFor(model => model.Reason)
+                @Html.DisplayNameFor(model => model.GeoFences)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Source)
@@ -162,14 +168,14 @@
             <th>
                 @Html.DisplayNameFor(model => model.PaymentRemarkes)
             </th>
-            
+
 
         </tr>
     </thead>
     <tbody>
         <tr style="font-family: 'Times New Roman'; ">
             <td>
-                @Html.DisplayFor(model => model.Reason)
+                @Html.DisplayFor(model => model.GeoFences)
             </td>
             <td>
                 @Html.DisplayFor(model => model.Source)
@@ -187,16 +193,128 @@
             <td>@Html.DisplayFor(model => model.PaymentAlert)</td>
             <td>@Html.DisplayFor(model => model.SpacialRemarkes)</td>
         </tr>
+
+        <tr style="font-family:'Times New Roman';">
+            <th> @Html.DisplayNameFor(model => model.Normal)</th>
+            <th>@Html.DisplayNameFor(model => model.Emergency)</th>
+        </tr>
+        <tr style="font-family:'Times New Roman';">
+            <td>@Html.DisplayFor(model => model.Normal)</td>
+            <td>@Html.DisplayFor(model => model.Emergency)</td>
+        </tr>
+        <tr style="font-family:'Times New Roman';">
+            <th> @Html.DisplayNameFor(model => model.Driver)</th>
+            <th>Driver Contact</th>
+        </tr>
+        <tr style="font-family:'Times New Roman';">
+            <td>@Html.DisplayFor(model => model.Driver)</td>
+            <td>@Html.DisplayFor(model => model.DrContact)</td>
+        </tr>
+
+
     </tbody>
-    </tbody>
+
 </table>
-<table class="table ">
-    <tbody>
-     
-</table >
+
+
+<table class="table">
+    <thead>
+        <h3>Secondry User One</h3>
+        <tr style="font-family: 'Times New Roman'; ">
+            <th>
+                Name
+            </th>
+            <th>
+                Phone One
+            </th>
+            <th>
+                Phone Two
+            </th>
+            <th> Relation</th>
+
+
+        </tr>
+        <tr style="font-family: 'Times New Roman';">
+            <td>
+                @Html.DisplayFor(model => model.PName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.PhonePOne)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.PhonePTwo)
+            </td>
+            <td>@Html.DisplayFor(model => model.PRelation)</td>
+
+        </tr>
+        </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr style="font-family: 'Times New Roman'; ">
+            <h3>Secondry User Two</h3>
+            <th>
+                Name
+            </th>
+            <th>
+                Phone One
+            </th>
+            <th>
+                Phone Two
+            </th>
+            <th> Relation</th>
+
+
+        </tr>
+        <tr style="font-family: 'Times New Roman';">
+            <td>@Html.DisplayFor(model => model.SName)</td>
+            <td>@Html.DisplayFor(model => model.PhoneSOne)</td>
+            <td> @Html.DisplayFor(model => model.PhoneSTwo)</td>
+            <td>
+                @Html.DisplayFor(model => model.SRelation)
+            </td>
+        </tr>
+
+
+        </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr style="font-family: 'Times New Roman'; ">
+            <h3>Emergency Contact Person </h3>
+            <th>
+                Name
+            </th>
+            <th>
+                Phone One
+            </th>
+            <th>
+                Phone Two
+            </th>
+            <th> Relation</th>
+
+
+        </tr>
+        <tr style="font-family: 'Times New Roman';">
+            <td>@Html.DisplayFor(model => model.ECPName)</td>
+            <td>@Html.DisplayFor(model => model.ECPPhoneOne)</td>
+            <td> @Html.DisplayFor(model => model.ECPPhoneTwo)</td>
+            <td>
+                @Html.DisplayFor(model => model.ECPRelation)
+            </td>
+        </tr>
+
+
+        </tbody>
+</table>
+
+
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model.VehicalId">Edit</a> |
-    
+
     <a asp-controller="InvoiceYearly" asp-action="Index" asp-route-id="@Model.VehicalId">See Billing Details</a>
 
 </div>

@@ -19,7 +19,7 @@ namespace tracking_project.Models
 
         public int PostalCode { get; set; }
 
-        public string GeoFences { get; set; }
+       // public string GeoFences { get; set; }
 
 
 

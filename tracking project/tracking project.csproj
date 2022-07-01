@@ -40,6 +40,16 @@
     <Compile Remove="Migrations\20220607132902_removeCommissionIdfromVehicle.Designer.cs" />
     <Compile Remove="Migrations\20220607134522_commissionIdremove.cs" />
     <Compile Remove="Migrations\20220607134522_commissionIdremove.Designer.cs" />
+    <Compile Remove="Migrations\20220626050050_Make.cs" />
+    <Compile Remove="Migrations\20220626050050_Make.Designer.cs" />
+    <Compile Remove="Migrations\20220626050330_MakeModel.cs" />
+    <Compile Remove="Migrations\20220626050330_MakeModel.Designer.cs" />
+    <Compile Remove="Migrations\20220626050532_MakeModel.cs" />
+    <Compile Remove="Migrations\20220626050532_MakeModel.Designer.cs" />
+    <Compile Remove="Migrations\20220629132808_CheakGSt4.cs" />
+    <Compile Remove="Migrations\20220629132808_CheakGSt4.Designer.cs" />
+    <Compile Remove="Migrations\20220701145659_FreshPaymentTable.cs" />
+    <Compile Remove="Migrations\20220701145659_FreshPaymentTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

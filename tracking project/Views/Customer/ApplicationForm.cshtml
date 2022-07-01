@@ -48,13 +48,11 @@
                                         CNIC
                                     </th>
                                     <th>
-                                        Phone Number (Primary)
+                                        Office Contact
                                     </th>
 
 
-                                    <th>
-                                        Phone Number (Secondary)
-                                    </th>
+                                    
                                 
                                 </tr>
                             </thead>
@@ -77,11 +75,9 @@
                                         @Html.DisplayFor(model => model.CNIC)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(model => model.PhonePOne)
+                                        @Html.DisplayFor(model => model.OfficePhone)
                                     </td>
-                                    <td>
-                                        @Html.DisplayFor(model => model.PhonePTwo)
-                                    </td>
+                                    
                                   
                                 </tr>
                             </tbody>
@@ -137,9 +133,7 @@
                                          <th>
                                             Decided AMF
                                         </th>
-                                         <th>
-                                            Sale Person
-                                        </th>
+                                       
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
@@ -164,19 +158,19 @@
                                         <td>
                                             @Html.DisplayFor(model => item.ChasisNo)
                                         </td>
-                                         <td>
+                                        <td>
                                             @Html.DisplayFor(model => item.Year)
                                         </td>
-                                         <td>
+                                        <td>
                                             @Html.DisplayFor(model => item.Color)
                                         </td>
-                                         <td>
+                                        <td>
                                             @Html.DisplayFor(model => item.DecidedAMF)
                                         </td>
-                                         <td>
+                                        <td>
                                             @Html.DisplayFor(model => item.UnitVehicle.InstallationDate)
                                         </td>
-
+                                       
                                     </tr>
                                     }
                                 </tbody>
@@ -217,18 +211,13 @@
                             </thead>
                             <tbody class="text-center">
                                 <tr>
-                                    <td>
-                                        @Html.DisplayFor(model => model.Normal)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(model => model.Emergency)
-                                    </td>
-                                    <td>
+                                    
+                                    @*<td>
                                         @Html.DisplayFor(model => model.SName)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(model => model.PhoneSOne)
-                                    </td>
+                                    </td>*@
                                 </tr>
 
                             </tbody>

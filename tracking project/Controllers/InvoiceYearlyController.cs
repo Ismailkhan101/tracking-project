@@ -42,8 +42,33 @@ namespace tracking_project.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(InvoiceYearly invoice,int Sale)
+        public IActionResult Create(InvoiceYearly invoice,int Sale,string Service_Tax)
         {
+            if (Service_Tax == "BRA-19.5%")
+            {
+                invoice.Service_Tax = ((invoice.AMF) * 0.195);
+            }
+            else if (Service_Tax == "SRB-19.5%")
+            {
+                invoice.Service_Tax = ((invoice.AMF) * 0.195);
+            }
+            else if (Service_Tax == "PRA-19.5%")
+            {
+                invoice.Service_Tax = ((invoice.AMF) * 0.195);
+            }
+            else if (Service_Tax == "KPRA-19.5%")
+            {
+                invoice.Service_Tax = ((invoice.AMF) * 0.195);
+            }
+            else if (Service_Tax == "ICT-15%")
+            {
+                invoice.Service_Tax = ((invoice.AMF) * 0.15);
+            }
+            else
+            {
+                invoice.Service_Tax = 0;
+            }
+           
             Comission com = new Comission();
             com.Commission = invoice.Comission;
             com.CommissionType = "Yearly Invoice";
@@ -61,7 +86,7 @@ namespace tracking_project.Controllers
 
             var AMF = _context.CustomerVehicles.Where(x => x.VehicalId == invoice.VehicalId).FirstOrDefault().DecidedAMF;
 
-            invoice.BalanceAmount = invoice.ReceivedAmount - AMF - invoice.Tax;
+            invoice.BalanceAmount = invoice.ReceivedAmount - AMF - invoice.Service_Tax;
             
             _context.InvoiceYearly.Add(invoice);
             _context.SaveChanges();
@@ -75,6 +100,8 @@ namespace tracking_project.Controllers
             InvoiceYearly invoice = _context.InvoiceYearly.Where(x => x.Id == id).FirstOrDefault();
             CustomerVehicle vehicle = _context.CustomerVehicles.Where(x => x.VehicalId == invoice.VehicalId).FirstOrDefault();
             invoice.CustomerVehicle = vehicle;
+            //get data frominvoice yearly
+            invoice.Net = (invoice.AMF + invoice.Service_Tax + invoice.Comission) - invoice.Discount;
 
             Customer cus = _context.Customers.Where(x => x.CustomerId == vehicle.CustomerID).FirstOrDefault();
             invoice.CustomerVehicle.Customer = cus;

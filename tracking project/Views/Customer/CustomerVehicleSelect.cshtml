@@ -27,9 +27,9 @@
                 @Html.DisplayNameFor(model => model.DateOfBirth)
             </th>
 
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.PhonePOne)
-            </th>
+            </th>*@
             <th>TotalAmount</th>
             
 
@@ -61,9 +61,9 @@
             <td>
                 @Html.DisplayFor(modelItem => Model.DateOfBirth)
             </td>
-            <td>
+           @* <td>
                 @Html.DisplayFor(modelItem => Model.PhonePOne)
-            </td>
+            </td>*@
             <td>
                 @ViewBag.TotalAmount
             </td>
@@ -127,7 +127,7 @@
                     @Html.DisplayFor(modelItem => item.Color)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.InvoiceAmount)
+                    @Html.DisplayFor(modelItem => item.UnitCost)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ReceiveAmount)

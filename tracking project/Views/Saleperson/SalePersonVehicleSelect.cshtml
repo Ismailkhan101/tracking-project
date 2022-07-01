@@ -71,7 +71,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().DateOfBirth)
             </th>
-            <th>
+           @* <th>
                 @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().PhonePOne)
             </th>
             <th>
@@ -85,13 +85,8 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().PhoneSTwo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().Normal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customers.FirstOrDefault().Emergency)
-            </th>
+            </th>*@
+          
 
             <th>
                 <a asp-action="SalePersonCustomerCreate" class="btn btn-primary" style="width:80px;">Add </a>
@@ -117,7 +112,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.DateOfBirth)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.PhonePOne)
             </td>
             <td>
@@ -132,12 +127,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.PhoneSTwo)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Normal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Emergency)
-            </td>
+           *@
             <td>
                 <a asp-action="SalePersonCustomerUpdate" asp-route-id="@item.CustomerId">Edit</a> |
                 <a asp-action="SalePersonCustomerDelete" asp-route-id="@item.CustomerId">Delete</a>

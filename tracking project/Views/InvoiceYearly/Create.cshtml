@@ -55,11 +55,18 @@
                         <span asp-validation-for="Discount" class="text-danger"></span>
                     </div>
                     <div class="col">
-                        <label asp-for="Tax" class="control-label"></label>
-                        <input asp-for="Tax" class="form-control" />
-                        <span asp-validation-for="Tax" class="text-danger"></span>
+                        <label asp-for="Service_Tax" class="control-label"></label>
+                        <select id="Tax"  asp-for="Service_Tax" class="form-control">
+                            <option>BRA-19.5%</option>
+                            <option>SRB-19.5%</option>
+                            <option>PRA-19.5%</option>
+                            <option>KPRA-19.5%</option>
+                            <option>ICT-15%</option>
+                            <option>KPRA-19.5%</option>
+                        </select>
+
                     </div>
-                </div><br />
+                </div><br/>
                 <div class="row col-sm-10">
                     <div class="col">
                         <label asp-for="ReceivedAmount" class="control-label"></label>
@@ -77,6 +84,11 @@
                         <label asp-for="TaxDeduction" class="control-label"></label>
                         <input asp-for="TaxDeduction" class="form-control" />
                         <span asp-validation-for="TaxDeduction" class="text-danger"></span>
+                    </div>
+                <div class="col">
+                        <label asp-for="AMF" class="control-label"></label>
+                        <input asp-for="AMF" class="form-control" />
+                        <span asp-validation-for="AMF" class="text-danger"></span>
                     </div>
                    @* <div class="col">
                         <label asp-for="Comission" class="control-label"></label>
@@ -115,6 +127,7 @@
     
 </div>
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+*@

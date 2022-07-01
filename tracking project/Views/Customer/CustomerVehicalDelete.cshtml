@@ -98,25 +98,25 @@
             </tr>
             <tr style="font-family: 'Times New Roman';">
                 <th>@Html.DisplayNameFor(model => model.Deduction)</th>
-                <th> @Html.DisplayNameFor(model => model.Bank)</th>
+                <th> @Html.DisplayNameFor(model => model.PaymentMethod)</th>
                 <th>
                     @Html.DisplayNameFor(model => model.ExtraCharges)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.InvoiceAmount)
+                    @Html.DisplayNameFor(model => model.UnitCost)
                 </th>
             </tr>
             <tr style="font-family: 'Times New Roman';">
                 <td>@Html.DisplayFor(model => model.Deduction)</td>
-                <td>@Html.DisplayFor(model => model.Bank)</td>
+                <td>@Html.DisplayFor(model => model.PaymentMethod)</td>
                 <td> @Html.DisplayFor(model => model.ExtraCharges)</td>
                 <td>
-                    @Html.DisplayFor(model => model.InvoiceAmount)
+                    @Html.DisplayFor(model => model.UnitCost)
                 </td>
             </tr>
             <tr style="font-family: 'Times New Roman'">
                 <th>
-                    @Html.DisplayNameFor(model => model.Tax)
+                    @Html.DisplayNameFor(model => model.ServiceTax)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.TaxDeduction)
@@ -130,7 +130,7 @@
             </tr>
             <tr style="font-family: 'Times New Roman'">
                 <td>
-                    @Html.DisplayFor(model => model.Tax)
+                    @Html.DisplayFor(model => model.ServiceTax)
                 </td>
                 <td>
                     @Html.DisplayFor(model => model.TaxDeduction)
@@ -155,7 +155,7 @@
         <thead>
             <tr style="font-family: 'Times New Roman';">
                 <th>
-                    @Html.DisplayNameFor(model => model.Reason)
+                    @Html.DisplayNameFor(model => model.GeoFences)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Source)
@@ -170,7 +170,7 @@
         <tbody>
             <tr style="font-family: 'Times New Roman'; ">
                 <td>
-                    @Html.DisplayFor(model => model.Reason)
+                    @Html.DisplayFor(model => model.GeoFences)
                 </td>
                 <td>
                     @Html.DisplayFor(model => model.Source)

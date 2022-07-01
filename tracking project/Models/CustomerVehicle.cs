@@ -35,25 +35,33 @@ namespace tracking_project.Models
 
         public Double ExtraCharges { get; set; }
 
-        public string  Reason { get; set; }
+       // public string  Reason { get; set; }
 
         public string SpacialRemarkes { get; set; }
 
-        public string Bank { get; set; }
-
+        //public string Bank { get; set; }
+        public string PaymentMethod { get; set; }
         public string Source { get; set; }
-        public Double InvoiceAmount { get; set; }
-        public Double Tax { get; set; }
+        public Double UnitCost { get; set; }
+        public Double ServiceTax { get; set; }
         public Double TaxDeduction { get; set; }
         //public double Commission { get; set; }
         public double Discount { get; set; }
         private double _Net;
         public double Net{
             get { return _Net;  }
-            set { _Net = (Tax + InvoiceAmount + ExtraCharges) - Discount; }
+            set { _Net = (UnitCost + ExtraCharges + _GST + DecidedAMF + Service) - Discount; } // - commission
         }
 
-
+        public double _GST ;
+        public bool GSTCheck ;
+        public double Service;
+        /*public Double _GST;
+         public double GST
+         {
+             get { return _GST; }
+             set { _GST = UnitCost * (17 / 100); }
+         }*/
         public double ReceiveAmount { get; set; }
         private double _Balance;
         public double Balance
@@ -67,7 +75,51 @@ namespace tracking_project.Models
 
         public double DecidedAMF { get; set; }
         public double Deduction { get; set; }
+        public string GeoFences { get; set; }
+        public string Model { get; set; }
+        public double Invoice;
+        
+        [Display(Name = "Normal")]
+        public string Normal { get; set; }
 
+       
+        [Display(Name = "Emergency")]
+        public string Emergency { get; set; }
+        public string Driver { get; set; }
+        public string DrContact { get; set; }
+
+        [Display(Name = " PName")]
+        public string PName { get; set; }
+        [Display(Name = " PRelation")]
+        public string PRelation { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "PhonePOne")]
+        
+        
+        public string PhonePOne { get; set; }
+
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "PhonePTwo")]
+        
+        public string PhonePTwo { get; set; }
+        
+
+        [Display(Name = " SName")]
+        public string SName { get; set; }
+        [Display(Name = " SRelation")]
+        public string SRelation { get; set; }
+        public string PhoneSOne { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        public string PhoneSTwo { get; set; }
+
+
+
+        [Display(Name = " ECPName")]
+        public string ECPName { get; set; }
+        [Display(Name = " ECPRelation")]
+        public string ECPRelation { get; set; }
+        public string ECPPhoneOne { get; set; }
+        public string ECPPhoneTwo { get; set; }
         public int CustomerID { get; set; }
         public string? unitId { get; set; }
         public virtual Customer Customer { get; set; }

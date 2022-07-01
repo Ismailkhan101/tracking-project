@@ -32,7 +32,10 @@ namespace tracking_project.Models
 
         public DbSet<Comission> Comissions { get; set; }
        public DbSet<Company> Company{ get; set; }
-
+       public DbSet<Make> Makes { get; set; }
+        public DbSet<Model> Models { get; set; }
+       // public DbSet<FreshPayment> freshPayments{ get; set; }
+        public DbSet<Technician> Technicians { get; set; }
         internal object Include(Func<object, object> p)
         {
             throw new NotImplementedException();
