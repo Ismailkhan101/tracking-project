@@ -70,7 +70,7 @@
     <table class="table">
         <thead>
             <tr style="font-family: 'Times New Roman'; ">
-                <th>
+               @* <th>
                     @Html.DisplayNameFor(model => model.Discount)
                 </th>
                 <th>
@@ -123,7 +123,7 @@
                 </th>
                @* <th>
                     @Html.DisplayNameFor(model => model.Commission)
-                </th>*@
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.DueDate)
                 </th>
@@ -136,11 +136,11 @@
                     @Html.DisplayFor(model => model.TaxDeduction)
                 </td>
                 @*<td>
-                    @Html.DisplayFor(model => model.Commission)
-                </td>*@
+            @Html.DisplayFor(model => model.Commission)
+        </td>
                 <td>
                     @Html.DisplayFor(model => model.DueDate)
-                </td>
+                </td>*@
             </tr>
 
             </tbody>

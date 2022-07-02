@@ -22,7 +22,7 @@ namespace tracking_project.Controllers
         }
         public IActionResult Index(int id)
         {
-            ViewBag.AMF = _context.CustomerVehicles.Where(x => x.VehicalId == id).FirstOrDefault().DecidedAMF;
+            ViewBag.AMF = _context.freshPayments.Where(x => x.Id == id).FirstOrDefault().DecidedAMF;
             ViewBag.vehicleID= _context.CustomerVehicles.Where(x => x.VehicalId == id).FirstOrDefault().VehicalId;
             var data = _context.InvoiceYearly.Include(x=>x.CustomerVehicle).Where(x=>x.VehicalId == id).ToList();
             return View(data);
@@ -84,7 +84,7 @@ namespace tracking_project.Controllers
             invoice.VehicalId = invoice.Id;
             invoice.Id = 0;
 
-            var AMF = _context.CustomerVehicles.Where(x => x.VehicalId == invoice.VehicalId).FirstOrDefault().DecidedAMF;
+            var AMF = _context.freshPayments.Where(x => x.Id == invoice.VehicalId).FirstOrDefault().DecidedAMF;
 
             invoice.BalanceAmount = invoice.ReceivedAmount - AMF - invoice.Service_Tax;
             

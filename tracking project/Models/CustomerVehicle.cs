@@ -33,51 +33,48 @@ namespace tracking_project.Models
         public string ExtraFeatures { get; set; }
 
 
-        public Double ExtraCharges { get; set; }
+        /*public Double ExtraCharges { get; set; }*/
 
        // public string  Reason { get; set; }
 
         public string SpacialRemarkes { get; set; }
 
         //public string Bank { get; set; }
-        public string PaymentMethod { get; set; }
+        /*public string PaymentMethod { get; set; }*/
         public string Source { get; set; }
-        public Double UnitCost { get; set; }
-        public Double ServiceTax { get; set; }
-        public Double TaxDeduction { get; set; }
+       /* public Double UnitCost { get; set; }
+        public Double ServiceTax { get; set; }*/
+        
         //public double Commission { get; set; }
-        public double Discount { get; set; }
+        /*public double Discount { get; set; }
         private double _Net;
         public double Net{
             get { return _Net;  }
             set { _Net = (UnitCost + ExtraCharges + _GST + DecidedAMF + Service) - Discount; } // - commission
-        }
+        }*/
 
-        public double _GST ;
-        public bool GSTCheck ;
-        public double Service;
+        
         /*public Double _GST;
          public double GST
          {
              get { return _GST; }
              set { _GST = UnitCost * (17 / 100); }
          }*/
-        public double ReceiveAmount { get; set; }
+        /*public double ReceiveAmount { get; set; }
         private double _Balance;
         public double Balance
         {
             get { return _Balance; }
             set { _Balance = ( ReceiveAmount - _Net); }
-        }
+        }*/
         public string PaymentRemarkes { get; set; }
         public bool PaymentAlert { get; set; }
-        public DateTime DueDate { get; set; }
+        
 
-        public double DecidedAMF { get; set; }
-        public double Deduction { get; set; }
+       
         public string GeoFences { get; set; }
         public string Model { get; set; }
-        public double Invoice;
+       
         
         [Display(Name = "Normal")]
         public string Normal { get; set; }

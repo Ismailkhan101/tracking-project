@@ -136,122 +136,6 @@
                     <span asp-validation-for="DrContact" class="text-danger"></span>
                 </div>
             </div><br />
-            <h4 style="font-family:'Times New Roman'">payment Info</h4>
-            <div class="row col-sm-10">
-
-                <div class="col">
-                    <label asp-for="PaymentMethod" class="control-label"></label>
-                    <select asp-for="PaymentMethod" class="form-control">
-                        <option></option>
-                        <option>Bank</option>
-                        <option>Cash</option>
-                        @*<option>Islamic</option>
-                    <option>JS bank</option>*@
-                    </select>
-                </div>
-
-                <div class="col">
-                    <label asp-for="DueDate" class="control-label"></label>
-                    <input asp-for="DueDate" class="form-control" type="date" />
-                    <span asp-validation-for="DueDate" class="text-danger"></span>
-
-
-                    @* <div class="col" style="display:none;" >
-                    <label asp-for="Net" class="control-label"></label>
-                    <input asp-for="Net" class="form-control"  />
-                    <span asp-validation-for="Net" class="text-danger"></span>
-                </div>*@
-                </div><br />
-
-            </div><br />
-            <div class="row col-sm-10">
-
-                <div class="col">
-                    <label class="control-label">Agent</label>
-                    <select name="Agent" class="form-control" asp-items="@(new SelectList(ViewBag.SalePerson,"SalePersonId","Name"))">
-                        <option></option>
-                    </select>
-                </div>
-
-                <div class="col">
-                    <label class="control-label">Commission</label>
-                    <input class="form-control" name="Commission" />
-
-                </div>
-
-
-            </div><br />
-            <div class="row col-sm-10">
-                <div class="col">
-                    <label asp-for="ExtraCharges" class="control-label"></label>
-                    <input id="ExtraCharges" asp-for="ExtraCharges" class="form-control" />
-                    <span asp-validation-for="ExtraCharges" class="text-danger"></span>
-                </div>
-                <div class="col">
-                    <label asp-for="UnitCost" class="control-label"></label>
-                    <input id="InvoiceAmount" asp-for="UnitCost" class="form-control" />
-                    <span asp-validation-for="UnitCost" class="text-danger"></span>
-                </div>
-
-                <div class="col">
-                    <label class="form-check-label" style="margin-top:40px;margin-left:40px">
-                        <input asp-for="GSTCheck" type="checkbox" /> @Html.DisplayNameFor(model => model.GSTCheck)
-                    </label>
-                </div>
-            </div><br />
-
-            <div class="row col-sm-10">
-                <div class="col">
-                    <label asp-for="ServiceTax" class="control-label"></label>
-                    <select id="Tax" asp-for="ServiceTax" class="form-control">
-                        <option>BRA-19.5%</option>
-                        <option>SRB-19.5%</option>
-                        <option>PRA-19.5%</option>
-                        <option>KPRA-19.5%</option>
-                        <option>ICT-15%</option>
-                        <option>KPRA-19.5%</option>
-                        <option>Zero</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label asp-for="Discount" class="control-label"></label>
-                    <input id="Discount" asp-for="Discount" class="form-control" />
-                    <span asp-validation-for="Discount" class="text-danger"></span>
-                </div>
-            <div class="col">
-                    <label asp-for="DecidedAMF" class="control-label"></label>
-                    <input asp-for="DecidedAMF" class="form-control"  />
-                    <span asp-validation-for="DecidedAMF" class="text-danger"></span>
-                </div>
-                @*<div class="col">
-                <label asp-for="TaxDeduction" class="control-label"></label>
-                <input asp-for="TaxDeduction" class="form-control" />
-                <span asp-validation-for="TaxDeduction" class="text-danger"></span>
-            </div>*@
-            </div><br />
-
-            
-
-            <div class="row col-sm-10">
-
-                <div class="col">
-                    <label asp-for="Net" class="control-label"></label>
-                    <input asp-for="Net" id="Net" class="form-control" />
-                    <span asp-validation-for="Net" class="text-danger"></span>
-                </div>
-
-                <div class="col">
-                    <label asp-for="ReceiveAmount" class="control-label"></label>
-                    <input id="ReceiveAmount" asp-for="ReceiveAmount" class="form-control" />
-                    <span asp-validation-for="ReceiveAmount" class="text-danger"></span>
-                </div>
-                 <div class="col">
-                    <label asp-for="Balance" class="control-label"></label>
-                    <input id="Balance" asp-for="Balance" class="form-control"  />
-                    <span asp-validation-for="Balance" class="text-danger"></span>
-                </div>
-            </div><br />
-
 
             <h4 style="margin-top:10px;">Secondry User One</h4>
             <div class="row col-sm-10">
@@ -337,7 +221,7 @@
 
 
                 <div class="col">
-                    <input type="submit" value="Add" class="btn btn-primary" style="width:100px;margin-top:30px;" />
+                    <input type="submit" value="Next" class="btn btn-primary" style="width:100px;margin-top:30px;" />
 
                 </div>
             </div>

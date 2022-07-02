@@ -1,4 +1,4 @@
-﻿@model tracking_project.Models.CustomerVehicle
+﻿@*@model tracking_project.Models.CustomerVehicle
 
 @{
     ViewData["Title"] = "CustomerVehicleDetails";
@@ -69,77 +69,7 @@
 <table class="table">
     <thead>
         <tr style="font-family: 'Times New Roman'; ">
-            <th>
-                @Html.DisplayNameFor(model => model.Discount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Net)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReceiveAmount)
-            </th>
-            <th> @Html.DisplayNameFor(model => model.Balance)</th>
             
-
-        </tr > 
-        <tr style="font-family: 'Times New Roman';">
-            <td>
-                @Html.DisplayFor(model => model.Discount)
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.Net)
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.ReceiveAmount)
-            </td>
-            <td>@Html.DisplayFor(model => model.Balance)</td>
-           
-        </tr>
-        <tr style="font-family: 'Times New Roman';">
-            <th>@Html.DisplayNameFor(model => model.Deduction)</th>
-            <th> @Html.DisplayNameFor(model => model.PaymentMethod)</th>
-            <th>
-                @Html.DisplayNameFor(model => model.ExtraCharges)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UnitCost)
-            </th>
-        </tr>
-        <tr style="font-family: 'Times New Roman';">
-            <td>@Html.DisplayFor(model => model.Deduction)</td>
-            <td>@Html.DisplayFor(model => model.PaymentMethod)</td>
-            <td> @Html.DisplayFor(model => model.ExtraCharges)</td>
-            <td>
-                @Html.DisplayFor(model => model.UnitCost)
-            </td>
-        </tr>
-        <tr style="font-family: 'Times New Roman'">
-            <th>
-                @Html.DisplayNameFor(model => model.ServiceTax)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TaxDeduction)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.Commission)
-            </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.DueDate)
-            </th>
-        </tr>
-        <tr style="font-family: 'Times New Roman'">
-            <td>
-                @Html.DisplayFor(model => model.ServiceTax)
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.TaxDeduction)
-            </td>
-            @*<td>
-                @Html.DisplayFor(model => model.Commission)
-            </td*@>
-            <td>
-                @Html.DisplayFor(model => model.DueDate)
-            </td>
         </tr>
     
     </tbody>
@@ -198,3 +128,4 @@
     <a asp-action="Edit" asp-route-id="@Model.VehicalId">Edit</a> |
     <a asp-action="Index">Back to List</a> |
 </div>
+*@

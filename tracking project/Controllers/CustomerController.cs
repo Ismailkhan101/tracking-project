@@ -31,17 +31,17 @@ namespace tracking_project.Controllers
         {
             Customer c = _context.Customers.Include(x => x.Vehicles).SingleOrDefault(x => x.CustomerId == id);
 
-            var dueAmount = (from v in c.Vehicles
+           /* var dueAmount = (from v in c.Vehicles
                              where v.DueDate < DateTime.Now && v.Balance < 0
                              select v.Balance).ToList();
             double totalAmount = 0;
             foreach (var item in dueAmount)
             {
                 totalAmount = totalAmount + item;
-            }
+            }*/
 
-            var vehiclesdecidedAMF = from v in c.Vehicles
-                             select new { v.VehicalId, v.DecidedAMF };
+          /*  var vehiclesdecidedAMF = from v in c.Vehicles
+                             select new { v.VehicalId, v.DecidedAMF };*/
 
             //vehiclesdecidedAMF.Select(x=>x.DecidedAMF)
 
@@ -49,13 +49,13 @@ namespace tracking_project.Controllers
 
             foreach (var item in _context.InvoiceYearly)
             {
-                foreach (var item2 in vehiclesdecidedAMF)
+               /* foreach (var item2 in vehiclesdecidedAMF)
                 {
                     if(item.VehicalId == item2.VehicalId && item.ExpiryDate < DateTime.Now && item.BalanceAmount < 0)
                     {
                         invoices.Add(item);
                     }
-                }
+                }*/
             }
 
             var q = from x in invoices
@@ -68,20 +68,20 @@ namespace tracking_project.Controllers
 
             foreach (var item in q)
             {
-                foreach(var item2 in vehiclesdecidedAMF)
+                /*foreach(var item2 in vehiclesdecidedAMF)
                 {
                     if(item.Value == item2.VehicalId)
                     {
                         yearAmount = yearAmount + (item.Count * item2.DecidedAMF);
                     }
-                }
+                }*/
             }
 
-            double totalInvoice = yearAmount + totalAmount;
+            /*double totalInvoice = yearAmount + totalAmount;*/
 
            
 
-            ViewBag.TotalAmount = totalInvoice;
+            /*ViewBag.TotalAmount = totalInvoice;*/
 
 
             return View(c);
@@ -92,27 +92,27 @@ namespace tracking_project.Controllers
         [HttpGet]
         public IActionResult InvoiceDetails(int id)
         {
-            Customer c = _context.Customers.Include(x => x.Vehicles).SingleOrDefault(x => x.CustomerId == id);
+            /*Customer c = _context.Customers.Include(x => x.Vehicles).SingleOrDefault(x => x.CustomerId == id);
 
             var dueAmount = (from v in c.Vehicles
                              where v.DueDate < DateTime.Now && v.Balance < 0
                              orderby v.RegistrationNo select v ).ToList();
 
             InvoiceDetails invoiceDetails = new InvoiceDetails();
-            invoiceDetails.customerVehicle = dueAmount;
+            invoiceDetails.customerVehicle = dueAmount;*/
 
             double freshVehicleAmounts = 0;
 
-            foreach (var item in dueAmount)
+            /*foreach (var item in dueAmount)
             {
                 freshVehicleAmounts = freshVehicleAmounts + item.Balance;
             }
 
-            invoiceDetails.freshVehicleAmounts = freshVehicleAmounts;
+            invoiceDetails.freshVehicleAmounts = freshVehicleAmounts;*/
 
 
-            var vehiclesdecidedAMF = from v in c.Vehicles
-                                     select new { v.VehicalId, v.DecidedAMF };
+            /*var vehiclesdecidedAMF = from v in c.Vehicles
+                                     select new { v.VehicalId, v.DecidedAMF };*/
 
             //vehiclesdecidedAMF.Select(x=>x.DecidedAMF)
 
@@ -120,19 +120,19 @@ namespace tracking_project.Controllers
 
             foreach (var item in _context.InvoiceYearly)
             {
-                foreach (var item2 in vehiclesdecidedAMF)
+               /* foreach (var item2 in vehiclesdecidedAMF)
                 {
                     if (item.VehicalId == item2.VehicalId && item.ExpiryDate < DateTime.Now && item.BalanceAmount < 0)
                     {
                         invoices.Add(item);
                     }
-                }
+                }*/
             }
 
-            invoiceDetails.InvoiceYearly = (from v in invoices
+            /*invoiceDetails.InvoiceYearly = (from v in invoices
                                            orderby v.VehicalId
                                            select v).ToList();
-
+*/
             var q = from x in invoices
                     group x by x.VehicalId into g
                     let count = g.Count()
@@ -144,35 +144,37 @@ namespace tracking_project.Controllers
 
             foreach (var item in q)
             {
-                foreach (var item2 in vehiclesdecidedAMF)
+                /*foreach (var item2 in vehiclesdecidedAMF)
                 {
                     if (item.Value == item2.VehicalId)
                     {
                         yearAmount = yearAmount + (item.Count * item2.DecidedAMF);
                     }
-                }
+                }*/
             }
 
-            invoiceDetails.totalYearlyInvoice = yearAmount; 
+            /*invoiceDetails.totalYearlyInvoice = yearAmount; */
 
             double totalInvoice = yearAmount + freshVehicleAmounts;
 
-            invoiceDetails.totalAmounntDue = totalInvoice;  
+            /*invoiceDetails.totalAmounntDue = totalInvoice; */
 
 
-            return View(invoiceDetails);
+            return View(/*invoiceDetails*/);
         }
 
 
         // it shows the details of customer vehicles
         private CustomerVehicle GetCustomerVehicle(int id)
         {
+            ViewBag.id = id;
             CustomerVehicle CustomerVehicles = _context.CustomerVehicles.FirstOrDefault(u => u.VehicalId == id);
             return CustomerVehicles;
         }
 
         public IActionResult CustomerVehicleDetails(int id)
         {
+            ViewBag.Id = id;
             CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
             return View(CustomerVehicles);
         }
@@ -191,30 +193,29 @@ namespace tracking_project.Controllers
 
             List<Model> Models = new List<Model>();
             Models = _context.Models.ToList();
-
+            
             ViewBag.Model = Models;
             List<UnitVehicle> Units = new List<UnitVehicle>();
             Units = _context.UnitVehicles.Where(x=>x.VehicleId == null).ToList();
 
             ViewBag.UnitId = Units;
-            List<SalePerson> SalePerson = new List<SalePerson>();
-            SalePerson = _context.SalePersons.ToList();
-            ViewBag.SalePerson = SalePerson;
+            
 
 
             return View();
         }
         [HttpPost]
-        public IActionResult CustomerVehicleCreate(CustomerVehicle customerVehicles,double Commission,int Agent,bool GSTCheck, string ServiceTax)
+        public IActionResult CustomerVehicleCreate(CustomerVehicle customerVehicles,double Commission,int Agent)
         {
             customerVehicles.CustomerID= customerVehicles.Customer.CustomerId;
             customerVehicles.Customer = null;
-            customerVehicles.Net = 5;
-            customerVehicles.Balance = 5;
+            //customerVehicles.Net = 5;
+           // customerVehicles.Balance = 5;
             _context.CustomerVehicles.Add(customerVehicles);
             _context.SaveChanges();
-
-            if(customerVehicles.unitId != null)
+            // getting vehicle id
+            
+            if (customerVehicles.unitId != null)
             {
                 UnitVehicle unitVehicle = _context.UnitVehicles.Where(x => x.UnitId.Equals(customerVehicles.unitId)).FirstOrDefault();
                 unitVehicle.VehicleId = customerVehicles.VehicalId;
@@ -223,57 +224,7 @@ namespace tracking_project.Controllers
                 /* unitVehicle.FreshExpiry = DateTime.Now.AddYears(1);*/
                 _context.Entry(unitVehicle).State = EntityState.Modified;
             }
-            //For check box of GSt
-            if(GSTCheck == true)
-            {
-                customerVehicles._GST = ((customerVehicles.UnitCost )* 0.17);
-            }
-            else
-            {
-                customerVehicles._GST = 0;
-            }
-            // customerVehicles.Net += customerVehicles._GST;
-           
-            if (ServiceTax == "BRA-19.5%")
-            {
-                customerVehicles.ServiceTax = ((customerVehicles.DecidedAMF) * 0.195);
-            }
-            else if(ServiceTax == "SRB-19.5%")
-            {
-                customerVehicles.ServiceTax = ((customerVehicles.DecidedAMF) * 0.195);
-            }
-            else if (ServiceTax == "PRA-19.5%")
-            {
-                customerVehicles.ServiceTax = ((customerVehicles.DecidedAMF) * 0.195);
-            }
-            else if (ServiceTax == "KPRA-19.5%")
-            {
-                customerVehicles.ServiceTax = ((customerVehicles.DecidedAMF) * 0.195);
-            }
-            else if (ServiceTax == "ICT-15%")
-            {
-                customerVehicles.ServiceTax = ((customerVehicles.DecidedAMF) * 0.15);
-            }
-            else if (ServiceTax == "Zero")
-            {
-                customerVehicles.ServiceTax = ((customerVehicles.DecidedAMF) * 0);
-            }
-            else
-            {
-                customerVehicles.ServiceTax = 0;
-            }
-            customerVehicles.Service = customerVehicles.ServiceTax ;
-            customerVehicles.Net += customerVehicles._GST;
-            //InvoiceYearly invoice = new InvoiceYearly();
-            //invoice.ValidFromDate = DateTime.Now;
-            //invoice.ExpiryDate = DateTime.Now.AddYears(1);
-            //invoice.AmfStatus = false;
-            //invoice.YearlyPaymentStatus = true;
-            //invoice.Year = DateTime.Now;
-            //invoice.VehicalId = customerVehicles.VehicalId;
-            //_context.InvoiceYearly.Add(invoice);
-            //_context.SaveChanges();
-
+         
             Comission com = new Comission();
             com.Commission = Commission;
             com.CommissionType = "Vehicle for Request";
@@ -285,7 +236,7 @@ namespace tracking_project.Controllers
             _context.SaveChanges();
 
 
-            return RedirectToAction("CustomerVehicleSelect", "Customer", new { @id = customerVehicles.CustomerID });
+            return RedirectToAction("FreshCreate", "Customer", new { @VehicleID = customerVehicles.VehicalId });
         }
         public IActionResult CustomerVehicalUpdate(int id)
         {
@@ -301,14 +252,14 @@ namespace tracking_project.Controllers
         [HttpPost]
         public IActionResult CustomerVehicalUpdate(CustomerVehicle CustomerVehicles)
         {
-            CustomerVehicles.Net = 5;
-            CustomerVehicles.Balance = 5;
+            /*CustomerVehicles.Net = 5;
+            CustomerVehicles.Balance = 5;*/
             _context.CustomerVehicles.Attach(CustomerVehicles);
             
             _context.Entry(CustomerVehicles).State = EntityState.Modified;
             _context.SaveChanges();
 
-            return RedirectToAction("CustomerVehicleSelect", "Customer", new { @id = CustomerVehicles.CustomerID });
+            return RedirectToAction("FreshPaymentUpdate", "Customer", new { @VehicleID = CustomerVehicles.VehicalId });
         }
         public IActionResult CustomerVehicalDelete(int id)
         {
@@ -430,6 +381,136 @@ namespace tracking_project.Controllers
             return View(data);
         }
 
+        // Fresh  PaymentCreate section
+        public IActionResult FreshPaymentCreate(int VehicleId)
+        {
+            ;
+           ViewBag.VehicleId = VehicleId;
+            List<SalePerson> SalePerson = new List<SalePerson>();
+            SalePerson = _context.SalePersons.ToList();
+            ViewBag.SalePerson = SalePerson;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult FreshPaymentCreate(FreshPayment FreshPayment,int Agent, bool GSTCheck, string ServiceTax)
+        {
+
+            if (GSTCheck == true)
+            {
+                FreshPayment._GST = ((FreshPayment.UnitCost) * 0.17);
+            }
+            else
+            {
+                FreshPayment._GST = 0;
+            }
+            
+
+            if (ServiceTax == "BRA-19.5%")
+            {
+                FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0.195);
+            }
+            else if (ServiceTax == "SRB-19.5%")
+            {
+                FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0.195);
+            }
+            else if (ServiceTax == "PRA-19.5%")
+            {
+                FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0.195);
+            }
+            else if (ServiceTax == "KPRA-19.5%")
+            {
+                FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0.195);
+            }
+            else if (ServiceTax == "ICT-15%")
+            {
+                FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0.15);
+            }
+            else if (ServiceTax == "Zero")
+            {
+                FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0);
+            }
+            else
+            {
+                FreshPayment.ServiceTax = 0;
+            }
+            FreshPayment.Service = FreshPayment.ServiceTax;
+            FreshPayment.Net = (FreshPayment.DecidedAMF+ FreshPayment.UnitCost)-FreshPayment._GST - FreshPayment.Commission - FreshPayment.ServiceTax - FreshPayment.Discount;
+            FreshPayment.Invoice = FreshPayment.DecidedAMF + FreshPayment.UnitCost;
+            FreshPayment.SalePersonID = Agent;
+            _context.freshPayments.Add(FreshPayment);
+            
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        private FreshPayment GetFreshPayment(int id)
+        {
+            FreshPayment FreshPayment = _context.freshPayments.FirstOrDefault(u => u.VehicleID == id);
+            return FreshPayment;
+        }
+        public IActionResult FreshPaymentUpdate(int id,int VehicleId)
+        {
+            ViewBag.VehicleId = VehicleId;
+            FreshPayment FreshPayment = GetFreshPayment(VehicleId);
+            return View(FreshPayment);
+        }
+
+        [HttpPost]
+        public IActionResult FreshPaymentUpdate(FreshPayment FreshPayment, bool GSTCheck, string ServiceTax)
+        {
+            if (GSTCheck == true)
+            {
+                FreshPayment._GST = ((FreshPayment.UnitCost) * 0.17);
+            }
+            else
+            {
+                FreshPayment._GST = 0;
+            }
+
+
+            if (ServiceTax == "BRA-19.5%")
+            {
+                FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0.195);
+            }
+            else if (ServiceTax == "SRB-19.5%")
+            {
+                FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0.195);
+            }
+            else if (ServiceTax == "PRA-19.5%")
+            {
+                FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0.195);
+            }
+            else if (ServiceTax == "KPRA-19.5%")
+            {
+                FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0.195);
+            }
+            else if (ServiceTax == "ICT-15%")
+            {
+                FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0.15);
+            }
+            else if (ServiceTax == "Zero")
+            {
+                FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0);
+            }
+            else
+            {
+                FreshPayment.ServiceTax = 0;
+            }
+            FreshPayment.Service = FreshPayment.ServiceTax;
+            FreshPayment.Net = (FreshPayment.DecidedAMF + FreshPayment.UnitCost) - FreshPayment._GST - FreshPayment.Commission - FreshPayment.ServiceTax - FreshPayment.Discount;
+            FreshPayment.Invoice = FreshPayment.DecidedAMF + FreshPayment.UnitCost;
+            _context.freshPayments.Attach(FreshPayment);
+            _context.Entry(FreshPayment).State = EntityState.Modified;
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult FreshPaymentDetails(int id)
+        {
+            FreshPayment FreshPayment = GetFreshPayment(id);
+            return View(FreshPayment);
+        }
 
     }
 }

@@ -9,7 +9,7 @@ namespace tracking_project.Models
 {
     public class FreshPayment
     {
-
+        [System.ComponentModel.DataAnnotations.Key]
         public int Id { get; set; }
         public double UnitCost { get; set; }
         public double ServiceTax { get; set; }
@@ -33,6 +33,14 @@ namespace tracking_project.Models
         public int VehicleID { get; set; }
         public virtual CustomerVehicle Vehicle { get; set; }
 
-
+        public string PaymentMethod { get; set; }
+       
+        public Double TaxDeduction { get; set; }
+        public double DecidedAMF { get; set; }
+        public double Deduction { get; set; }
+        public double Invoice;
+        public double _GST;
+        public bool GSTCheck;
+        public double Service;
     }
 }
