@@ -12,7 +12,7 @@ namespace tracking_project.Models
         public IOrderedEnumerable<InvoiceYearly> InvoiceYearly { get; set; }       
         public double totalYearlyInvoice { get; set; }  
 
-        public double totalAmounntDue { get; set; } 
+        public double totalAmountDue { get; set; } 
 
     }
 }

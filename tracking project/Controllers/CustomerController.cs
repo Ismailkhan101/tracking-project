@@ -117,21 +117,26 @@ namespace tracking_project.Controllers
 
             foreach (var item in dueFreshVehiclePayments)
             {
-                freshVehicleAmounts = freshVehicleAmounts + item.Balance;
+                invoiceDetails.freshVehicleAmounts = invoiceDetails.freshVehicleAmounts + item.Balance;
             }
 
-            invoiceDetails.freshVehicleAmounts = freshVehicleAmounts;
+            //invoiceDetails.freshVehicleAmounts = freshVehicleAmounts;
 
 
-            var invoiceYeary = _context.InvoiceYearly.Where(x =>vehicleID.Contains((int)x.VehicalId)).ToList();
-            var dueFinvoicePayments = (from v in invoiceYeary
-                                           where v.ExpiryDate < localDate && v.BalanceAmount < 0
-                                           orderby v select v);
-            var invoiceAmounts = 0;
-            foreach (var item in dueFinvoicePayments)
+            var invoiceYeary = _context.InvoiceYearly.Where(x =>vehicleID.Contains((int)x.VehicalId) && x.ExpiryDate < localDate && x.BalanceAmount < 0).ToList();
+            //var dueYearlyPayments = (from v in invoiceYeary
+            //                               where v.ExpiryDate < localDate && v.BalanceAmount < 0
+            //                               orderby v select v);
+            
+            
+            //var invoiceAmounts = 0;
+
+            foreach (var item in invoiceYeary)
             {
-                invoiceAmounts +=  Convert.ToInt32( item.BalanceAmount);
+                invoiceDetails.totalYearlyInvoice +=  item.BalanceAmount;
             }
+
+            invoiceDetails.totalAmountDue = invoiceDetails.freshVehicleAmounts + invoiceDetails.totalYearlyInvoice;
 
             //var invoiceYeary = _context.InvoiceYearly.Include(x => x.CustomerVehicle).Where(r => vehicleID.Any(id => id == r.VehicalId)).ToList();
 
