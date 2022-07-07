@@ -46,7 +46,7 @@
 
                 <div class="col">
                     <label asp-for="MakeModel" class="control-label"></label>
-                    <select asp-for="MakeModel" class="form-control" asp-items="@(new SelectList(ViewBag.Make,"Id","Name"))" id="MakeModel" name="MakeModel">
+                    <select asp-for="MakeModel" class="form-control" asp-items="@(new SelectList(ViewBag.Make,"Id","MakeName"))" id="MakeModel" name="MakeModel">
                         
                     </select>
                 </div>
@@ -54,6 +54,7 @@
                     <label asp-for="Model" class="control-label"></label>
                     <select asp-for="Model" class="form-control" id="Model" name="Model">
                     </select>
+
                 </div>
                 <div class="col">
                     <label asp-for="ChasisNo" class="control-label"></label>

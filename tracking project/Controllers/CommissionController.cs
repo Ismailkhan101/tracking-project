@@ -40,58 +40,45 @@ namespace tracking_project.Controllers
             return RedirectToAction("Index");
         }
         // it shows the details of customer vehicles
-        private CustomerVehicle GetCustomerVehicle(int id)
+        private Comission GetComission(int id)
         {
-            CustomerVehicle CustomerVehicles = _context.CustomerVehicles.FirstOrDefault(u => u.VehicalId == id);
-            return CustomerVehicles;
+            Comission Comission = _context.Comissions.FirstOrDefault(u => u.CommisionId == id);
+            return Comission;
         }
 
-        public IActionResult CustomerVehicleDetails(int id)
-        {
-            CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
-            return View(CustomerVehicles);
-        }
+      
 
-        public IActionResult CustomerVehicalUpdate(int id)
+        public IActionResult CommissionUpdate(int id)
         {
-            CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
-            return View(CustomerVehicles);
+            Comission Comission = GetComission(id);
+            return View(Comission);
         }
 
         [HttpPost]
-        public IActionResult CustomerVehicalUpdate(CustomerVehicle CustomerVehicles)
+        public IActionResult CommissionUpdate(Comission Comission)
         {
-            try
-            {
-                _context.CustomerVehicles.Attach(CustomerVehicles);
-                _context.Entry(CustomerVehicles).State = EntityState.Modified;
+          
+                _context.Comissions.Attach(Comission);
+                _context.Entry(Comission).State = EntityState.Modified;
                 _context.SaveChanges();
-            }
-            catch
-            {
-
-            }
+           
             return RedirectToAction("Index");
         }
-        public IActionResult CustomerVehicalDelete(int id)
+        public IActionResult ComissionDelete(int id)
         {
-            CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
-            return View(CustomerVehicles);
+            Comission Comission = GetComission(id);
+            return View(Comission);
         }
 
         [HttpPost]
-        public IActionResult CustomerVehicalDelete(CustomerVehicle CustomerVehicles)
+        public IActionResult ComissionDelete(Comission Comission)
         {
-            try
-            {
-                _context.CustomerVehicles.Attach(CustomerVehicles);
-                _context.Entry(CustomerVehicles).State = EntityState.Deleted;
+           
+                _context.Comissions.Attach(Comission);
+                _context.Entry(Comission).State = EntityState.Deleted;
                 _context.SaveChanges();
-            }
-            catch
-            {
-
-            }
+           
+            
             return RedirectToAction("index");
         }
     }

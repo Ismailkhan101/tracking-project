@@ -939,3 +939,5 @@ D:\tracking project\tracking project\bin\Debug\netcoreapp3.1\System.ComponentMod
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\FreshPaymentUpdate.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\FreshPaymentDetails.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.csproj.AssemblyReference.cache
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Commission\ComissionDelete.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Commission\CommissionUpdate.cshtml.g.cs

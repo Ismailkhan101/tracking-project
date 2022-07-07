@@ -12,7 +12,7 @@ namespace tracking_project.Models
         
        [System.ComponentModel.DataAnnotations.Key]
         public int CompanyId { get; set; }
-       
+       [Required]
         public string CompanyName{ get; set; }
         
 

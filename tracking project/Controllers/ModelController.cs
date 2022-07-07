@@ -41,9 +41,14 @@ namespace tracking_project.Controllers
         public IActionResult ModelCreate(Model Model)
         {
 
+            if ((Model.Name != null))
+            {
+                _context.Models.Add(Model);
+                _context.SaveChanges();
+            }
+            
 
-            _context.Models.Add(Model);
-            _context.SaveChanges();
+           
 
             return RedirectToAction("Index");
         }

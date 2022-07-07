@@ -11,8 +11,10 @@ namespace tracking_project.Models
     {
         [System.ComponentModel.DataAnnotations.Key]
         public int Id { get; set; }
-        [Required]
-        public String Name { get; set; }
+
+
+        [Required(ErrorMessage = "enter make!")]
+        public string MakeName { get; set; }
 
         public IList<Model>Models { get; set; }
 

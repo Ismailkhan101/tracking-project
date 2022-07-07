@@ -11,8 +11,9 @@ namespace tracking_project.Models
     {
         [System.ComponentModel.DataAnnotations.Key]
         public int Id { get; set; }
-        [Required]
-        public String Name { get; set; }
+        [Display(Name = "Select your Make"), Required]
+        public string Name { get; set; }
+        [Display(Name = "Enter your Model"), Required]
         public int MakeId { get; set; }
         public virtual Make Make { get; set; }
 

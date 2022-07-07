@@ -47,25 +47,30 @@
                 </div>
             </div><br />
 
-            <div class="row col-sm-10">
-                <div class="col">
-                    <label class="control-label">Decided AMF</label>
-                    <input id="DecidedAMF" asp-for="DecidedAMF" class="form-control" />
-                    <span asp-validation-for="DecidedAMF" class="text-danger"></span>
-                </div>
-                <div class="col">
-                    <label class="control-label">Tax Deduction</label>
-                    <input asp-for="TaxDeduction" class="form-control" />
-                    <span asp-validation-for="TaxDeduction" class="text-danger"></span>
-                </div>
+                  <div class="row col-sm-10">
+                      <div class="col">
+                          <label class="control-label">Decided AMF</label>
+                          <input id="DecidedAMF" asp-for="DecidedAMF" class="form-control" />
+                          <span asp-validation-for="DecidedAMF" class="text-danger"></span>
+                      </div>
+                      <div class="col">
+                          <label class="control-label">Extra Charges</label>
+                          <input id="ExtraCharges" asp-for="ExtraCharges" class="form-control" />
+                          <span asp-validation-for="ExtraCharges" class="text-danger"></span>
+                      </div>
+                      @*<div class="col">
+            <label class="control-label">Tax Deduction</label>
+            <input asp-for="TaxDeduction" class="form-control" />
+            <span asp-validation-for="TaxDeduction" class="text-danger"></span>
+        </div>*@
 
 
-                <div class="col">
-                    <label class="form-check-label" style="margin-top:40px;margin-left:40px">
-                        <input value="0.17" asp-for="GSTCheck" type="checkbox" id="GSTCheck" name="GSTCheck"/>GST
-                    </label>
-                </div>
-            </div><br />
+                      <div class="col">
+                          <label class="form-check-label" style="margin-top:40px;margin-left:40px">
+                              <input value="0.17" asp-for="GSTCheck" type="checkbox" id="GSTCheck" name="GSTCheck" />GST
+                          </label>
+                      </div>
+                  </div><br />
             <div class="row col-sm-10">
                 <div class="col">
                     <label asp-for="Discount" class="control-label"></label>
@@ -79,16 +84,12 @@
                 </div>
             </div><br />
             <div class="row col-sm-10">
-                <div class="col">
-                    <label class="control-label">Extra Charges</label>
-                    <input id="ExtraCharges" asp-for="ExtraCharges" class="form-control" />
-                    <span asp-validation-for="ExtraCharges" class="text-danger"></span>
-                </div>
-                <div class="col">
+              
+               @* <div class="col">
                     <label asp-for="Deduction" class="control-label"></label>
                     <input asp-for="Deduction" class="form-control" />
                     <span asp-validation-for="Deduction" class="text-danger"></span>
-                </div>
+                </div>*@
 
             </div><br />
             <div class="form-group" style="display:none">

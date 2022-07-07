@@ -14,6 +14,7 @@ namespace tracking_project.Models
         public int CommisionId { get; set; }
         [Required]
         public double Commission { get; set; }
+        [Required]
         public string  CommissionType { get; set; }
 
         public int? VehicleId { get; set; }

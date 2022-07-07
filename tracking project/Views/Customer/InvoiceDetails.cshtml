@@ -12,16 +12,16 @@
             <th>
                 @Html.DisplayNameFor(model => model.freshPayments.FirstOrDefault().Vehicle.VehicalId)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.freshPayments.FirstOrDefault().Vehicle.RegistrationNo)
-            </th>
+            </th>*@
 
-           @* <th>
-                @Html.DisplayNameFor(model => model.customerVehicle.FirstOrDefault().DueDate)
+            <th>
+                @Html.DisplayNameFor(model => model.freshPayments.FirstOrDefault().DueDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.customerVehicle.FirstOrDefault().Balance)
-            </th>*@
+                @Html.DisplayNameFor(model => model.freshPayments.FirstOrDefault().Balance)
+            </th>
 
         </tr>
     </thead>
@@ -33,19 +33,19 @@
         {
 
             <tr style="font-family:'Times New Roman'">
+                <td>
+                  //  @Html.DisplayFor(modelItem => item.VehicleID)
+                </td>
                 @*<td>
-                  //  @Html.DisplayFor(modelItem => item.VehicalId)
-                </td>*@
-               @* <td>
-                   @Html.DisplayFor(modelItem => item.RegistrationNo)
+                   @Html.DisplayFor(modelItem => item.)
                 </td>*@
 
-               @* <td>
+                <td>
                     @Html.DisplayFor(modelItem => item.DueDate)
                 </td>
                  <td>
                     @Html.DisplayFor(modelItem => item.Balance)
-                </td>*@
+                </td>
             </tr>
         }
 
@@ -74,7 +74,7 @@
 
 <table class="table">
     <thead>
-        <tr style="font-family:'Times New Roman'">
+        @*<tr style="font-family:'Times New Roman'">
             <th>
                 @Html.DisplayNameFor(model => model.InvoiceYearly.FirstOrDefault().VehicalId)
             </th>
@@ -85,7 +85,7 @@
                 @Html.DisplayNameFor(model => model.InvoiceYearly.FirstOrDefault().BalanceAmount)
             </th>
 
-        </tr>
+        </tr>*@
     </thead>
 
     <tbody>
@@ -129,4 +129,4 @@
     </tbody>
 </table>
 
-<h4> Total Invoice Amount for the Year = @Model.totalAmounntDue</h4>
+<h4> Total Invoice Amount for the Year = @Model.totalAmountDue</h4>

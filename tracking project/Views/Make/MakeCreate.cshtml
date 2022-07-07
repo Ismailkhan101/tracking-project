@@ -4,18 +4,18 @@
     ViewData["Title"] = "MakeCreate";
 }
 
-<h1>MakeCreate</h1>
+<h1>Make Create</h1>
 
-<h4>Make</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="MakeCreate">
+        <form asp-action="MakeCreate" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="MakeName" class="control-label"></label>
+                <input asp-for="MakeName" class="form-control"  />
+                <span class="text-danger" asp-validation-for="MakeName"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

@@ -9,6 +9,7 @@ namespace tracking_project.Models
     public class UnitVehicle
     {
         [Key]
+        [Required]
         public string UnitId { get; set; }
 
         [Required]

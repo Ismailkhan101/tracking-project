@@ -35,9 +35,9 @@ namespace tracking_project.Models
 
         public string PaymentMethod { get; set; }
        
-        public Double TaxDeduction { get; set; }
+     //   public Double TaxDeduction { get; set; }
         public double DecidedAMF { get; set; }
-        public double Deduction { get; set; }
+       // public double Deduction { get; set; }
         public double Invoice;
         public double _GST;
         public bool GSTCheck;

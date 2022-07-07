@@ -41,9 +41,17 @@ namespace tracking_project.Controllers
         public IActionResult MakeCreate(Make make)
         {
 
+            if ((make.MakeName != null))
+            {
+                _context.Makes.Add(make);
+                _context.SaveChanges();
 
-            _context.Makes.Add(make);
-            _context.SaveChanges();
+            }
+            else
+            {
+                ViewBag.mes = "Please enter make";
+            }
+
 
             return RedirectToAction("Index");
         }

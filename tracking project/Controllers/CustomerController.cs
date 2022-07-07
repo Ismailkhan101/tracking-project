@@ -124,84 +124,20 @@ namespace tracking_project.Controllers
 
 
             var invoiceYeary = _context.InvoiceYearly.Where(x =>vehicleID.Contains((int)x.VehicalId) && x.ExpiryDate < localDate && x.BalanceAmount < 0).ToList();
-            //var dueYearlyPayments = (from v in invoiceYeary
-            //                               where v.ExpiryDate < localDate && v.BalanceAmount < 0
-            //                               orderby v select v);
+                                          
             
             
-            //var invoiceAmounts = 0;
+            var invoiceAmounts = 0;
 
             foreach (var item in invoiceYeary)
             {
-                invoiceDetails.totalYearlyInvoice +=  item.BalanceAmount;
+                invoiceAmounts += Convert.ToInt32(item.BalanceAmount);
             }
-
+            invoiceDetails.totalYearlyInvoice = invoiceAmounts;
             invoiceDetails.totalAmountDue = invoiceDetails.freshVehicleAmounts + invoiceDetails.totalYearlyInvoice;
 
-            //var invoiceYeary = _context.InvoiceYearly.Include(x => x.CustomerVehicle).Where(r => vehicleID.Any(id => id == r.VehicalId)).ToList();
-
-            //var invoiceYeary = _context.InvoiceYearly.Where(r => vehicleID.Any(id => id == r.VehicalId)).ToList();
-
-           /* invoiceDetails.InvoiceYearly = invoiceAmounts;*/
-
-            /* foreach (var item in invoiceYeary)
-             {
-                 invoiceDetails.totalYearlyInvoice = invoiceDetails.totalYearlyInvoice + item.BalanceAmount;
-             }
-
-             invoiceDetails.totalAmounntDue = invoiceDetails.totalYearlyInvoice + invoiceDetails.freshVehicleAmounts;
- */
-
-            //var vehiclesdecidedAMF = from v in c.Vehicles
-            //                         select new { v.VehicalId, v.DecidedAMF };
-
-            //vehiclesdecidedAMF.Select(x => x.DecidedAMF);
-
-            //List<InvoiceYearly> invoices = new List<InvoiceYearly>();
-
-            //foreach (var item in _context.InvoiceYearly)
-            //{
-            //    foreach (var item2 in vehiclesdecidedAMF)
-            //    {
-            //        if (item.VehicalId == item2.VehicalId && item.ExpiryDate < DateTime.Now && item.BalanceAmount < 0)
-            //        {
-            //            invoices.Add(item);
-            //        }
-            //    }
-            //}
-
-            //invoiceDetails.InvoiceYearly = (from v in invoices
-            //                                orderby v.VehicalId
-            //                                select v).ToList();
-
-            //var q = from x in invoices
-            //        group x by x.VehicalId into g
-            //        let count = g.Count()
-            //        orderby count descending
-            //        select new { Value = g.Key, Count = count };
-
-
-            //double yearAmount = 0;
-
-            //foreach (var item in q)
-            //{
-            //    foreach (var item2 in vehiclesdecidedAMF)
-            //    {
-            //        if (item.Value == item2.VehicalId)
-            //        {
-            //            yearAmount = yearAmount + (item.Count * item2.DecidedAMF);
-            //        }
-            //    }
-            //}
-
-            //invoiceDetails.totalYearlyInvoice = yearAmount;
-
-            //double totalInvoice = yearAmount + freshVehicleAmounts;
-
-            //invoiceDetails.totalAmounntDue = totalInvoice;
-
-
-            return View(invoiceDetails);
+            
+           return View(invoiceDetails);
         }
 
 
@@ -225,7 +161,7 @@ namespace tracking_project.Controllers
             CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
           var MakeIdGet=Convert.ToInt32( CustomerVehicles.MakeModel);
             //only gettnt make mode name to display record
-            CustomerVehicles.MakeModel = GetMakeModel(MakeIdGet).Name;
+            CustomerVehicles.MakeModel = GetMakeModel(MakeIdGet).MakeName;
             
 
 
