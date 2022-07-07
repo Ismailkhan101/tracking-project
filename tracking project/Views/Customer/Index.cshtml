@@ -12,9 +12,7 @@
 <table id="myTable" class="table table-striped">
     <thead>
         <tr style="font-family:'Times New Roman'">
-            <th>
-                @Html.DisplayNameFor(model => model.CustomerId)
-            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -60,9 +58,7 @@
     <tbody>
 @foreach (var item in Model) {
         <tr style="font-family:'Times New Roman'">
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerId)
-            </td>
+            
             <td>
                 <a href="@Url.Action("ApplicationForm","Customer", new { id = item.CustomerId })" class="nav-link">
                             @Html.DisplayFor(modelItem => item.Name)

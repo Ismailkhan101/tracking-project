@@ -22,7 +22,7 @@ namespace tracking_project.Controllers
         }
         public IActionResult Index(int id)
         {
-            ViewBag.AMF = _context.freshPayments.Where(x => x.Id == id).FirstOrDefault().DecidedAMF;
+            //ViewBag.AMF = _context.Where(x => x.VehicleID == id).FirstOrDefault().DecidedAMF;
             ViewBag.vehicleID= _context.CustomerVehicles.Where(x => x.VehicalId == id).FirstOrDefault().VehicalId;
             var data = _context.InvoiceYearly.Include(x=>x.CustomerVehicle).Where(x=>x.VehicalId == id).ToList();
             return View(data);
@@ -64,11 +64,12 @@ namespace tracking_project.Controllers
             {
                 invoice.Service_Tax = ((invoice.AMF) * 0.15);
             }
-            else
+            else if (Service_Tax == "Zero")
             {
-                invoice.Service_Tax = 0;
+                invoice.Service_Tax = ((invoice.AMF) * 0);
             }
-           
+            invoice.Net = (invoice.AMF) - invoice.Comission - invoice.Service_Tax - invoice.Discount;
+
             Comission com = new Comission();
             com.Commission = invoice.Comission;
             com.CommissionType = "Yearly Invoice";
@@ -84,9 +85,9 @@ namespace tracking_project.Controllers
             invoice.VehicalId = invoice.Id;
             invoice.Id = 0;
 
-            var AMF = _context.freshPayments.Where(x => x.Id == invoice.VehicalId).FirstOrDefault().DecidedAMF;
+          //  var AMF = _context.freshPayments.Where(x => x.VehicleID == invoice.VehicalId).FirstOrDefault().DecidedAMF;
 
-            invoice.BalanceAmount = invoice.ReceivedAmount - AMF - invoice.Service_Tax;
+            //invoice.BalanceAmount = invoice.ReceivedAmount - AMF - invoice.Service_Tax;
             
             _context.InvoiceYearly.Add(invoice);
             _context.SaveChanges();
@@ -114,15 +115,41 @@ namespace tracking_project.Controllers
         }
         public IActionResult InvoiceYearlyUpdate(int id)
         {
+
            InvoiceYearly InvoiceYearlies = GetInvoiceYearly(id);
+            ViewBag.vehicle = InvoiceYearlies.VehicalId;
             return View(InvoiceYearlies);
         }
 
         [HttpPost]
-        public IActionResult InvoiceYearlyUpdate(InvoiceYearly InvoiceYearlies)
+        public IActionResult InvoiceYearlyUpdate(InvoiceYearly InvoiceYearlies, string Service_Tax)
         {
-           
-                _context.InvoiceYearly.Attach(InvoiceYearlies);
+            if (Service_Tax == "BRA-19.5%")
+            {
+                InvoiceYearlies.Service_Tax = ((InvoiceYearlies.AMF) * 0.195);
+            }
+            else if (Service_Tax == "SRB-19.5%")
+            {
+                InvoiceYearlies.Service_Tax = ((InvoiceYearlies.AMF) * 0.195);
+            }
+            else if (Service_Tax == "PRA-19.5%")
+            {
+                InvoiceYearlies.Service_Tax = ((InvoiceYearlies.AMF) * 0.195);
+            }
+            else if (Service_Tax == "KPRA-19.5%")
+            {
+                InvoiceYearlies.Service_Tax = ((InvoiceYearlies.AMF) * 0.195);
+            }
+            else if (Service_Tax == "ICT-15%")
+            {
+                InvoiceYearlies.Service_Tax = ((InvoiceYearlies.AMF) * 0.15);
+            }
+            else if (Service_Tax == "Zero")
+            {
+                InvoiceYearlies.Service_Tax = ((InvoiceYearlies.AMF) * 0);
+            }
+            InvoiceYearlies.Net = (InvoiceYearlies.AMF) - InvoiceYearlies.Comission - InvoiceYearlies.Service_Tax - InvoiceYearlies.Discount;
+            _context.InvoiceYearly.Attach(InvoiceYearlies);
                 _context.Entry(InvoiceYearlies).State = EntityState.Modified;
                 _context.SaveChanges();
             
@@ -145,7 +172,7 @@ namespace tracking_project.Controllers
             _context.Entry(InvoiceYearly).State = EntityState.Deleted;
             _context.SaveChanges();
 
-            return RedirectToAction("Index", "InvoiceYearly", new { id = vechileid });
+            return RedirectToAction("Index", "InvoiceYearly", new { @id = InvoiceYearly.VehicalId});
         }
     }
     

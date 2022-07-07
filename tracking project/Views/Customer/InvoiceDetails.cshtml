@@ -10,10 +10,10 @@
     <thead>
         <tr style="font-family:'Times New Roman'">
             <th>
-                @Html.DisplayNameFor(model => model.customerVehicle.FirstOrDefault().VehicalId)
+                @Html.DisplayNameFor(model => model.freshPayments.FirstOrDefault().Vehicle.VehicalId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.customerVehicle.FirstOrDefault().RegistrationNo)
+                @Html.DisplayNameFor(model => model.freshPayments.FirstOrDefault().Vehicle.RegistrationNo)
             </th>
 
            @* <th>
@@ -29,16 +29,16 @@
     <tbody>
 
 
-        @foreach (var item in Model.customerVehicle) 
+        @foreach (var item in Model.freshPayments) 
         {
 
             <tr style="font-family:'Times New Roman'">
-                <td>
-                    @Html.DisplayFor(modelItem => item.VehicalId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RegistrationNo)
-                </td>
+                @*<td>
+                  //  @Html.DisplayFor(modelItem => item.VehicalId)
+                </td>*@
+               @* <td>
+                   @Html.DisplayFor(modelItem => item.RegistrationNo)
+                </td>*@
 
                @* <td>
                     @Html.DisplayFor(modelItem => item.DueDate)
@@ -90,7 +90,7 @@
 
     <tbody>
 
-
+@*
         @foreach (var item in Model.InvoiceYearly) 
         {
 
@@ -106,7 +106,7 @@
                     @Html.DisplayFor(modelItem => item.BalanceAmount)
                 </td>
             </tr>
-        }
+        }*@
 
     </tbody>
 </table>

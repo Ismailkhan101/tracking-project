@@ -33,7 +33,7 @@
                 @Html.DisplayNameFor(model => model.Service_Tax)
             </th>
             <th>
-                Decided AMF
+               AMF
             </th>
            
             
@@ -63,7 +63,8 @@
                 @Html.DisplayFor(modelItem => item.Service_Tax)
             </td>
             <td>
-                @ViewBag.AMF
+                @Html.DisplayFor(modelItem => item.AMF)
+                @*@ViewBag.AMF*@
             </td>
             
             

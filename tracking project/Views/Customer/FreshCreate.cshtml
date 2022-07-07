@@ -19,74 +19,77 @@
                     <select name="Agent" asp-for="SalePersonID" class="form-control" asp-items="@(new SelectList(ViewBag.SalePerson,"SalePersonId","Name"))">
                         <option></option>
                     </select>
+                    <span asp-validation-for="SalePersonID" class="text-danger"></span>
                 </div>
                 <div class="col">
-                    <label asp-for="DueDate" class="control-label"></label>
+                    <label class="control-label">Due Date</label>
                     <input asp-for="DueDate" type="date" class="form-control" />
                     <span asp-validation-for="DueDate" class="text-danger"></span>
                 </div>
             </div><br />
             <div class="row col-sm-10">
                 <div class="col">
-                    <label asp-for="UnitCost" class="control-label"></label>
-                    <input asp-for="UnitCost" class="form-control" />
+                    <label class="control-label">UnitCost</label>
+                    <input id="UnitCost" asp-for="UnitCost" class="form-control" />
                     <span asp-validation-for="UnitCost" class="text-danger"></span>
                 </div>
                 <div class="col">
-                    <label asp-for="ServiceTax" class="control-label"></label>
-                    <select id="Tax" asp-for="ServiceTax" class="form-control">
-                        <option>BRA-19.5%</option>
-                        <option>SRB-19.5%</option>
-                        <option>PRA-19.5%</option>
-                        <option>KPRA-19.5%</option>
-                        <option>ICT-15%</option>
-                        <option>KPRA-19.5%</option>
-                        <option>Zero</option>
+                    <label class="control-label">Service Tax</label>
+                    <select id="ServiceTax" asp-for="ServiceTax" class="form-control">
+                        <option value="0.195">BRA-19.5%</option>
+                            <option value="0.195">SRB-19.5%</option>
+                            <option value="0.195">PRA-19.5%</option>
+                            <option value="0.195">KPRA-19.5%</option>
+                            <option value="0.15">ICT-15%</option>
+                            <option value="0.195">KPRA-19.5%</option>
+                        <option value="0">0</option>
                     </select>
                 </div>
             </div><br />
 
-                  <div class="row col-sm-10">
-                      <div class="col">
-                          <label asp-for="DecidedAMF" class="control-label"></label>
-                          <input asp-for="DecidedAMF" class="form-control" />
-                          <span asp-validation-for="DecidedAMF" class="text-danger"></span>
-                      </div>
+            <div class="row col-sm-10">
+                <div class="col">
+                    <label class="control-label">Decided AMF</label>
+                    <input id="DecidedAMF" asp-for="DecidedAMF" class="form-control" />
+                    <span asp-validation-for="DecidedAMF" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label class="control-label">Tax Deduction</label>
+                    <input asp-for="TaxDeduction" class="form-control" />
+                    <span asp-validation-for="TaxDeduction" class="text-danger"></span>
+                </div>
 
-                      <div class="col">
-                          <label asp-for="ReceiveAmount" class="control-label"></label>
-                          <input asp-for="ReceiveAmount" class="form-control" />
-                          <span asp-validation-for="ReceiveAmount" class="text-danger"></span>
-                      </div>
-                      <div class="col">
-                          <label class="form-check-label" style="margin-top:40px;margin-left:40px">
-                              <input asp-for="GSTCheck" type="checkbox" />GST
-                          </label>
-                      </div>
-                  </div><br />
+
+                <div class="col">
+                    <label class="form-check-label" style="margin-top:40px;margin-left:40px">
+                        <input value="0.17" asp-for="GSTCheck" type="checkbox" id="GSTCheck" name="GSTCheck"/>GST
+                    </label>
+                </div>
+            </div><br />
             <div class="row col-sm-10">
                 <div class="col">
                     <label asp-for="Discount" class="control-label"></label>
-                    <input asp-for="Discount" class="form-control" />
+                    <input id="Discount" asp-for="Discount" class="form-control" />
                     <span asp-validation-for="Discount" class="text-danger"></span>
                 </div>
                 <div class="col">
                     <label asp-for="Commission" class="control-label"></label>
-                    <input asp-for="Commission" class="form-control" />
+                    <input id="Commission" asp-for="Commission" class="form-control" />
                     <span asp-validation-for="Commission" class="text-danger"></span>
                 </div>
             </div><br />
             <div class="row col-sm-10">
                 <div class="col">
-                    <label asp-for="ExtraCharges" class="control-label"></label>
-                    <input asp-for="ExtraCharges" class="form-control" />
+                    <label class="control-label">Extra Charges</label>
+                    <input id="ExtraCharges" asp-for="ExtraCharges" class="form-control" />
                     <span asp-validation-for="ExtraCharges" class="text-danger"></span>
                 </div>
                 <div class="col">
-                    <label asp-for="Balance" class="control-label"></label>
-                    <input asp-for="Balance" class="form-control" />
-                    <span asp-validation-for="Balance" class="text-danger"></span>
+                    <label asp-for="Deduction" class="control-label"></label>
+                    <input asp-for="Deduction" class="form-control" />
+                    <span asp-validation-for="Deduction" class="text-danger"></span>
                 </div>
+
             </div><br />
             <div class="form-group" style="display:none">
                 <label asp-for="VehicleID" class="control-label"></label>
@@ -99,38 +102,155 @@
                         <option></option>
                         <option>Bank</option>
                         <option>Cash</option>-->
-                        
-                      </select>
-                        </div>
 
-                        <div class="col">
-                            <label asp-for="TaxDeduction" class="control-label"></label>
-                            <input asp-for="TaxDeduction" class="form-control" />
-                            <span asp-validation-for="TaxDeduction" class="text-danger"></span>
-                        </div>
-                    </div><br />
-                    <div class="row col-sm-10">
-                        <div class="col">
-                            <label asp-for="Net" class="control-label"></label>
-                            <input asp-for="Net" class="form-control" />
-                            <span asp-validation-for="Net" class="text-danger"></span>
-                        </div>
+                    </select>
+                </div>
+                <div class="col">
+                    <label asp-for="Net" class="control-label"></label>
+                    <input id="Net" asp-for="Net" class="form-control" disabled />
+                    <span asp-validation-for="Net" class="text-danger"></span>
+                </div>
 
-                        <div class="col">
-                            <label asp-for="Deduction" class="control-label"></label>
-                            <input asp-for="Deduction" class="form-control" />
-                            <span asp-validation-for="Deduction" class="text-danger"></span>
-                        </div>
-                    </div><br />
-                    <div class="row col-sm-10">
-                        <div class="col">
+            </div><br />
+            <div class="row col-sm-10">
+                <div class="col">
+                    <label class="control-label">Receive Amount</label>
+                    <input id="ReceiveAmount" asp-for="ReceiveAmount" class="form-control" />
+                    <span asp-validation-for="ReceiveAmount" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="Balance" class="control-label"></label>
+                    <input id="Balance" asp-for="Balance" class="form-control" disabled />
+                    <span asp-validation-for="Balance" class="text-danger"></span>
+                </div>
 
-                            <input type="submit" value="Add" class="btn btn-primary" style="width:100px;"/>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+            </div><br />
+
+                  <div class="row col-sm-10">
+                      <div class="col">
+                          <label asp-for="Invoice" class="control-label"></label>
+                          <input id="Invoice" asp-for="Invoice" class="form-control" disabled />
+
+                      </div>
+                      <div class="col">
+
+                          <input type="submit" value="Add" class="btn btn-primary" style="width:100px;margin-top:30px;" />
+                      </div>
+                  </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+<script>
+
+        $(document).ready(function() {
+
+            function calculateNet() {
+                var UnitCoust = 0.0;
+
+                if ($('#UnitCost').val()) {
+                    UnitCoust = parseInt($('#UnitCost').val())
+                }
+                let gstvalue=0;
+                if ($('#GSTCheck').is(":checked")) {
+                    gstvalue = UnitCoust * 0.17;
+                }
+                var Commission = 0.0;
+
+                if ($('#Commission').val()) {
+                    Commission= parseFloat($('#Commission').val())
+                }
+                
+
+                var DecidedAMF = 0.0;
+                
+                if ($('#DecidedAMF').val()) {
+                    DecidedAMF = parseFloat($('#DecidedAMF').val())
+                }
+                var tax = parseFloat($('#ServiceTax').val());
+
+                var discount =0.0;
+
+                if ($('#Discount').val()) {
+                    discount = parseFloat($('#Discount').val())
+                }
 
 
+                var Servicetax = (DecidedAMF) * tax;
+                var Net = parseFloat((DecidedAMF + UnitCoust) - Servicetax - discount - Commission - gstvalue);
+                document.getElementById("Net").value = Net;
+
+                var Invoice = (DecidedAMF + UnitCoust);
+
+
+
+
+                document.getElementById("Invoice").value = Invoice;
+
+            }
+
+            function calculatebalance()
+            {
+                
+                  var DecidedAMF = parseInt($('#DecidedAMF').val());
+                var UnitCoust = parseInt($('#UnitCost').val());
+                var Invoice = (DecidedAMF + UnitCoust);
+                 var ReceiveAmount = parseInt($('#ReceiveAmount').val());
+                 var Balance = ReceiveAmount - Invoice;
+                document.getElementById("Balance").value = Balance;
+
+            }
+
+
+
+        @*    function calculateNet1() {
+
+
+                var UnitCoust = parseInt($('#UnitCost').val());
+
+                var DecidedAMF = parseInt($('#DecidedAMF').val());
+                var Invoice = (DecidedAMF + UnitCoust);
+                document.getElementById("Invoice").value = Invoice;
+
+            }*@
+
+            $("#Commission").change(function(){
+              calculateNet();
+            });
+
+            $("#UnitCost").change(function () {
+                calculateNet();
+            });
+
+            $("#GSTCheck").change(function () {
+                calculateNet();
+            });
+
+            $("#ServiceTax").change(function(){
+              calculateNet();
+            });
+
+            $("#DecidedAMF").change(function () {
+                calculateNet();
+            });
+
+            $("#Invoice").change(function(){
+              calculateNet1();
+            });
+
+             $("#Discount").change(function(){
+              calculateNet();
+            });
+
+             $("#ReceiveAmount").change(function(){
+              calculatebalance();
+            });
+
+
+        });
+</script>
+}
 

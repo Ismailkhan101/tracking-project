@@ -13,6 +13,7 @@ namespace tracking_project.Controllers
     {
         // this statment display the recordes of customers  
         private readonly VehicleTrackingERPDBContext _context;
+       
 
         public CustomerController(VehicleTrackingERPDBContext context)
         {
@@ -40,8 +41,8 @@ namespace tracking_project.Controllers
                 totalAmount = totalAmount + item;
             }*/
 
-          /*  var vehiclesdecidedAMF = from v in c.Vehicles
-                             select new { v.VehicalId, v.DecidedAMF };*/
+            /*  var vehiclesdecidedAMF = from v in c.Vehicles
+                               select new { v.VehicalId, v.DecidedAMF };*/
 
             //vehiclesdecidedAMF.Select(x=>x.DecidedAMF)
 
@@ -92,75 +93,110 @@ namespace tracking_project.Controllers
         [HttpGet]
         public IActionResult InvoiceDetails(int id)
         {
-            /*Customer c = _context.Customers.Include(x => x.Vehicles).SingleOrDefault(x => x.CustomerId == id);
+            Customer c = _context.Customers.Include(x => x.Vehicles).SingleOrDefault(x => x.CustomerId == id);
 
-            var dueAmount = (from v in c.Vehicles
-                             where v.DueDate < DateTime.Now && v.Balance < 0
-                             orderby v.RegistrationNo select v ).ToList();
+            List<int> vehicleID = c.Vehicles.Select(x => x.VehicalId).ToList();
+
+           
+
+            var freshPayments = _context.freshPayments.Include(x => x.Vehicle).Where(r => vehicleID.Any(id => id == r.VehicleID)).ToList();
+
+            DateTime localDate = DateTime.Now;
+
+            var dueFreshVehiclePayments = (from v in freshPayments
+                             where v.DueDate < localDate && v.Balance < 0
+                             orderby v.Vehicle.RegistrationNo
+                             select v);
 
             InvoiceDetails invoiceDetails = new InvoiceDetails();
-            invoiceDetails.customerVehicle = dueAmount;*/
+            invoiceDetails.freshPayments = dueFreshVehiclePayments;
 
             double freshVehicleAmounts = 0;
 
-            /*foreach (var item in dueAmount)
+             
+
+            foreach (var item in dueFreshVehiclePayments)
             {
                 freshVehicleAmounts = freshVehicleAmounts + item.Balance;
             }
 
-            invoiceDetails.freshVehicleAmounts = freshVehicleAmounts;*/
+            invoiceDetails.freshVehicleAmounts = freshVehicleAmounts;
 
 
-            /*var vehiclesdecidedAMF = from v in c.Vehicles
-                                     select new { v.VehicalId, v.DecidedAMF };*/
-
-            //vehiclesdecidedAMF.Select(x=>x.DecidedAMF)
-
-            List<InvoiceYearly> invoices = new List<InvoiceYearly>();
-
-            foreach (var item in _context.InvoiceYearly)
+            var invoiceYeary = _context.InvoiceYearly.Where(x =>vehicleID.Contains((int)x.VehicalId)).ToList();
+            var dueFinvoicePayments = (from v in invoiceYeary
+                                           where v.ExpiryDate < localDate && v.BalanceAmount < 0
+                                           orderby v select v);
+            var invoiceAmounts = 0;
+            foreach (var item in dueFinvoicePayments)
             {
-               /* foreach (var item2 in vehiclesdecidedAMF)
-                {
-                    if (item.VehicalId == item2.VehicalId && item.ExpiryDate < DateTime.Now && item.BalanceAmount < 0)
-                    {
-                        invoices.Add(item);
-                    }
-                }*/
+                invoiceAmounts +=  Convert.ToInt32( item.BalanceAmount);
             }
 
-            /*invoiceDetails.InvoiceYearly = (from v in invoices
-                                           orderby v.VehicalId
-                                           select v).ToList();
-*/
-            var q = from x in invoices
-                    group x by x.VehicalId into g
-                    let count = g.Count()
-                    orderby count descending
-                    select new { Value = g.Key, Count = count };
+            //var invoiceYeary = _context.InvoiceYearly.Include(x => x.CustomerVehicle).Where(r => vehicleID.Any(id => id == r.VehicalId)).ToList();
+
+            //var invoiceYeary = _context.InvoiceYearly.Where(r => vehicleID.Any(id => id == r.VehicalId)).ToList();
+
+           /* invoiceDetails.InvoiceYearly = invoiceAmounts;*/
+
+            /* foreach (var item in invoiceYeary)
+             {
+                 invoiceDetails.totalYearlyInvoice = invoiceDetails.totalYearlyInvoice + item.BalanceAmount;
+             }
+
+             invoiceDetails.totalAmounntDue = invoiceDetails.totalYearlyInvoice + invoiceDetails.freshVehicleAmounts;
+ */
+
+            //var vehiclesdecidedAMF = from v in c.Vehicles
+            //                         select new { v.VehicalId, v.DecidedAMF };
+
+            //vehiclesdecidedAMF.Select(x => x.DecidedAMF);
+
+            //List<InvoiceYearly> invoices = new List<InvoiceYearly>();
+
+            //foreach (var item in _context.InvoiceYearly)
+            //{
+            //    foreach (var item2 in vehiclesdecidedAMF)
+            //    {
+            //        if (item.VehicalId == item2.VehicalId && item.ExpiryDate < DateTime.Now && item.BalanceAmount < 0)
+            //        {
+            //            invoices.Add(item);
+            //        }
+            //    }
+            //}
+
+            //invoiceDetails.InvoiceYearly = (from v in invoices
+            //                                orderby v.VehicalId
+            //                                select v).ToList();
+
+            //var q = from x in invoices
+            //        group x by x.VehicalId into g
+            //        let count = g.Count()
+            //        orderby count descending
+            //        select new { Value = g.Key, Count = count };
 
 
-            double yearAmount = 0;
+            //double yearAmount = 0;
 
-            foreach (var item in q)
-            {
-                /*foreach (var item2 in vehiclesdecidedAMF)
-                {
-                    if (item.Value == item2.VehicalId)
-                    {
-                        yearAmount = yearAmount + (item.Count * item2.DecidedAMF);
-                    }
-                }*/
-            }
+            //foreach (var item in q)
+            //{
+            //    foreach (var item2 in vehiclesdecidedAMF)
+            //    {
+            //        if (item.Value == item2.VehicalId)
+            //        {
+            //            yearAmount = yearAmount + (item.Count * item2.DecidedAMF);
+            //        }
+            //    }
+            //}
 
-            /*invoiceDetails.totalYearlyInvoice = yearAmount; */
+            //invoiceDetails.totalYearlyInvoice = yearAmount;
 
-            double totalInvoice = yearAmount + freshVehicleAmounts;
+            //double totalInvoice = yearAmount + freshVehicleAmounts;
 
-            /*invoiceDetails.totalAmounntDue = totalInvoice; */
+            //invoiceDetails.totalAmounntDue = totalInvoice;
 
 
-            return View(/*invoiceDetails*/);
+            return View(invoiceDetails);
         }
 
 
@@ -171,11 +207,23 @@ namespace tracking_project.Controllers
             CustomerVehicle CustomerVehicles = _context.CustomerVehicles.FirstOrDefault(u => u.VehicalId == id);
             return CustomerVehicles;
         }
+        private Make GetMakeModel(int id)
+        {
+
+            Make MDN = _context.Makes.FirstOrDefault(x => x.Id == id); ;
+            return MDN;
+        }
 
         public IActionResult CustomerVehicleDetails(int id)
         {
             ViewBag.Id = id;
             CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
+          var MakeIdGet=Convert.ToInt32( CustomerVehicles.MakeModel);
+            //only gettnt make mode name to display record
+            CustomerVehicles.MakeModel = GetMakeModel(MakeIdGet).Name;
+            
+
+
             return View(CustomerVehicles);
         }
         //submitt data into customer vehicle
@@ -205,10 +253,10 @@ namespace tracking_project.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult CustomerVehicleCreate(CustomerVehicle customerVehicles,double Commission,int Agent)
+        public IActionResult CustomerVehicleCreate(CustomerVehicle customerVehicles)
         {
-            customerVehicles.CustomerID= customerVehicles.Customer.CustomerId;
-            customerVehicles.Customer = null;
+           // customerVehicles.CustomerID= customerVehicles.CustomerID;
+           // customerVehicles.Customer = null;
             //customerVehicles.Net = 5;
            // customerVehicles.Balance = 5;
             _context.CustomerVehicles.Add(customerVehicles);
@@ -225,15 +273,7 @@ namespace tracking_project.Controllers
                 _context.Entry(unitVehicle).State = EntityState.Modified;
             }
          
-            Comission com = new Comission();
-            com.Commission = Commission;
-            com.CommissionType = "Vehicle for Request";
-            com.VehicleId = customerVehicles.VehicalId; ;
-            com.SalePersonId =Convert.ToInt32( Agent); 
-            // sale person id
-            // comssion value
-            _context.Comissions.Add(com);
-            _context.SaveChanges();
+           
 
 
             return RedirectToAction("FreshCreate", "Customer", new { @VehicleID = customerVehicles.VehicalId });
@@ -369,6 +409,9 @@ namespace tracking_project.Controllers
         public IActionResult ApplicationForm(int id)
         {
             var data = _context.Customers.Include(x => x.Vehicles).Where(x => x.CustomerId == id).FirstOrDefault();
+            
+            
+            //var af=_context.freshPayments.Include(x=>x.VehicleID).Where(x=>x.VehicleID==data).
             //var a = _context.CustomerVehicles.Include(x => x.UnitVehicle).ToList();
             //a = (from v in a
             //         from c in data.Vehicles
@@ -378,11 +421,12 @@ namespace tracking_project.Controllers
             //{
 
             //}
+            
             return View(data);
         }
 
         // Fresh  PaymentCreate section
-        public IActionResult FreshPaymentCreate(int VehicleId)
+        public IActionResult FreshCreate(int VehicleId)
         {
             ;
            ViewBag.VehicleId = VehicleId;
@@ -392,7 +436,7 @@ namespace tracking_project.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult FreshPaymentCreate(FreshPayment FreshPayment,int Agent, bool GSTCheck, string ServiceTax)
+        public IActionResult FreshCreate(FreshPayment FreshPayment,int Agent, bool GSTCheck, string ServiceTax)
         {
 
             if (GSTCheck == true)
@@ -439,6 +483,15 @@ namespace tracking_project.Controllers
             FreshPayment.SalePersonID = Agent;
             _context.freshPayments.Add(FreshPayment);
             
+            _context.SaveChanges();
+            Comission com = new Comission();
+            com.Commission = FreshPayment.Commission;
+            com.CommissionType = "Vehicle for Request";
+            com.VehicleId = FreshPayment.VehicleID ;
+            com.SalePersonId = Convert.ToInt32(Agent);
+            // sale person id
+            // comssion value
+            _context.Comissions.Add(com);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -492,10 +545,7 @@ namespace tracking_project.Controllers
             {
                 FreshPayment.ServiceTax = ((FreshPayment.DecidedAMF) * 0);
             }
-            else
-            {
-                FreshPayment.ServiceTax = 0;
-            }
+           
             FreshPayment.Service = FreshPayment.ServiceTax;
             FreshPayment.Net = (FreshPayment.DecidedAMF + FreshPayment.UnitCost) - FreshPayment._GST - FreshPayment.Commission - FreshPayment.ServiceTax - FreshPayment.Discount;
             FreshPayment.Invoice = FreshPayment.DecidedAMF + FreshPayment.UnitCost;
@@ -510,6 +560,13 @@ namespace tracking_project.Controllers
         {
             FreshPayment FreshPayment = GetFreshPayment(id);
             return View(FreshPayment);
+        }
+
+        [HttpPost]
+        public JsonResult VehicleLoad(int id)
+        {
+            var Vehcle = _context.Models.Where(z => z.MakeId == id).ToList();
+            return Json(new SelectList( Vehcle,"Id","Name"));
         }
 
     }

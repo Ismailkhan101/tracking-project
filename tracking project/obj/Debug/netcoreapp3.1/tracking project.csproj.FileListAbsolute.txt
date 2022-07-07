@@ -934,8 +934,8 @@ D:\tracking project\tracking project\bin\Debug\netcoreapp3.1\runtimes\win\lib\ne
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.Views.pdb
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.csproj.CopyComplete
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.genruntimeconfig.cache
-D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.csproj.AssemblyReference.cache
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\FreshCreate.cshtml.g.cs
 D:\tracking project\tracking project\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\FreshPaymentUpdate.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\FreshPaymentDetails.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.csproj.AssemblyReference.cache

@@ -5,11 +5,8 @@
 }
 
 
-<div>
-    <h4>Theasdasdasd Customer vehicle details</h4>
-    <hr />
-</div>
-<a asp-action="FreshPaymentDetails" asp-route-id="@Model.VehicalId">Details</a>
+
+
 <h5 style="font-family:'Times New Roman'">Vehicle Info</h5>
 <table class="table table-bordered" style="font-family:'Times New Roman'">
     <dl>
@@ -42,7 +39,7 @@
     </tr>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.MakeModel)
+            Make Model
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Color)
@@ -50,16 +47,29 @@
         <th>
             @Html.DisplayNameFor(model => model.Year)
         </th>
+       
     </tr>
     <tr>
+        <td>
+            @Model.MakeModel
+        </td>
         <td>
             @Html.DisplayFor(model => model.Color)
         </td>
         <td>
             @Html.DisplayFor(model => model.Year)
         </td>
+        
+
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+    </tr>
+    <tr>
         <td>
-            @Html.DisplayFor(model => model.MakeModel)
+            @Html.DisplayFor(model => model.Model)
         </td>
     </tr>
     <thead>
@@ -72,13 +82,13 @@
     <thead>
         <tr style="font-family: 'Times New Roman';">
             <th>
-                @Html.DisplayNameFor(model => model.GeoFences)
+                Geo Fences
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Source)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PaymentRemarkes)
+                Payment Remarkes
             </th>
 
 
@@ -98,30 +108,29 @@
 
         </tr>
         <tr style="font-family:'Times New Roman';">
-            <th> @Html.DisplayNameFor(model => model.PaymentAlert)</th>
-            <th>@Html.DisplayNameFor(model => model.SpacialRemarkes)</th>
+            <th> Payment Alert</th>
+            <th>Spacial Remarkes</th>
+            <th> @Html.DisplayNameFor(model => model.Normal)</th>
         </tr>
         <tr style="font-family:'Times New Roman';">
             <td>@Html.DisplayFor(model => model.PaymentAlert)</td>
             <td>@Html.DisplayFor(model => model.SpacialRemarkes)</td>
+            <td>@Html.DisplayFor(model => model.Normal)</td>
         </tr>
 
         <tr style="font-family:'Times New Roman';">
-            <th> @Html.DisplayNameFor(model => model.Normal)</th>
+
             <th>@Html.DisplayNameFor(model => model.Emergency)</th>
-        </tr>
-        <tr style="font-family:'Times New Roman';">
-            <td>@Html.DisplayFor(model => model.Normal)</td>
-            <td>@Html.DisplayFor(model => model.Emergency)</td>
-        </tr>
-        <tr style="font-family:'Times New Roman';">
             <th> @Html.DisplayNameFor(model => model.Driver)</th>
             <th>Driver Contact</th>
         </tr>
         <tr style="font-family:'Times New Roman';">
+
+            <td>@Html.DisplayFor(model => model.Emergency)</td>
             <td>@Html.DisplayFor(model => model.Driver)</td>
             <td>@Html.DisplayFor(model => model.DrContact)</td>
         </tr>
+       
 
 
     </tbody>
@@ -222,7 +231,7 @@
         </tbody>
 </table>
 
-<h1>@Model.VehicalId </h1>
+
 
 <div>
     <a asp-action="FreshPaymentDetails" asp-route-id="@Model.VehicalId">Next</a> |

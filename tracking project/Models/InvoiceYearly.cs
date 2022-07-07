@@ -44,7 +44,7 @@ namespace tracking_project.Models
         public string Remarks { get; set; }
         public double AMF { get; set; }
 
-        public double Net ;
+        public double Net { get; set; }
         public int? VehicalId { get; set; }
         public virtual CustomerVehicle CustomerVehicle { get; set; }
 
