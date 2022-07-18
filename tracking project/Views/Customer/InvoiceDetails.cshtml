@@ -12,9 +12,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.freshPayments.FirstOrDefault().Vehicle.VehicalId)
             </th>
-            @*<th>
+            <th>
                 @Html.DisplayNameFor(model => model.freshPayments.FirstOrDefault().Vehicle.RegistrationNo)
-            </th>*@
+            </th>
 
             <th>
                 @Html.DisplayNameFor(model => model.freshPayments.FirstOrDefault().DueDate)
@@ -29,16 +29,16 @@
     <tbody>
 
 
-        @foreach (var item in Model.freshPayments) 
+        @foreach (var item  in Model.freshPayments) 
         {
 
             <tr style="font-family:'Times New Roman'">
                 <td>
-                  //  @Html.DisplayFor(modelItem => item.VehicleID)
+                   @Html.DisplayFor(modelItem => item.VehicleID)
                 </td>
-                @*<td>
-                   @Html.DisplayFor(modelItem => item.)
-                </td>*@
+                <td>
+                   @Html.DisplayFor(modelItem => item.Vehicle.RegistrationNo)
+                </td>
 
                 <td>
                     @Html.DisplayFor(modelItem => item.DueDate)
@@ -74,7 +74,7 @@
 
 <table class="table">
     <thead>
-        @*<tr style="font-family:'Times New Roman'">
+        <tr style="font-family:'Times New Roman'">
             <th>
                 @Html.DisplayNameFor(model => model.InvoiceYearly.FirstOrDefault().VehicalId)
             </th>
@@ -85,28 +85,31 @@
                 @Html.DisplayNameFor(model => model.InvoiceYearly.FirstOrDefault().BalanceAmount)
             </th>
 
-        </tr>*@
+        </tr>
     </thead>
 
     <tbody>
 
-@*
-        @foreach (var item in Model.InvoiceYearly) 
+        @if(Model.InvoiceYearly != null)
         {
+                @foreach (var item in Model.InvoiceYearly)
+            {
 
-            <tr style="font-family:'Times New Roman'">
-                <td>
-                    @Html.DisplayFor(modelItem => item.VehicalId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ExpiryDate)
-                </td>
+                <tr style="font-family:'Times New Roman'">
+                    <td>
+                        @Html.DisplayFor(modelItem =>item.VehicalId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpiryDate)
+                    </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.BalanceAmount)
-                </td>
-            </tr>
-        }*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BalanceAmount)
+                    </td>
+                </tr>
+            }
+
+        }
 
     </tbody>
 </table>

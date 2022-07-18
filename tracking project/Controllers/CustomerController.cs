@@ -65,18 +65,18 @@ namespace tracking_project.Controllers
                     orderby count descending
                     select new { Value = g.Key, Count = count };
 
-            double yearAmount = 0;
+            /*double yearAmount = 0;
 
             foreach (var item in q)
             {
-                /*foreach(var item2 in vehiclesdecidedAMF)
+                foreach (var item2 in vehiclesdecidedAMF)
                 {
-                    if(item.Value == item2.VehicalId)
+                    if (item.Value == item2.VehicalId)
                     {
                         yearAmount = yearAmount + (item.Count * item2.DecidedAMF);
                     }
-                }*/
-            }
+                }
+            }*/
 
             /*double totalInvoice = yearAmount + totalAmount;*/
 
@@ -124,15 +124,18 @@ namespace tracking_project.Controllers
 
 
             var invoiceYeary = _context.InvoiceYearly.Where(x =>vehicleID.Contains((int)x.VehicalId) && x.ExpiryDate < localDate && x.BalanceAmount < 0).ToList();
-                                          
-            
-            
+
+            var yearly = (from v in invoiceYeary
+                          orderby v.VehicalId
+                                           select v);
+
             var invoiceAmounts = 0;
 
             foreach (var item in invoiceYeary)
             {
                 invoiceAmounts += Convert.ToInt32(item.BalanceAmount);
             }
+            invoiceDetails.InvoiceYearly = yearly;
             invoiceDetails.totalYearlyInvoice = invoiceAmounts;
             invoiceDetails.totalAmountDue = invoiceDetails.freshVehicleAmounts + invoiceDetails.totalYearlyInvoice;
 
@@ -219,6 +222,7 @@ namespace tracking_project.Controllers
 
             return RedirectToAction("FreshCreate", "Customer", new { @VehicleID = customerVehicles.VehicalId });
         }
+
         public IActionResult CustomerVehicalUpdate(int id)
         {
             List<UnitVehicle> UnitId = new List<UnitVehicle>();
@@ -244,16 +248,24 @@ namespace tracking_project.Controllers
         }
         public IActionResult CustomerVehicalDelete(int id)
         {
+          /*  var commission = _context.Comissions.Where(x => x.VehicleId == id).ToList();
+            CustomerVehicles.Comissions = commission;*/
             CustomerVehicle CustomerVehicles = GetCustomerVehicle(id);
+            
             return View(CustomerVehicles);
         }
 
         [HttpPost]
         public IActionResult CustomerVehicalDelete(CustomerVehicle CustomerVehicles)
         {
-         
-                _context.CustomerVehicles.Attach(CustomerVehicles);
+            /*var comission=_context.Comissions.Where(x=>x.VehicleId== CustomerVehicles.VehicalId).ToList();
+            _context.Comissions.Attach(comission);
+
+            _context.Entry(comission).State = EntityState.Deleted;
+            _context.SaveChanges();*/
+            _context.CustomerVehicles.Attach(CustomerVehicles);
                 _context.Entry(CustomerVehicles).State = EntityState.Deleted;
+            
                 _context.SaveChanges();
          
             return RedirectToAction("index");
@@ -446,6 +458,10 @@ namespace tracking_project.Controllers
         {
             ViewBag.VehicleId = VehicleId;
             FreshPayment FreshPayment = GetFreshPayment(VehicleId);
+            
+            List<SalePerson> Saleperson = new List<SalePerson>();
+            Saleperson = _context.SalePersons.Where(x => x.SalePersonId == FreshPayment.SalePersonID).ToList();
+            ViewBag.SalePerson = Saleperson;
             return View(FreshPayment);
         }
 

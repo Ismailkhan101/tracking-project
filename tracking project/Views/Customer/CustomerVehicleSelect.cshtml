@@ -23,14 +23,14 @@
             <th>
                 @Html.DisplayNameFor(model => model.CNIC)
             </th>
-            <th>
+            <!--<th>
                 @Html.DisplayNameFor(model => model.DateOfBirth)
-            </th>
+            </th>-->
 
             @*<th>
                 @Html.DisplayNameFor(model => model.PhonePOne)
             </th>*@
-            <th>TotalAmount</th>
+            <!--<th>TotalAmount</th>-->
             
 
         </tr>
@@ -58,15 +58,15 @@
 
 
 
-            <td>
+            <!--<td>
                 @Html.DisplayFor(modelItem => Model.DateOfBirth)
-            </td>
+            </td>-->
            @* <td>
                 @Html.DisplayFor(modelItem => Model.PhonePOne)
             </td>*@
-            <td>
+            <!--<td>
                 @ViewBag.TotalAmount
-            </td>
+            </td>-->
             <td><a asp-action="InvoiceDetails" asp-route-id="@Model.CustomerId" class="btn btn-primary">View Invoice</a></td>
         </tr>
 

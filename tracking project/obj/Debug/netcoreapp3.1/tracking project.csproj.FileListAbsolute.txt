@@ -772,7 +772,6 @@ D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Custome
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\ApplicationForm.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Customercreate.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerDetails.cshtml.g.cs
-D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerVehicalDelete.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerVehicalUpdate.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerVehicleCreate.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerVehicleDetails.cshtml.g.cs
@@ -938,6 +937,8 @@ D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Custome
 D:\tracking project\tracking project\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\FreshPaymentUpdate.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\FreshPaymentDetails.cshtml.g.cs
-D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.csproj.AssemblyReference.cache
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Commission\ComissionDelete.cshtml.g.cs
 D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Commission\CommissionUpdate.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Technician\Delete.cshtml.g.cs
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\tracking project.csproj.AssemblyReference.cache
+D:\tracking project\tracking project\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerVehicalDelete.cshtml.g.cs

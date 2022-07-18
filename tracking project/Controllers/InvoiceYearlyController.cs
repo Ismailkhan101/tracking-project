@@ -69,7 +69,7 @@ namespace tracking_project.Controllers
                 invoice.Service_Tax = ((invoice.AMF) * 0);
             }
             invoice.Net = (invoice.AMF) - invoice.Comission - invoice.Service_Tax - invoice.Discount;
-
+            invoice.BalanceAmount = invoice.ReceivedAmount - (invoice.AMF);
             Comission com = new Comission();
             com.Commission = invoice.Comission;
             com.CommissionType = "Yearly Invoice";
@@ -149,10 +149,13 @@ namespace tracking_project.Controllers
                 InvoiceYearlies.Service_Tax = ((InvoiceYearlies.AMF) * 0);
             }
             InvoiceYearlies.Net = (InvoiceYearlies.AMF) - InvoiceYearlies.Comission - InvoiceYearlies.Service_Tax - InvoiceYearlies.Discount;
+            InvoiceYearlies.BalanceAmount = InvoiceYearlies.ReceivedAmount - (InvoiceYearlies.AMF);
+            
             _context.InvoiceYearly.Attach(InvoiceYearlies);
                 _context.Entry(InvoiceYearlies).State = EntityState.Modified;
                 _context.SaveChanges();
-            
+
+          //  InvoiceYearlies.BalanceAmount = InvoiceYearlies.ReceivedAmount - InvoiceYearlies.Net;
             return RedirectToAction("Index", "InvoiceYearly", new { id = InvoiceYearlies.VehicalId });
         }
         public IActionResult InvoiceYearlyDelete(int id)

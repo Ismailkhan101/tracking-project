@@ -149,7 +149,14 @@
 
         $(document).ready(function() {
 
+            
             function calculateNet() {
+                
+                var Balance = 0.0;
+
+                if ($('#Balance').val()) {
+                    Balance = parseInt($('#Balance').val())
+                }
                 var UnitCoust = 0.0;
 
                 if ($('#UnitCost').val()) {
@@ -196,6 +203,7 @@
             function calculatebalance()
             {
                 
+                
                   var DecidedAMF = parseInt($('#DecidedAMF').val());
                 var UnitCoust = parseInt($('#UnitCost').val());
                 var Invoice = (DecidedAMF + UnitCoust);
@@ -224,6 +232,8 @@
 
             $("#UnitCost").change(function () {
                 calculateNet();
+                calculatebalance();
+                
             });
 
             $("#GSTCheck").change(function () {
@@ -236,10 +246,11 @@
 
             $("#DecidedAMF").change(function () {
                 calculateNet();
+                calculatebalance();
             });
 
             $("#Invoice").change(function(){
-              calculateNet1();
+              calculateNet();
             });
 
              $("#Discount").change(function(){
@@ -248,6 +259,11 @@
 
              $("#ReceiveAmount").change(function(){
               calculatebalance();
+             });
+
+            $("#Balance").change(function () {
+                calculatebalance();
+                calculateNet();
             });
 
 

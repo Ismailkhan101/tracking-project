@@ -11,17 +11,7 @@
     <div class="">
         <form asp-action="Create" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @*<div class="form-group">
-            <label asp-for="ValidFromDate" class="control-label"></label>
-            <input asp-for="ValidFromDate" class="form-control" />
-            <span asp-validation-for="ValidFromDate" class="text-danger"></span>
-        </div>*@
-            @*<div class="form-group">
-            <label asp-for="ExpiryDate" class="control-label"></label>
-            <input asp-for="ExpiryDate" class="form-control" />
-            <span asp-validation-for="ExpiryDate" class="text-danger"></span>
-        </div>*@
-            
+
             <input type="hidden" asp-for="VehicalId" />
             <div class="row col-sm-10">
                 <div class="col">
@@ -29,7 +19,7 @@
                         <label class="form-check-label">
                             <input class="form-check-input" asp-for="AmfStatus" /> @Html.DisplayNameFor(model => model.AmfStatus)
                         </label>
-                    </div>
+                    </div></div>
                     <div class="form-group form-check">
                         <label class="form-check-label">
                             <input class="form-check-input" asp-for="YearlyPaymentStatus" /> @Html.DisplayNameFor(model => model.YearlyPaymentStatus)
@@ -43,79 +33,75 @@
                         <span asp-validation-for="Year" class="text-danger"></span>
                     </div>
                     <div class="col">
-                        <label asp-for="Comission" class="control-label"></label>
-                        <input asp-for="Comission" class="form-control" />
-                        <span asp-validation-for="Comission" class="text-danger"></span>
+                        <label asp-for="Service_Tax" class="control-label"></label>
+                        <select id="Service_Tax" asp-for="Service_Tax" class="form-control">
+                            <option value="0.195">BRA-19.5%</option>
+                            <option value="0.195">SRB-19.5%</option>
+                            <option value="0.195">PRA-19.5%</option>
+                            <option value="0.195">KPRA-19.5%</option>
+                            <option value="0.195">ICT-15%</option>
+                            <option value="0.195">KPRA-19.5%</option>
+                            <option value="0">Zero</option>
+                        </select>
+                        </div>
+                    </div><br />
+                    <div class="row col-sm-10">
+                        <div class="col">
+                            <label asp-for="Discount" class="control-label"></label>
+                            <input id="Discount" asp-for="Discount" class="form-control" />
+                            <span asp-validation-for="Discount" class="text-danger"></span>
+                        </div>
+
+                        <div class="col">
+                            <label asp-for="Comission" class="control-label"></label>
+                            <input id="Comission" asp-for="Comission" class="form-control" />
+                            <span asp-validation-for="Comission" class="text-danger"></span>
+                       
                     </div>
                 </div><br />
+                      <div class="row col-sm-10">
+                          <div class="col">
+                              <label class="control-label">Received Amount</label>
+                              <input  asp-for="ReceivedAmount" class="form-control" id="ReceivedAmount" />
+                              <span asp-validation-for="ReceivedAmount" class="text-danger"></span>
+                          </div>
+                          <div class="col">
+                              <label asp-for="AMF" class="control-label"></label>
+                              <input id="AMF" asp-for="AMF" class="form-control" />
+                              <span asp-validation-for="AMF" class="text-danger"></span>
+                          </div>
+                          
+                      </div><br />
                 <div class="row col-sm-10">
                     <div class="col">
-                        <label asp-for="Discount" class="control-label"></label>
-                        <input asp-for="Discount" class="form-control" />
-                        <span asp-validation-for="Discount" class="text-danger"></span>
-                    </div>
-                    <div class="col">
-                        <label asp-for="Service_Tax" class="control-label"></label>
-                        <select id="Tax" asp-for="Service_Tax" class="form-control">
-                            <option>BRA-19.5%</option>
-                            <option>SRB-19.5%</option>
-                            <option>PRA-19.5%</option>
-                            <option>KPRA-19.5%</option>
-                            <option>ICT-15%</option>
-                            <option>KPRA-19.5%</option>
-                            <option>Zero</option>
-                        </select>
 
-                    </div>
-                </div><br/>
-                <div class="row col-sm-10">
+                              <label asp-for="Net" class="control-label"></label>
+                              <input id="Net" asp-for="Net" class="form-control" />
+                              <span asp-validation-for="Net" class="text-danger"></span>
+                          </div>
                     <div class="col">
-                        <label asp-for="ReceivedAmount" class="control-label"></label>
-                        <input asp-for="ReceivedAmount" class="form-control" />
-                        <span asp-validation-for="ReceivedAmount" class="text-danger"></span>
-                    </div>
-                    <div class="col">
-                        <label asp-for="BalanceAmount" class="control-label"></label>
-                        <input asp-for="BalanceAmount" class="form-control" />
+                        <label class="control-label">Balance Amount</label>
+                        <input id="BalanceAmount" asp-for="BalanceAmount" class="form-control" />
                         <span asp-validation-for="BalanceAmount" class="text-danger"></span>
                     </div>
                 </div><br />
-                <div class="row col-sm-10">
-                    <div class="col">
-                        <label asp-for="TaxDeduction" class="control-label"></label>
-                        <input asp-for="TaxDeduction" class="form-control" />
-                        <span asp-validation-for="TaxDeduction" class="text-danger"></span>
-                    </div>
-                <div class="col">
-                        <label asp-for="AMF" class="control-label"></label>
-                        <input asp-for="AMF" class="form-control" />
-                        <span asp-validation-for="AMF" class="text-danger"></span>
-                    </div>
-                   @* <div class="col">
-                        <label asp-for="Comission" class="control-label"></label>
-                        <input asp-for="Comission" class="form-control" />
-                        <span asp-validation-for="Comission" class="text-danger"></span>
-                    </div>*@
-                </div><br />
-                @*<div class="form-group">
-                <label asp-for="VehicalId" class="control-label"></label>
-                <input asp-for="VehicalId" class="form-control" />
-                <span asp-validation-for="VehicalId" class="text-danger"></span>
-            </div>*@
-            <div class="row col-sm-10">
-                <div class="col">
-                    <label class="control-label">Agent</label>
-                    <select name="Sale" class="form-control" asp-items="@(new SelectList(ViewBag.SalePerson,"SalePersonId","Name"))">
-                        <option></option>
-                    </select>
-                </div>
-                
-                <div class="col">
-                   
-                    <label asp-for="Remarks" class="control-label"></label>
-                    <input asp-for="Remarks" class="form-control" />
-                    <span asp-validation-for="Remarks" class="text-danger"></span>
-                </div></div><br />
+               
+        <div class="row col-sm-10">
+                        <div class="col">
+                            <label class="control-label">Agent</label>
+                            <select name="Sale" class="form-control" asp-items="@(new SelectList(ViewBag.SalePerson,"SalePersonId","Name"))">
+                                <option></option>
+                            </select>
+                        </div>
+
+                        <div class="col">
+
+                            <label asp-for="Remarks" class="control-label"></label>
+                            <input asp-for="Remarks" class="form-control" />
+                            <span asp-validation-for="Remarks" class="text-danger"></span>
+                        </div>
+
+                    </div><br />
                     <div class="row col-sm-10">
                         <div class="col">
                             <input type="submit" value="Add" class="btn btn-primary" style="margin-top:30px;width:100px;" />
@@ -125,10 +111,95 @@
 </form>
     </div>
 
-    
+
 </div>
 
-@*@section Scripts {
+@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+
+        $(document).ready(function() {
+
+            function calculateNet() {
+
+                var Service_Tax = 0.0;
+
+                if ($('#Service_Tax').val()) {
+                    Service_Tax = parseFloat($('#Service_Tax').val())
+                }
+
+                var Comission = 0.0;
+
+                if ($('#Comission').val()) {
+                    Comission = parseInt($('#Comission').val())
+                }
+                
+                var Discount = 0.0;
+
+                if ($('#Discount').val()) {
+                    Discount = parseFloat($('#Discount').val())
+                }
+
+
+                var AMF = 0.0;
+
+                if ($('#AMF').val()) {
+                    AMF = parseFloat($('#AMF').val())
+                }
+                
+                
+
+                var tax = AMF * Service_Tax ;
+                var Net = parseFloat((AMF) - tax - Discount - Comission);
+                document.getElementById("Net").value = Net;
+
+
+                var ReceivedAmount = 0.0;
+                if ($('#ReceivedAmount').val()) {
+                    ReceivedAmount = parseFloat($('#ReceivedAmount').val())
+                }
+
+                var balance =(ReceivedAmount - (AMF));
+                document.getElementById("BalanceAmount").value = balance;
+                
+
+                }
+
+          
+
+
+
+       
+
+            $("#Comission").change(function(){
+              calculateNet();
+            });
+
+            $("#AMF").change(function () {
+                calculateNet();
+            });
+
+            $("#Net").change(function () {
+                calculateNet();
+            });
+
+            $("#Service_Tax").change(function(){
+              calculateNet();
+            });
+
+             $("#Discount").change(function(){
+              calculateNet();
+            });
+
+            $("#ReceivedAmount").change(function () {
+                calculateNet();
+            });
+            $("#BalanceAmount").change(function () {
+                calculateNet();
+            });
+
+
+        });
+    </script>
 }
-*@
